@@ -1,4 +1,13 @@
 <script setup lang="ts">
+export default {
+  name: 'GlimTabs',
+  props: {
+    modelValue: {
+      type: String,
+      required: true
+    }
+  }
+}
 import { ref, watch, onMounted, nextTick, computed } from 'vue';
 
 /**
