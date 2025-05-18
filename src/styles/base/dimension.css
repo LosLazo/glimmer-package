@@ -1,0 +1,62 @@
+/**
+ * This file was generated automatically by Supernova.io and should not be changed manually.
+ * To modify the format or content of this file, please contact your design system team. 
+ */
+
+:root {
+  --glim-dimension-dimensions-unit-0: 2px;
+  --glim-dimension-dimensions-unit-1: 4px;
+  --glim-dimension-dimensions-unit-2: 8px;
+  --glim-dimension-dimensions-unit-3: 12px;
+  --glim-dimension-dimensions-unit-4: 16px;
+  --glim-dimension-dimensions-unit-5: 20px;
+  --glim-dimension-dimensions-unit-6: 24px;
+  --glim-dimension-dimensions-unit-7: 32px;
+  --glim-dimension-dimensions-unit-8: 40px;
+  --glim-dimension-dimensions-unit-9: 48px;
+  --glim-dimension-dimensions-unit-10: 56px;
+  --glim-dimension-dimensions-unit-11: 64px;
+  --glim-dimension-dimensions-unit-12: 80px;
+  --glim-dimension-dimensions-unit-13: 96px;
+  --glim-dimension-dimensions-unit-14: 120px;
+  --glim-dimension-border-focus: 2px;
+  --glim-dimension-font-size-12: 12px;
+  --glim-dimension-font-size-14: 14px;
+  --glim-dimension-font-size-16: 16px;
+  --glim-dimension-font-size-20: 20px;
+  --glim-dimension-font-size-24: 24px;
+  --glim-dimension-font-size-32: 32px;
+  --glim-dimension-font-size-40: 40px;
+  --glim-dimension-font-size-48: 48px;
+  --glim-dimension-font-size-56: 56px;
+  --glim-dimension-font-size-64: 64px;
+  --glim-dimension-font-size-96: 96px;
+  --glim-dimension-font-size-112: 112px;
+  --glim-dimension-font-size-156: 156px;
+  --glim-dimension-font-size-216: 216px;
+  --glim-dimension-size-1: var(--glim-dimension-dimensions-unit-2);
+  --glim-dimension-radius-1: var(--glim-dimension-dimensions-unit-0);
+  --glim-dimension-radius-2: var(--glim-dimension-dimensions-unit-1);
+  --glim-dimension-radius-3: var(--glim-dimension-dimensions-unit-2);
+  --glim-dimension-radius-4: var(--glim-dimension-dimensions-unit-3);
+  --glim-dimension-size-2: var(--glim-dimension-dimensions-unit-4);
+  --glim-dimension-size-3: var(--glim-dimension-dimensions-unit-6);
+  --glim-dimension-size-4: var(--glim-dimension-dimensions-unit-8);
+  --glim-dimension-size-5: var(--glim-dimension-dimensions-unit-10);
+  --glim-dimension-size-0-5: var(--glim-dimension-dimensions-unit-1);
+  --glim-dimension-radius-5: var(--glim-dimension-dimensions-unit-5);
+  --glim-dimension-padding-1: var(--glim-dimension-dimensions-unit-0);
+  --glim-dimension-padding-2: var(--glim-dimension-dimensions-unit-1);
+  --glim-dimension-padding-3: var(--glim-dimension-dimensions-unit-2);
+  --glim-dimension-padding-4: var(--glim-dimension-dimensions-unit-3);
+  --glim-dimension-padding-5: var(--glim-dimension-dimensions-unit-4);
+  --glim-dimension-margin-1: var(--glim-dimension-dimensions-unit-1);
+  --glim-dimension-margin-2: var(--glim-dimension-dimensions-unit-2);
+  --glim-dimension-margin-3: var(--glim-dimension-dimensions-unit-4);
+  --glim-dimension-margin-4: var(--glim-dimension-dimensions-unit-6);
+  --glim-dimension-gap-1: var(--glim-dimension-dimensions-unit-1);
+  --glim-dimension-gap-2: var(--glim-dimension-dimensions-unit-2);
+  --glim-dimension-gap-3: var(--glim-dimension-dimensions-unit-4);
+  --glim-dimension-gap-4: var(--glim-dimension-dimensions-unit-6);
+  --glim-dimension-gap-5: var(--glim-dimension-dimensions-unit-8);
+}

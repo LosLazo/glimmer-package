@@ -1,0 +1,225 @@
+:root {
+  /* Grid System */
+  --grid-max-width: 1720px;
+  --grid-columns: 12;
+  --grid-gap: var(--glim-dimension-dimension-size-2);
+  
+  /* Breakpoints */
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}
+
+/* Container with max-width */
+.container-fluid {
+  width: 100%;
+  padding-right: var(--glim-dimension-dimension-size-3);
+  padding-left: var(--glim-dimension-dimension-size-3);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Responsive container at different breakpoints */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: var(--glim-grid-max-width);
+  }
+}
+
+/* Grid Row - using CSS Grid instead of Flexbox */
+.row {
+  display: grid !important;
+  grid-template-columns: repeat(var(--glim-grid-columns), 1fr);
+  gap: var(--glim-grid-gap);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Grid Columns - base styles */
+[class*="col-"] {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  grid-column: span 12; /* Default to full width on mobile */
+}
+
+/* Auto-sized column */
+.col {
+  grid-column: span 1;
+}
+
+/* Default (xs) grid columns */
+.col-1 { grid-column: span 1; }
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }
+.col-6 { grid-column: span 6; }
+.col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+.col-9 { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+/* Small breakpoint (sm) */
+@media (min-width: 576px) {
+  .col-sm-1 { grid-column: span 1; }
+  .col-sm-2 { grid-column: span 2; }
+  .col-sm-3 { grid-column: span 3; }
+  .col-sm-4 { grid-column: span 4; }
+  .col-sm-5 { grid-column: span 5; }
+  .col-sm-6 { grid-column: span 6; }
+  .col-sm-7 { grid-column: span 7; }
+  .col-sm-8 { grid-column: span 8; }
+  .col-sm-9 { grid-column: span 9; }
+  .col-sm-10 { grid-column: span 10; }
+  .col-sm-11 { grid-column: span 11; }
+  .col-sm-12 { grid-column: span 12; }
+}
+
+/* Medium breakpoint (md) */
+@media (min-width: 768px) {
+  .col-md-1 { grid-column: span 1; }
+  .col-md-2 { grid-column: span 2; }
+  .col-md-3 { grid-column: span 3; }
+  .col-md-4 { grid-column: span 4; }
+  .col-md-5 { grid-column: span 5; }
+  .col-md-6 { grid-column: span 6; }
+  .col-md-7 { grid-column: span 7; }
+  .col-md-8 { grid-column: span 8; }
+  .col-md-9 { grid-column: span 9; }
+  .col-md-10 { grid-column: span 10; }
+  .col-md-11 { grid-column: span 11; }
+  .col-md-12 { grid-column: span 12; }
+}
+
+/* Large breakpoint (lg) */
+@media (min-width: 992px) {
+  .col-lg-1 { grid-column: span 1; }
+  .col-lg-2 { grid-column: span 2; }
+  .col-lg-3 { grid-column: span 3; }
+  .col-lg-4 { grid-column: span 4; }
+  .col-lg-5 { grid-column: span 5; }
+  .col-lg-6 { grid-column: span 6; }
+  .col-lg-7 { grid-column: span 7; }
+  .col-lg-8 { grid-column: span 8; }
+  .col-lg-9 { grid-column: span 9; }
+  .col-lg-10 { grid-column: span 10; }
+  .col-lg-11 { grid-column: span 11; }
+  .col-lg-12 { grid-column: span 12; }
+}
+
+/* Extra large breakpoint (xl) */
+@media (min-width: 1200px) {
+  .col-xl-1 { grid-column: span 1; }
+  .col-xl-2 { grid-column: span 2; }
+  .col-xl-3 { grid-column: span 3; }
+  .col-xl-4 { grid-column: span 4; }
+  .col-xl-5 { grid-column: span 5; }
+  .col-xl-6 { grid-column: span 6; }
+  .col-xl-7 { grid-column: span 7; }
+  .col-xl-8 { grid-column: span 8; }
+  .col-xl-9 { grid-column: span 9; }
+  .col-xl-10 { grid-column: span 10; }
+  .col-xl-11 { grid-column: span 11; }
+  .col-xl-12 { grid-column: span 12; }
+}
+
+/* Advanced Grid Layouts */
+
+/* Grid row with auto-fill (creates as many columns as will fit) */
+.row-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--glim-grid-gap);
+}
+
+/* Grid row with auto-fit (expands columns to fill available space) */
+.row-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--glim-grid-gap);
+}
+
+/* Grid area classes for more complex layouts */
+.grid-area {
+  display: grid;
+  gap: var(--glim-grid-gap);
+  grid-auto-rows: max-content;
+}
+
+/* Helper classes for column ordering */
+.col-start-1 { grid-column-start: 1; }
+.col-start-2 { grid-column-start: 2; }
+.col-start-3 { grid-column-start: 3; }
+.col-start-4 { grid-column-start: 4; }
+.col-start-5 { grid-column-start: 5; }
+.col-start-6 { grid-column-start: 6; }
+.col-start-7 { grid-column-start: 7; }
+.col-start-8 { grid-column-start: 8; }
+.col-start-9 { grid-column-start: 9; }
+.col-start-10 { grid-column-start: 10; }
+.col-start-11 { grid-column-start: 11; }
+.col-start-12 { grid-column-start: 12; }
+
+/* Row alignment classes */
+.row-items-start { align-items: start; }
+.row-items-center { align-items: center; }
+.row-items-end { align-items: end; }
+.row-items-stretch { align-items: stretch; }
+
+.row-content-start { justify-content: start; }
+.row-content-center { justify-content: center; }
+.row-content-end { justify-content: end; }
+.row-content-between { justify-content: space-between; }
+.row-content-around { justify-content: space-around; }
+.row-content-evenly { justify-content: space-evenly; } 
+
+
+/* testing new grid system */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--glim-dimension-dimension-size-2);
+  width: 100%;
+  padding-top: 32px;
+}
+
+.split-1 {
+  grid-column: span 12;
+}
+
+.split-2 {
+  grid-column: span 6;
+}
+
+.split-3 {
+  grid-column: span 4;
+}
+
+.split-4 {
+  grid-column: span 3;
+}
+

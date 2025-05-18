@@ -1,0 +1,30 @@
+/**
+ * This file was generated automatically by Supernova.io and should not be changed manually.
+ * To modify the format or content of this file, please contact your design system team. 
+ */
+
+:root {
+  /* This is not the default h1 tag, but it's primarily used for extra large numbers and statistics */
+  --glim-typography-display-xxl: var(--glim-string-string-font-weight-loud) 216px/100% var(--glim-string-string-font-family-display);
+  /* This is not the default h1 tag, but it's primarily used for extra large numbers and statistics */
+  --glim-typography-display-xl: var(--glim-string-string-font-weight-loud) 156px/100% var(--glim-string-string-font-family-display);
+  /* Headlines, when you want to be extra bold in your expression. */
+  --glim-typography-display-lg: var(--glim-string-string-font-weight-loud) 112px/100% var(--glim-string-string-font-family-display);
+  --glim-typography-headline-lg: var(--glim-string-string-font-weight-loud) 80px/100% var(--glim-string-string-font-family-display);
+  --glim-typography-headline-md: var(--glim-string-string-font-weight-loud) 56px/100% var(--glim-string-string-font-family-display);
+  --glim-typography-headline-sm: var(--glim-string-string-font-weight-loud) 40px/100% var(--glim-string-string-font-family-display);
+  --glim-typography-title-lg: var(--glim-string-string-font-weight-loud) 24px/100% var(--glim-string-string-font-family-display);
+  --glim-typography-title-md: var(--glim-string-string-font-weight-loud) 20px/100% var(--glim-string-string-font-family-display);
+  --glim-typography-title-sm: var(--glim-string-string-font-weight-loud) 16px/100% var(--glim-string-string-font-family-display);
+  --glim-typography-title-xs: var(--glim-string-string-font-weight-loud) 14px/100% var(--glim-string-string-font-family-display);
+  --glim-typography-body-loud-xl: var(--glim-string-string-font-weight-loud) 24px/130% var(--glim-string-string-font-family-text);
+  --glim-typography-body-loud-lg: var(--glim-string-string-font-weight-loud) 20px/130% var(--glim-string-string-font-family-text);
+  --glim-typography-body-loud-md: var(--glim-string-string-font-weight-loud) 16px/130% var(--glim-string-string-font-family-text);
+  --glim-typography-body-loud-sm: var(--glim-string-string-font-weight-loud) 14px/130% var(--glim-string-string-font-family-text);
+  --glim-typography-body-loud-xs: var(--glim-string-string-font-weight-loud) 12px/130% var(--glim-string-string-font-family-text);
+  --glim-typography-body-xl: var(--glim-string-string-font-weight-composed) 24px/130% var(--glim-string-string-font-family-text);
+  --glim-typography-body-lg: var(--glim-string-string-font-weight-composed) 20px/130% var(--glim-string-string-font-family-text);
+  --glim-typography-body-md: var(--glim-string-string-font-weight-composed) 16px/130% var(--glim-string-string-font-family-text);
+  --glim-typography-body-sm: var(--glim-string-string-font-weight-composed) 14px/130% var(--glim-string-string-font-family-text);
+  --glim-typography-body-xs: var(--glim-string-string-font-weight-composed) 12px/130% var(--glim-string-string-font-family-text);
+}

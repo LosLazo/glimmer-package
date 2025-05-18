@@ -1,0 +1,8 @@
+/**
+ * This file was generated automatically by Supernova.io and should not be changed manually.
+ * To modify the format or content of this file, please contact your design system team. 
+ */
+
+:root {
+  --glim-shadow-focus-shadow: inset 0px 0px 0px 3px var(--glim-color-elevation-layer-1);
+}

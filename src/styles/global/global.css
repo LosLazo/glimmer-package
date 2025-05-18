@@ -1,0 +1,71 @@
+@import '~/styles/global/fonts.css';
+@import '~/styles/base/typography.css';
+  
+/* Add this file to your css array in nuxt.config.ts */
+
+:root {
+    /* Ensure primitive tokens are always available */
+    --permanent-white: #FFFFFF;
+    --permanent-black: #000000;
+    
+    /* Add any other global variables that should be available regardless of theme */
+  }
+    /* Add basic reset styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body, #__nuxt {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--glim-color-elevation-base);
+  }
+  
+  /* Ensure smooth theme transitions (excluding focus states) */
+  body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Add theme transition for buttons (excluding focus states) */
+  .button {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  /* Global focus styles - no transition for immediate feedback */
+  :focus-visible {
+    outline: 2px solid var(--glim-color-interaction-focus);
+    outline-offset: 2px;
+    border-radius: inherit;
+  }
+
+  /* Remove default focus styles */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Ensure interactive elements have a pointer cursor */
+  button,
+  [role="button"],
+  a[href],
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"],
+  select,
+  summary {
+    cursor: pointer;
+  }
+
+  /* Disable pointer events and show not-allowed cursor for disabled elements */
+  [disabled],
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .gradient {
+    background: linear-gradient(to right, var(--glim-color-elevation-base), var(--glim-color-clickable-hover-inverse));
+  }

@@ -1,0 +1,141 @@
+@import '~/styles/base/typography.css';
+
+:root {
+    --glim-font-size-xxl: var(--glim-dimension-font-size-48);
+    --glim-font-size-xl: var(--glim-dimension-font-size-32);
+    --glim-font-size-lg: var(--glim-dimension-font-size-24);
+    --glim-font-size-md: var(--glim-dimension-font-size-16);
+    --glim-font-size-sm: var(--glim-dimension-font-size-14);
+    --glim-font-size-xs: var(--glim-dimension-font-size-12);
+}
+
+@font-face {
+    font-family: 'Eidra Sans Display';
+    src: url('../../assets/fonts/EidraSans-Bold.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Eidra Sans Text';
+    src: url('../../assets/fonts/EidraSans-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Eidra Sans Display;
+    font-weight: Bold;
+}
+
+h1 {
+    font-size: var(--glim-font-size-xxl);
+}
+
+h2 {
+    font-size: var(--glim-font-size-xl);
+}
+
+h3 {
+    font-size: var(--glim-font-size-lg);
+}
+
+h4 {
+    font-size: var(--glim-font-size-md);
+}
+
+h5 {
+    font-size: var(--glim-font-size-sm);
+}
+
+
+p, a, li, ul, ol, span, div {
+    font-family: var(--glim-string-font-family-text);
+    font-weight: 500;
+}
+
+.display-lg {
+    font-family: Eidra Sans Display;
+    font-weight: 500;
+    font-size: 80px !important;
+}
+
+.body-xs {
+    font-size: var(--glim-font-size-xs);
+}
+
+.body-sm {
+    font-size: var(--glim-font-size-sm);
+}
+
+.body-md {
+    font-size: var(--glim-font-size-md);
+}
+
+.body-lg {
+    font-size: var(--glim-font-size-lg);
+}
+
+.body-xl {
+    font-size: var(--glim-font-size-xl);
+}
+
+.body-xxl {
+    font-size: var(--glim-font-size-xxl);
+}
+
+.body-xs-loud, .body-sm-loud, .body-md-loud, .body-lg-loud, .body-xl-loud, .body-xxl-loud {
+    font-weight: Bold;
+}
+
+.body-xs, .body-sm, .body-md, .body-lg, .body-xl, .body-xxl {
+    font-weight: 500;
+}
+
+.color-strong-inverse {
+    color: var(--glim-color-text-strong-inverse);
+}
+
+.color-strong {
+    color: var(--glim-color-text-strong);
+}
+
+.color-soft-inverse {
+    color: var(--glim-color-text-soft-inverse);
+}
+
+.color-soft {
+    color: var(--glim-color-text-soft);
+}
+
+.color-subtle-inverse {
+    color: var(--glim-color-text-subtle-inverse);
+}
+
+.color-discrete {
+    color: var(--glim-color-text-discrete);
+}
+
+.color-defined {
+    color: var(--glim-color-text-defined);
+}
+
+.color-defined-inverse {
+    color: var(--glim-color-text-defined-inverse);
+}
+
+.color-disabled {
+    color: var(--glim-color-text-disabled);
+}
+
+.color-disabled-inverse {
+    color: var(--glim-color-text-disabled-inverse);
+}
+
+.color-discrete {
+    color: var(--glim-color-text-discrete);
+}
+
+.color-discrete-inverse {
+    color: var(--glim-color-text-discrete-inverse);
+}
