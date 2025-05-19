@@ -29,16 +29,15 @@ export default defineConfig({
     {
       name: 'copy-files',
       async writeBundle() {
-        // Copy styles directory
-        await copyDir(
-          resolve(__dirname, 'src/styles'),
-          resolve(__dirname, 'dist/styles')
-        );
-        // Copy Vue components
-        await copyDir(
-          resolve(__dirname, 'src/components'),
-          resolve(__dirname, 'dist/components')
-        );
+        // Copy all directories from src
+        const srcDirs = ['styles', 'components', 'assets', 'utils', 'types'];
+        
+        for (const dir of srcDirs) {
+          await copyDir(
+            resolve(__dirname, `src/${dir}`),
+            resolve(__dirname, `dist/${dir}`)
+          );
+        }
       }
     }
   ],
