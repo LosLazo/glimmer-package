@@ -1,4 +1,4 @@
-@import '~/styles/base/typography.css';
+@import '../base/typography.css';
 
 :root {
     --glim-font-size-xxl: var(--glim-dimension-font-size-48);

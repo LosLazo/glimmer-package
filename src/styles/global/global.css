@@ -1,5 +1,5 @@
-@import '~/styles/global/fonts.css';
-@import '~/styles/base/typography.css';
+@import './fonts.css';
+@import './typography.css';
   
 /* Add this file to your css array in nuxt.config.ts */
 
