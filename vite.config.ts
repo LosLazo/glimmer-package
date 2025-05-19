@@ -72,10 +72,7 @@ export default defineConfig({
             return 'styles/index.css';
           }
           return assetInfo.name || 'unknown';
-        },
-        // Ensure proper handling of SFCs in node_modules
-        preserveModules: true,
-        preserveModulesRoot: 'src'
+        }
       }
     },
     cssCodeSplit: false,
