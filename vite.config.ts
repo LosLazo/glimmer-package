@@ -14,7 +14,14 @@ async function copyDir(src: string, dest: string): Promise<void> {
 
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      // Enable template compilation for SFCs
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag.includes('-')
+        }
+      }
+    }),
     dts({
       insertTypesEntry: true,
       include: ['src/components/', 'src/index.ts'],
@@ -50,7 +57,8 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'GlimmerPackage',
-      formats: ['es']
+      formats: ['es', 'cjs'],
+      fileName: (format) => `glimmer-package.${format}.js`
     },
     rollupOptions: {
       external: ['vue', /\.stories\.(t|j)sx?$/],
@@ -64,19 +72,38 @@ export default defineConfig({
             return 'styles/index.css';
           }
           return assetInfo.name || 'unknown';
-        }
+        },
+        // Ensure proper handling of SFCs in node_modules
+        preserveModules: true,
+        preserveModulesRoot: 'src'
       }
     },
     cssCodeSplit: false,
-    sourcemap: true
+    sourcemap: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: false,
+        drop_debugger: true
+      }
+    }
   },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
       '~': resolve(__dirname, 'src')
-    }
+    },
+    // Add support for resolving SFCs from node_modules
+    dedupe: ['vue'],
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
   },
   optimizeDeps: {
-    exclude: ['src/components/*/stories']
+    exclude: ['src/components/*/stories'],
+    include: ['vue']
+  },
+  ssr: {
+    // SSR-specific optimizations
+    noExternal: ['glimmer-package'],
+    target: 'node'
   }
 }); 
