@@ -1,3 +1,8 @@
+/* global styles */
+@import "./global/global.css";
+@import "./global/fonts.css";
+@import "./global/grid.css";
+
 /* Base tokens */
 @import "./base/dimension.css";
 @import "./base/string.css";
