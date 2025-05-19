@@ -61,10 +61,11 @@ export default defineConfig({
       fileName: (format) => `glimmer-package.${format}.js`
     },
     rollupOptions: {
-      external: ['vue', /\.stories\.(t|j)sx?$/],
+      external: ['vue', '@vue/compiler-sfc', /\.stories\.(t|j)sx?$/],
       output: {
         globals: {
-          vue: 'Vue'
+          vue: 'Vue',
+          '@vue/compiler-sfc': 'VueCompilerSfc'
         },
         exports: 'named',
         assetFileNames: (assetInfo: PreRenderedAsset): string => {
@@ -103,7 +104,7 @@ export default defineConfig({
   },
   optimizeDeps: {
     exclude: ['src/components/*/stories'],
-    include: ['vue']
+    include: ['vue', '@vue/compiler-sfc']
   },
   ssr: {
     // SSR-specific optimizations
