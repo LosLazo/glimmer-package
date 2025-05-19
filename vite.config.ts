@@ -33,10 +33,13 @@ export default defineConfig({
         const srcDirs = ['styles', 'components', 'assets', 'utils', 'types'];
         
         for (const dir of srcDirs) {
-          await copyDir(
-            resolve(__dirname, `src/${dir}`),
-            resolve(__dirname, `dist/${dir}`)
-          );
+          const srcPath = resolve(__dirname, `src/${dir}`);
+          if (await fs.pathExists(srcPath)) {
+            await copyDir(
+              srcPath,
+              resolve(__dirname, `dist/${dir}`)
+            );
+          }
         }
       }
     }
