@@ -5,14 +5,19 @@
   "author": "Laurens van Tour",
   "license": "MIT",
   "type": "module",
-  "private": true,
-  "main": "./dist/glimmer-package.js",
-  "module": "./dist/glimmer-package.js",
+  "private": false,
+  "main": "./dist/glimmer-package.cjs.js",
+  "module": "./dist/glimmer-package.es.js",
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/glimmer-package.js",
+      "import": "./dist/glimmer-package.es.js",
+      "require": "./dist/glimmer-package.cjs.js",
       "types": "./dist/types/index.d.ts"
+    },
+    "./styles": {
+      "import": "./dist/styles/index.css",
+      "require": "./dist/styles/index.css"
     },
     "./styles/*": "./dist/styles/*",
     "./components/*": "./dist/components/*"
@@ -21,9 +26,6 @@
     "dist",
     "README.md"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LosLazo/glimmer-package.git"

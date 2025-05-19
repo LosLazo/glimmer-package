@@ -24,8 +24,8 @@ export default defineConfig({
     }),
     dts({
       insertTypesEntry: true,
-      include: ['src/components/', 'src/index.ts'],
-      exclude: ['src/components/*/stories', 'src/**/*.stories.ts'],
+      include: ['src/**/*.ts', 'src/**/*.vue'],
+      exclude: ['src/**/*.stories.ts', 'src/**/*.stories.vue'],
       beforeWriteFile: (filePath, content) => {
         return {
           filePath: filePath.replace('/dist/', '/dist/types/'),
@@ -82,6 +82,13 @@ export default defineConfig({
       compress: {
         drop_console: false,
         drop_debugger: true
+      }
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/styles/variables.scss";`
       }
     }
   },
