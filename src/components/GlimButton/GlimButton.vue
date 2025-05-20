@@ -49,14 +49,19 @@ import { computed } from 'vue'
 import Icon from '../GlimIcon/GlimIcon.vue'
 
 /**
- * @component Button
+ * @name GlimButton
  * @description A versatile button component with multiple variants, sizes, and states.
  * Supports icons, loading states, and inverse color schemes.
+ * Use for user interactions and form submissions.
  * 
- * @example <Button>Click me</Button>
- * @example <Button variant="secondary" size="medium">Secondary Button</Button>
- * @example <Button prefixIcon="arrow-right">With Icon</Button>
- * @example <Button loading>Loading</Button>
+ * @example <GlimButton>Click me</GlimButton>
+ * @example <GlimButton variant="secondary" size="medium">Secondary Button</GlimButton>
+ * @example <GlimButton prefixIcon="arrow-right">With Icon</GlimButton>
+ * @example <GlimButton loading>Loading</GlimButton>
+ * 
+ * @displayName GlimButton
+ * @status stable
+ * @category Actions
  */
 
 const props = defineProps({
@@ -97,6 +102,7 @@ const props = defineProps({
    * Controls padding, font size, and overall dimensions
    * @type {'large'|'medium'|'small'}
    * @default 'medium'
+   * @values large, medium, small
    */
   size: {
     type: String as () => 'large' | 'medium' | 'small',
@@ -119,10 +125,11 @@ const props = defineProps({
    * Visual style variant of the button
    * - primary: Main call-to-action
    * - secondary: Alternative or less prominent action
-   * - ghost: Subtle or auxiliary action (previously tertiary)
+   * - ghost: Subtle or auxiliary action
    * - danger: Destructive or warning action
    * @type {'primary'|'secondary'|'ghost'|'danger'}
    * @default 'primary'
+   * @values primary, secondary, ghost, danger
    */
   variant: {
     type: String as () => 'primary' | 'secondary' | 'ghost' | 'danger',
@@ -145,6 +152,7 @@ const props = defineProps({
    * Button type attribute (button, submit, reset)
    * @type {'button'|'submit'|'reset'}
    * @default 'button'
+   * @values button, submit, reset
    */
   type: {
     type: String as () => 'button' | 'submit' | 'reset',
@@ -187,6 +195,7 @@ const iconSize = computed<number>(() => {
 const emit = defineEmits<{
   /**
    * Emitted when the button is clicked and not disabled or loading
+   * @event click
    */
   'click': []
 }>()

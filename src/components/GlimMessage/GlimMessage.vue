@@ -1,5 +1,5 @@
 <template>
-  <div class="message" :class="`message--${variant}`">
+  <div class="message" :class="`message--${variant}`" data-component="GlimMessage">
     <div class="message__icon">
       <Icon :name="getIconFromVariant" />
     </div>
@@ -14,23 +14,23 @@
 import Icon from '../GlimIcon/GlimIcon.vue'
 import { computed } from 'vue'
 
-const props = defineProps({
-  title: {
-    type: String,
-    required: true, 
-    default: 'Title'
-  },
-  description: {
-    type: String,
-    required: true,
-    default: 'Description'
-  },
-  variant: {
-    type: String,
-    default: 'info',
-    validator: (value: string) => ['info', 'success', 'warning', 'error'].includes(value)
-  }
-})
+export interface GlimMessageProps {
+  /**
+   * The title of the message
+   */
+  title: string
+  /**
+   * The description text of the message
+   */
+  description: string
+  /**
+   * The style variant of the message
+   * @values info, success, warning, error
+   */
+  variant?: 'info' | 'success' | 'warning' | 'error'
+}
+
+const props = defineProps<GlimMessageProps>()
 
 const getIconFromVariant = computed(() => {
   switch (props.variant) {
@@ -44,6 +44,10 @@ const getIconFromVariant = computed(() => {
     default:
       return 'info'
   }
+})
+
+defineOptions({
+  name: 'GlimMessage'
 })
 </script>
 

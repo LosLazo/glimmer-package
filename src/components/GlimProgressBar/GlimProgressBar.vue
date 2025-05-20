@@ -14,6 +14,10 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * @component GlimProgressBar
+ * @description A progress bar component that can show determinate progress or an indeterminate loading state
+ */
 import { computed } from 'vue';
 
 const props = defineProps({
@@ -51,6 +55,11 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
+
+  /**
+   * Custom height for the progress bar
+   * @example '8px', '1rem', 12
+   */
   height: {
     type: [String, Number],
     default: '8px'
@@ -59,6 +68,17 @@ const props = defineProps({
 
 const progress = computed(() => props.value);
 const looping = computed(() => props.indeterminate);
+
+defineExpose({
+  /**
+   * Current progress percentage
+   */
+  progress,
+  /**
+   * Whether the progress bar is in looping/indeterminate state
+   */
+  looping
+});
 </script>
 
 <style scoped>

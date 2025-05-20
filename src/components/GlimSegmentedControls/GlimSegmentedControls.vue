@@ -1,10 +1,16 @@
 <script setup lang="ts">
 /**
- * @component SegmentedControls
+ * @name GlimSegmentedControls
  * @description A component that provides a set of mutually exclusive options, similar to radio buttons but with a cohesive, button-like appearance.
  * Commonly used for switching between views or toggling related options.
- * @example
- * <SegmentedControls
+ * 
+ * @displayName Segmented Controls
+ * @status stable
+ * @category Input Controls
+ * 
+ * @example Basic Usage
+ * ```vue
+ * <GlimSegmentedControls
  *   v-model="selectedOption"
  *   :items="[
  *     { id: 'day', label: 'Day' },
@@ -13,9 +19,27 @@
  *   ]"
  *   size="default"
  * />
+ * ```
  */
 
 import { computed, onMounted, ref, watch, nextTick } from 'vue';
+
+interface SegmentItem {
+  /**
+   * Unique identifier for the segment
+   */
+  id: string | number;
+  
+  /**
+   * Display text for the segment
+   */
+  label: string;
+  
+  /**
+   * Whether the segment is disabled
+   */
+  disabled?: boolean;
+}
 
 interface Props {
   /**
@@ -26,22 +50,7 @@ interface Props {
   /**
    * Array of items to display as segments
    */
-  items: Array<{
-    /**
-     * Unique identifier for the segment
-     */
-    id: string | number;
-    
-    /**
-     * Display text for the segment
-     */
-    label: string;
-    
-    /**
-     * Whether the segment is disabled
-     */
-    disabled?: boolean;
-  }>;
+  items: Array<SegmentItem>;
   
   /**
    * Size of the segmented controls
@@ -60,19 +69,15 @@ const props = withDefaults(defineProps<Props>(), {
   ]
 });
 
-// Add computed property for default value
+// Compute the default value from the first item in the items array
 const defaultModelValue = computed(() => {
   return props.items[0]?.id || ''
-})
+});
 
-// Add computed property for selected value
+// Use the provided model value or fall back to the default value
 const selectedValue = computed(() => {
-  // If modelValue is undefined, use the first item's id
-  if (props.modelValue === undefined) {
-    return defaultModelValue.value
-  }
-  return props.modelValue
-})
+  return props.modelValue === undefined ? defaultModelValue.value : props.modelValue;
+});
 
 /**
  * Define emitted events
@@ -133,7 +138,7 @@ function updateBackgroundPosition() {
     
     // Ensure all items are properly interactive
     const items = segmentControls.value.querySelectorAll('.segmented-controls__item') as NodeListOf<HTMLElement>;
-    items.forEach((item, idx) => {
+    items.forEach((item) => {
       item.style.opacity = '1';
       item.style.pointerEvents = 'auto';
       item.classList.remove('segmented-controls__item--disabled');

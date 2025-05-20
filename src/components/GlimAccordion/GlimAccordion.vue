@@ -61,7 +61,7 @@ import { ref, computed } from 'vue'
  * @property {string} label - The label displayed in the accordion header
  * @property {string} content - The content displayed when the accordion is expanded
  */
-interface AccordionItem {
+export interface AccordionItem {
   /**
    * The label displayed in the accordion header
    */
@@ -77,7 +77,7 @@ interface AccordionItem {
  * Accordion component props
  * @typedef {Object} AccordionProps
  */
-interface Props {
+export interface AccordionProps {
   /**
    * Array of accordion items to display
    * @type {AccordionItem[]}
@@ -94,7 +94,7 @@ interface Props {
   maxWidth?: string | number;
 }
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<AccordionProps>(), {
   options: () => [
     {
       label: 'Getting Started',
@@ -190,6 +190,12 @@ const toggleItem = (index: number) => {
     expandedIndices.value = [...expandedIndices.value, index]
   }
 }
+
+// Expose public API for component-api to consume
+defineExpose({
+  expandedIndices,
+  toggleItem
+})
 </script>
 
 <style scoped>

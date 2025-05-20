@@ -8,11 +8,11 @@ const meta = {
   argTypes: {
     variant: { 
       control: 'select', 
-      options: ['primary', 'secondary', 'tertiary', 'danger']
+      options: ['primary', 'secondary', 'ghost', 'danger']
     },
     size: { 
       control: 'select', 
-      options: ['large', 'medium', 'small', 'tiny']
+      options: ['large', 'medium', 'small']
     },
     loading: {
       control: 'boolean'
@@ -62,7 +62,7 @@ export const Variants: Story = {
       <div style="display: flex; gap: 16px; flex-wrap: wrap;">
         <GlimButton v-bind="args" variant="primary">Primary</GlimButton>
         <GlimButton v-bind="args" variant="secondary">Secondary</GlimButton>
-        <GlimButton v-bind="args" variant="tertiary">Tertiary</GlimButton>
+        <GlimButton v-bind="args" variant="ghost">Ghost</GlimButton>
         <GlimButton v-bind="args" variant="danger">Danger</GlimButton>
       </div>
     `
@@ -84,7 +84,6 @@ export const Sizes: Story = {
         <GlimButton v-bind="args" size="large">Large</GlimButton>
         <GlimButton v-bind="args" size="medium">Medium</GlimButton>
         <GlimButton v-bind="args" size="small">Small</GlimButton>
-        <GlimButton v-bind="args" size="tiny">Tiny</GlimButton>
       </div>
     `
   })
@@ -106,7 +105,7 @@ export const LoadingState: Story = {
         <GlimButton v-bind="args" :loading="false">Default</GlimButton>
         <GlimButton v-bind="args" :loading="true">Loading</GlimButton>
         <GlimButton v-bind="args" variant="secondary" :loading="true">Loading</GlimButton>
-        <GlimButton v-bind="args" variant="tertiary" :loading="true">Loading</GlimButton>
+        <GlimButton v-bind="args" variant="ghost" :loading="true">Loading</GlimButton>
         <GlimButton v-bind="args" variant="danger" :loading="true">Loading</GlimButton>
       </div>
     `
@@ -130,7 +129,7 @@ export const IconOnlyLoading: Story = {
         <GlimButton v-bind="args" :prefixIcon="args.prefixIcon" :suffixIcon="undefined"></GlimButton>
         <GlimButton v-bind="args" :prefixIcon="args.prefixIcon" :suffixIcon="undefined" :loading="true"></GlimButton>
         <GlimButton v-bind="args" :prefixIcon="args.prefixIcon" :suffixIcon="undefined" variant="secondary" :loading="true"></GlimButton>
-        <GlimButton v-bind="args" :prefixIcon="args.prefixIcon" :suffixIcon="undefined" variant="tertiary" :loading="true"></GlimButton>
+        <GlimButton v-bind="args" :prefixIcon="args.prefixIcon" :suffixIcon="undefined" variant="ghost" :loading="true"></GlimButton>
         <GlimButton v-bind="args" :prefixIcon="args.prefixIcon" :suffixIcon="undefined" variant="danger" :loading="true"></GlimButton>
       </div>
     `

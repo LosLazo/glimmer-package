@@ -1,23 +1,24 @@
 <script setup lang="ts">
 /**
- * @component Toggle
+ * @component GlimToggle
  * @description A toggle switch component for boolean inputs, similar to a checkbox but with a sliding visual design.
  * Used for enabling/disabling settings or features.
  * 
- * @example <Toggle v-model="enabled" />
- * @example <Toggle v-model="darkMode" size="small" />
- * @example <Toggle v-model="notifications" disabled />
+ * @example <GlimToggle v-model="enabled" />
+ * @example <GlimToggle v-model="darkMode" size="small" />
+ * @example <GlimToggle v-model="notifications" disabled />
  */
 
-/**
- * Toggle component props
- * @typedef {Object} ToggleProps
- */
 import { computed } from 'vue';
 
+/**
+ * @prop modelValue - Current state of the toggle (v-model)
+ * @prop disabled - Whether the toggle is disabled
+ * @prop size - Size variant for the toggle
+ */
 interface Props {
   /**
-   * Current state of the toggle (v-model)
+   * Current state of the toggle
    * @type {boolean|string}
    * @required
    */
@@ -44,9 +45,7 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 /**
- * Events emitted by the Toggle component
- * @typedef {Object} ToggleEmits
- * @property {Function} update:modelValue - Emitted when the toggle state changes
+ * @event update:modelValue - Emitted when the toggle state changes
  */
 const emit = defineEmits<{
   'update:modelValue': [value: boolean];

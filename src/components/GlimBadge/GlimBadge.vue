@@ -10,14 +10,14 @@
 import { computed } from 'vue'
 
 /**
- * @component Badge
+ * @component GlimBadge
  * @description Displays a small numerical value or indicator that can be used for notifications, counts, or status indicators.
  * The badge can be displayed as a number with optional maximum value or as a simple dot.
  * 
- * @example <Badge content="5" />
- * @example <Badge content="100" max="99" />
- * @example <Badge isDot />
- * @example <Badge content="NEW" />
+ * @example <GlimBadge value="5" />
+ * @example <GlimBadge value="100" max="99" />
+ * @example <GlimBadge isDot />
+ * @example <GlimBadge value="NEW" />
  */
 
 /**

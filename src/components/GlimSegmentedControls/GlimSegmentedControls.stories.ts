@@ -2,16 +2,24 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
 import { GlimSegmentedControls } from '../../../src'
 
+/**
+ * Segmented Controls provide a set of mutually exclusive options with a cohesive, button-like appearance.
+ * They are commonly used for switching between views or toggling related options.
+ */
 const meta = {
   title: 'Components/SegmentedControls',
   component: GlimSegmentedControls,
   tags: ['autodocs'],
   argTypes: {
-    modelValue: { control: 'text' },
-    items: { control: 'object' },
+    modelValue: { control: 'text', description: 'The selected value, should match an item\'s id' },
+    items: { 
+      control: 'object', 
+      description: 'Array of items to display as segments'
+    },
     size: { 
       control: 'select', 
-      options: ['small', 'default']
+      options: ['small', 'default'],
+      description: 'Size of the segmented controls'
     }
   },
 } as Meta<typeof GlimSegmentedControls>

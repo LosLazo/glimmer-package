@@ -5,6 +5,7 @@
       `image-container--${aspectRatio}`,
       { 'image-container--portrait': isPortrait }
     ]"
+    data-glimmer-component="GlimImage"
   >
     <img
       v-if="src"
@@ -21,16 +22,16 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, defineProps, withDefaults } from 'vue'
 
 /**
- * @component Image
+ * @component GlimImage
  * @description A responsive image component that maintains aspect ratio and supports various image formats.
  * Handles different aspect ratios and orientations, and provides a placeholder when no image is available.
  * 
- * @example <Image src="/images/photo.jpg" alt="A beautiful landscape" />
- * @example <Image src="/images/portrait.jpg" aspectRatio="4x5" orientation="portrait" />
- * @example <Image backgroundColor="#f0f0f0" aspectRatio="1x1" />
+ * @example <GlimImage src="/images/photo.jpg" alt="A beautiful landscape" />
+ * @example <GlimImage src="/images/portrait.jpg" aspectRatio="4x5" orientation="portrait" />
+ * @example <GlimImage backgroundColor="#f0f0f0" aspectRatio="1x1" />
  */
 
 /**
@@ -47,7 +48,7 @@ type Orientation = 'landscape' | 'portrait'
 
 /**
  * Image component props
- * @typedef {Object} ImageProps
+ * @typedef {Object} GlimImageProps
  */
 interface Props {
   /**

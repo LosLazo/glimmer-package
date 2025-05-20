@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import { GlimAvatar } from '../../../src'
 
 const meta = {
-  title: 'Components/Avatar',
+  title: 'Components/GlimAvatar',
   component: GlimAvatar,
   tags: ['autodocs'],
   argTypes: {

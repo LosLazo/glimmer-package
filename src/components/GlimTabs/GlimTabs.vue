@@ -2,13 +2,21 @@
 import { ref, watch, onMounted, nextTick, computed } from 'vue';
 
 /**
- * @component Tabs
+ * @name GlimTabs
  * @description A tabbed interface component that allows switching between different content sections.
  * Features an animated indicator that follows the selected tab.
  * 
- * @example <Tabs v-model="activeTab" :items="[{id: 'tab1', label: 'First Tab'}, {id: 'tab2', label: 'Second Tab'}]" />
- * @example <Tabs v-model="activeSection" :items="tabs" />
- * @example <Tabs v-model="view" :items="[{id: 1, label: 'Details'}, {id: 2, label: 'Reviews', disabled: true}]" />
+ * @example
+ * <GlimTabs v-model="activeTab" :items="[{id: 'tab1', label: 'First Tab'}, {id: 'tab2', label: 'Second Tab'}]" />
+ * @example
+ * <GlimTabs v-model="activeSection" :items="tabs" />
+ * @example
+ * <GlimTabs v-model="view" :items="[{id: 1, label: 'Details'}, {id: 2, label: 'Reviews', disabled: true}]" />
+ * 
+ * @vue-prop {string|number} modelValue - Currently selected tab ID (v-model)
+ * @vue-prop {TabItem[]} items - Array of tab items to display
+ * 
+ * @vue-event {string|number} update:modelValue - Emitted when a tab is selected
  */
 
 /**
@@ -17,11 +25,6 @@ import { ref, watch, onMounted, nextTick, computed } from 'vue';
  * @property {string|number} id - Unique identifier for the tab
  * @property {string} label - Display text for the tab
  * @property {boolean} [disabled] - Whether the tab is disabled
- */
-
-/**
- * Tabs component props
- * @typedef {Object} TabsProps
  */
 interface TabItem {
   id: string | number;
@@ -32,15 +35,11 @@ interface TabItem {
 interface Props {
   /**
    * Currently selected tab ID (v-model)
-   * @type {string|number}
-   * @required
    */
   modelValue: string | number;
   
   /**
    * Array of tab items to display
-   * @type {TabItem[]}
-   * @required
    */
   items: TabItem[];
 }
@@ -54,11 +53,6 @@ const props = withDefaults(defineProps<Props>(), {
   ]
 });
 
-/**
- * Events emitted by the Tabs component
- * @typedef {Object} TabsEmits
- * @property {Function} update:modelValue - Emitted when a tab is selected
- */
 const emit = defineEmits<{
   'update:modelValue': [value: string | number];
 }>();

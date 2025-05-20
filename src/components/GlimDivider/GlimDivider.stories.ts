@@ -41,27 +41,27 @@ export const HorizontalColors: Story = {
       <div style="display: flex; flex-direction: column; gap: 32px;">
         <div>
           <div style="margin-bottom: 8px;">Strong</div>
-          <Divider v-bind="args" color="strong" />
+          <GlimDivider v-bind="args" color="strong" />
         </div>
         <div>
           <div style="margin-bottom: 8px;">Defined (Default)</div>
-          <Divider v-bind="args" color="defined" />
+          <GlimDivider v-bind="args" color="defined" />
         </div>
         <div>
           <div style="margin-bottom: 8px;">Soft</div>
-          <Divider v-bind="args" color="soft" />
+          <GlimDivider v-bind="args" color="soft" />
         </div>
         <div>
           <div style="margin-bottom: 8px;">Subtle</div>
-          <Divider v-bind="args" color="subtle" />
+          <GlimDivider v-bind="args" color="subtle" />
         </div>
         <div>
           <div style="margin-bottom: 8px;">Discrete</div>
-          <Divider v-bind="args" color="discrete" />
+          <GlimDivider v-bind="args" color="discrete" />
         </div>
         <div>
           <div style="margin-bottom: 8px;">Disabled</div>
-          <Divider v-bind="args" color="disabled" />
+          <GlimDivider v-bind="args" color="disabled" />
         </div>
       </div>
     `
@@ -82,7 +82,7 @@ export const Vertical: Story = {
     template: `
       <div style="display: flex; height: 100px; align-items: center;">
         <div>Left Content</div>
-        <Divider v-bind="args" orientation="vertical" />
+        <GlimDivider v-bind="args" orientation="vertical" />
         <div>Right Content</div>
       </div>
     `
@@ -105,15 +105,15 @@ export const CustomMargins: Story = {
       <div style="display: flex; flex-direction: column; gap: 32px;">
         <div>
           <div style="margin-bottom: 8px;">Small Margin (8px)</div>
-          <Divider v-bind="args" margin="8px" />
+          <GlimDivider v-bind="args" margin="8px" />
         </div>
         <div>
           <div style="margin-bottom: 8px;">Medium Margin (16px)</div>
-          <Divider v-bind="args" margin="16px" />
+          <GlimDivider v-bind="args" margin="16px" />
         </div>
         <div>
           <div style="margin-bottom: 8px;">Large Margin (32px)</div>
-          <Divider v-bind="args" margin="32px" />
+          <GlimDivider v-bind="args" margin="32px" />
         </div>
       </div>
     `

@@ -1,13 +1,16 @@
 <script setup lang="ts">
 /**
- * @component Checkbox
+ * @component GlimCheckbox
  * @description A checkbox component for boolean inputs with customizable label and sizing.
  * Follows accessibility best practices and provides visual feedback for different states.
  * 
- * @example <Checkbox v-model="isChecked" />
- * @example <Checkbox v-model="agreeToTerms" label="I agree to the terms and conditions" />
- * @example <Checkbox v-model="rememberMe" size="small" label="Remember me" />
- * @example <Checkbox v-model="isDisabled" disabled />
+ * @example <GlimCheckbox v-model="isChecked" />
+ * @example <GlimCheckbox v-model="agreeToTerms" label="I agree to the terms and conditions" />
+ * @example <GlimCheckbox v-model="rememberMe" size="small" label="Remember me" />
+ * @example <GlimCheckbox v-model="isDisabled" disabled />
+ * @example <GlimCheckbox v-model="value" error="This field is required" />
+ * @example <GlimCheckbox v-model="value" success="Valid selection" />
+ * @example <GlimCheckbox v-model="value" indeterminate />
  */
 
 /**
@@ -19,7 +22,7 @@ interface Props {
   /**
    * Current state of the checkbox (v-model)
    * @type {boolean}
-   * @required
+   * @default false
    */
   modelValue: boolean;
   
@@ -47,21 +50,18 @@ interface Props {
   /**
    * Optional id for the checkbox input
    * @type {string}
-   * @default ''
    */
   id?: string;
 
   /**
    * Error message for the checkbox
    * @type {string}
-   * @default ''
    */
   error?: string;
 
   /**
    * Success message for the checkbox
    * @type {string}
-   * @default ''
    */
   success?: string;
 
@@ -73,7 +73,16 @@ interface Props {
   indeterminate?: boolean;
 }
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: false,
+  disabled: false,
+  size: 'default',
+  label: '',
+  id: '',
+  error: '',
+  success: '',
+  indeterminate: false
+});
 
 /**
  * Events emitted by the Checkbox component
@@ -92,45 +101,75 @@ const toggle = () => {
 </script>
 
 <template>
-  <label
-    :class="[
-      'checkbox',
-      `checkbox--${size}`,
-      {
-        'checkbox--disabled': disabled
-      }
-    ]"
-  >
-    <input
-      type="checkbox"
-      :id="id"
-      :checked="modelValue"
-      :disabled="disabled"
-      @input="toggle"
-      class="checkbox__input"
-    />
-    <span class="checkbox__box">
-      <svg
-        v-if="modelValue"
-        class="checkbox__check"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M20 6L9 17L4 12"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </span>
-    <span v-if="label" class="checkbox__label">{{ label }}</span>
-  </label>
+  <div class="glim-checkbox-container">
+    <label
+      :class="[
+        'checkbox',
+        `checkbox--${size}`,
+        {
+          'checkbox--disabled': disabled,
+          'checkbox--error': error,
+          'checkbox--success': success
+        }
+      ]"
+    >
+      <input
+        type="checkbox"
+        :id="id"
+        :checked="modelValue"
+        :disabled="disabled"
+        :indeterminate="indeterminate"
+        @input="toggle"
+        class="checkbox__input"
+      />
+      <span class="checkbox__box">
+        <svg
+          v-if="modelValue && !indeterminate"
+          class="checkbox__check"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M20 6L9 17L4 12"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <svg
+          v-if="indeterminate"
+          class="checkbox__indeterminate"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 12H19"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span v-if="label" class="checkbox__label">{{ label }}</span>
+    </label>
+    <div v-if="error" class="checkbox__error">{{ error }}</div>
+    <div v-if="success" class="checkbox__success">{{ success }}</div>
+  </div>
 </template>
 
 <style scoped>
+.glim-checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--glim-dimension-space-2);
+}
+
 .checkbox {
   position: relative;
   display: inline-flex;
@@ -162,7 +201,7 @@ const toggle = () => {
   border: 1px solid var(--glim-color-border-defined);
   border-radius: var(--glim-dimension-radius-2);
   background-color: var(--glim-color-solid-100);
-  transition: none;
+  transition: all 0.2s ease;
 }
 
 .checkbox--small .checkbox__box {
@@ -184,13 +223,15 @@ const toggle = () => {
   border: 2px solid var(--glim-color-border-strong);
 }
 
-.checkbox__check {
+.checkbox__check,
+.checkbox__indeterminate {
   width: var(--glim-dimension-dimensions-unit-4);
   height: var(--glim-dimension-dimensions-unit-4);
   color: var(--glim-color-text-strong-inverse);
 }
 
-.checkbox--small .checkbox__check {
+.checkbox--small .checkbox__check,
+.checkbox--small .checkbox__indeterminate {
   width: var(--glim-dimension-dimensions-unit-3);
   height: var(--glim-dimension-dimensions-unit-3);
 }
@@ -203,5 +244,25 @@ const toggle = () => {
 
 .checkbox--disabled .checkbox__label {
   color: var(--glim-color-text-soft);
+}
+
+.checkbox--error .checkbox__box {
+  border-color: var(--glim-color-feedback-error);
+}
+
+.checkbox--success .checkbox__box {
+  border-color: var(--glim-color-feedback-success);
+}
+
+.checkbox__error {
+  font-size: var(--glim-dimension-dimensions-unit-font-size-200);
+  line-height: var(--glim-dimension-dimensions-unit-line-height-200);
+  color: var(--glim-color-feedback-error);
+}
+
+.checkbox__success {
+  font-size: var(--glim-dimension-dimensions-unit-font-size-200);
+  line-height: var(--glim-dimension-dimensions-unit-line-height-200);
+  color: var(--glim-color-feedback-success);
 }
 </style> 

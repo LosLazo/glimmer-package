@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import { GlimSpinner } from '../../../src'
 
 const meta = {
-  title: 'Components/Spinner',
+  title: 'Components/GlimSpinner',
   component: GlimSpinner,
   tags: ['autodocs'],
   argTypes: {

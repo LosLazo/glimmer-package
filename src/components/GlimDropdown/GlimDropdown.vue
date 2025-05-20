@@ -32,87 +32,98 @@ import Input from '../GlimInput/GlimInput.vue'
 import Menu from '../GlimMenu/GlimMenu.vue'
 
 /**
- * @component Dropdown
- * @description An input component with dropdown menu functionality.
- * Combines the functionality of an input field with selectable options.
- * @example
- * <Dropdown
+ * GlimDropdown provides a dropdown selection interface with optional editable input field
+ *
+ * @displayName GlimDropdown
+ * @status stable
+ * @group Form Controls
+ *
+ * @example Basic Usage
+ * ```vue
+ * <GlimDropdown
  *   id="dropdown1"
  *   v-model="selectedOption"
  *   :items="[{label: 'Option 1'}, {label: 'Option 2'}]"
  *   label="Select an option"
  * />
+ * ```
+ *
+ * @example Editable Dropdown
+ * ```vue
+ * <GlimDropdown
+ *   id="editableDropdown"
+ *   v-model="selectedOption"
+ *   :items="dropdownOptions"
+ *   label="Select or type"
+ *   :editable="true"
+ * />
+ * ```
  */
 
-interface Props {
+export interface DropdownItem {
+  label: string
+  value?: string
+  selected?: boolean
+}
+
+export interface GlimDropdownProps {
   /**
-   * Current value of the input field
-   * @required
+   * Current value of the dropdown
    */
   modelValue: string
   
   /**
-   * Label text for the input field
-   * @default 'Label'
+   * Label text for the dropdown field
    */
   label?: string
   
   /**
-   * Placeholder text for the input field
-   * @default 'Placeholder'
+   * Placeholder text when no value is selected
    */
   placeholder?: string
   
   /**
-   * Size of the input field
-   * @default 'medium'
+   * Size of the dropdown component
    */
   size?: 'large' | 'medium' | 'small'
   
   /**
-   * Whether the input is disabled
-   * @default false
+   * Whether the dropdown is disabled
    */
   disabled?: boolean
   
   /**
    * Error message to display
-   * @default ''
    */
   error?: string
   
   /**
    * Success message to display
-   * @default ''
    */
   success?: string
   
   /**
    * Icon to display before the input text
-   * @default ''
    */
   prefixIcon?: string
   
   /**
-   * Unique identifier for the input field
-   * @required
+   * Unique identifier for the dropdown field
    */
   id: string
   
   /**
-   * Array of options to display in the dropdown
-   * @required
+   * Array of options to display in the dropdown menu
    */
-  items: Array<{ label: string; value?: string; selected?: boolean }>
+  items: Array<DropdownItem>
   
   /**
    * Whether the input text can be edited manually
-   * @default false
    */
   editable?: boolean
 }
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<GlimDropdownProps>(), {
   label: 'Label',
   placeholder: 'Placeholder',
   size: 'medium',
@@ -123,41 +134,30 @@ const props = withDefaults(defineProps<Props>(), {
   editable: false
 })
 
-/**
- * Define emitted events
- */
-const emit = defineEmits<{
+export interface GlimDropdownEmits {
   /**
-   * Emitted when the input value changes
-   * @param value - The new input value
+   * Emitted when the dropdown value changes
+   * @param value - The new dropdown value
    */
-  'update:modelValue': [value: string]
+  (e: 'update:modelValue', value: string): void
   
   /**
    * Emitted when an option is selected from the dropdown
    * @param item - The selected item object
    */
-  'select': [item: { label: string; value?: string }]
-}>()
+  (e: 'select', item: DropdownItem): void
+}
 
-/**
- * Whether the dropdown is currently expanded
- * @private
- */
+const emit = defineEmits<GlimDropdownEmits>()
+
+// State management
 const isExpanded = ref(false)
 
-/**
- * The value to display in the input field
- * @private
- */
+// Computed properties
 const displayValue = computed(() => {
   return props.modelValue || props.placeholder || ''
 })
 
-/**
- * Processed options with selected state
- * @private
- */
 const processedOptions = computed(() => {
   return props.items.map(item => ({
     ...item,
@@ -165,39 +165,25 @@ const processedOptions = computed(() => {
   }))
 })
 
-/**
- * Toggle the dropdown expansion state
- */
+// Event handlers
 const toggleDropdown = () => {
   if (!props.disabled) {
     isExpanded.value = !isExpanded.value
   }
 }
 
-/**
- * Handle input field value changes
- * @param value - The new input value
- */
 const handleInputChange = (value: string) => {
   if (props.editable) {
     emit('update:modelValue', value)
   }
 }
 
-/**
- * Handle item selection from the dropdown
- * @param item - The selected item
- */
-const handleItemClick = (item: { label: string; value?: string }) => {
+const handleItemClick = (item: DropdownItem) => {
   emit('update:modelValue', item.label)
   emit('select', item)
   isExpanded.value = false
 }
 
-/**
- * Close dropdown when clicking outside
- * @private
- */
 const handleClickOutside = (event: MouseEvent) => {
   const target = event.target as HTMLElement
   if (!target.closest('.dropdown')) {
@@ -205,6 +191,7 @@ const handleClickOutside = (event: MouseEvent) => {
   }
 }
 
+// Lifecycle hooks
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
 })

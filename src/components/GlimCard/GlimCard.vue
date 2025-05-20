@@ -14,6 +14,7 @@
     />
     <div class="card__content">
       <div class="card__header">
+        <p v-if="headerText" class="body-xs color-soft">{{ headerText }}</p>
         <p v-if="title" class="body-sm color-strong">{{ title }}</p>
       </div>
       <p v-if="text" class="body-sm color-soft">{{ text }}</p>
@@ -32,25 +33,28 @@
 
 <script setup lang="ts">
 import Image from '../GlimImage/GlimImage.vue'
-
 import { computed } from 'vue'
 
 /**
- * @component Card
+ * @name GlimCard
  * @description A versatile card component for displaying content with optional image and action slots.
  * Cards can be used for various purposes such as product cards, article previews, or feature highlights.
  * 
- * @example <Card title="Card Title" text="Card description text" />
- * @example <Card 
+ * @displayName Card
+ * @status stable
+ * @category Data Display
+ * 
+ * @example <GlimCard title="Card Title" text="Card description text" />
+ * @example <GlimCard 
  *   title="Product Name" 
  *   text="Product description" 
  *   imageSrc="/images/product.jpg" 
  * />
- * @example <Card title="Spanning Card" width="span 2">
+ * @example <GlimCard title="Spanning Card" width="span 2">
  *   <template #actions>
- *     <Button>Action</Button>
+ *     <GlimButton>Action</GlimButton>
  *   </template>
- * </Card>
+ * </GlimCard>
  */
 
 /**
@@ -64,6 +68,11 @@ type WidthValue = number | `${number}` | `span ${number}` | 'auto'
  * @typedef {Object} CardProps
  */
 interface Props {
+  /**
+   * Text displayed above the title (optional header text)
+   * @type {string}
+   */
+  headerText?: string
   
   /**
    * Main title of the card
@@ -115,6 +124,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  headerText: '',
   title: 'Title',
   text: 'Text',
   imageSrc: 'https://cdn.cosmos.so/962784fe-d06b-4f23-84e5-f0a1efd3a6d6.?format=jpeg',
@@ -140,6 +150,7 @@ const cardStyle = computed(() => {
 })
 
 /**
+ * @slot default - Default slot (not used currently)
  * @slot actions - Slot for action buttons or links at the bottom of the card
  */
 </script>

@@ -32,9 +32,7 @@
           <div class="slider__circle"></div>
         </div>
         <div class="slider__tooltip" :class="{ 'slider__tooltip--visible': isDragging }">
-          
           <Tooltip :text="String(displayValue)" :visible="isDragging" class="slider__tooltip-text" position="top"/>
-          <!-- <span class="slider__tooltip-text">{{ displayValue }}</span> -->
         </div>
       </div>
     </div>
@@ -46,10 +44,21 @@ import { ref, computed, onUnmounted, watch } from 'vue';
 import Tooltip from '../GlimTooltip/GlimTooltip.vue';
 
 /**
- * An interactive slider component for selecting a value within a range.
+ * @component GlimSlider
+ * @description An interactive slider component for selecting a value within a range.
  * Features a draggable thumb, visual track/rail, and tooltip showing the current value.
+ * @displayName Glim Slider
+ * @group Input Controls
  */
 
+/**
+ * @typedef {Object} SliderProps
+ * @property {number} progress - The current value of the slider
+ * @property {number} [min=0] - The minimum allowed value
+ * @property {number} [max=100] - The maximum allowed value
+ * @property {number} [step=1] - The step increment value
+ * @property {boolean} [isDisabled=false] - Whether the slider is disabled
+ */
 interface SliderProps {
   /** The current value of the slider */
   progress: number;
@@ -74,6 +83,11 @@ const props = withDefaults(defineProps<SliderProps>(), {
   isDisabled: false
 });
 
+/**
+ * @typedef {Object} SliderEmits
+ * @property {(value: number) => void} update:progress - Emitted continuously as the slider value changes
+ * @property {(value: number) => void} change - Emitted when the user stops dragging the slider
+ */
 const emit = defineEmits<{
   /** Emitted continuously as the slider value changes */
   'update:progress': [value: number];
@@ -91,16 +105,25 @@ watch(() => props.progress, (newVal) => {
   internalValue.value = newVal;
 });
 
+/**
+ * Computed percentage of the current value in the range
+ * @returns {number} Percentage from 0-100
+ */
 const percentage = computed(() => {
   return ((internalValue.value - props.min) / (props.max - props.min)) * 100;
 });
 
+/**
+ * Computed display value (rounded)
+ * @returns {number} The rounded value to display
+ */
 const displayValue = computed(() => {
   return Math.round(internalValue.value);
 });
 
 /**
  * Handles the start of a drag operation
+ * @param {MouseEvent|TouchEvent} event - The mouse or touch event
  */
 const startDrag = (event: MouseEvent | TouchEvent) => {
   if (props.isDisabled) return;
@@ -118,6 +141,7 @@ const startDrag = (event: MouseEvent | TouchEvent) => {
 
 /**
  * Updates the slider value based on the current pointer position
+ * @param {MouseEvent|TouchEvent} event - The mouse or touch event
  */
 const updateValueFromEvent = (event: MouseEvent | TouchEvent) => {
   if (!railEl.value) return;
@@ -144,6 +168,7 @@ const updateValueFromEvent = (event: MouseEvent | TouchEvent) => {
 
 /**
  * Handles the drag movement
+ * @param {MouseEvent|TouchEvent} event - The mouse or touch event
  */
 const onDrag = (event: MouseEvent | TouchEvent) => {
   if (!isDragging.value) return;
@@ -176,6 +201,10 @@ onUnmounted(() => {
   document.removeEventListener('mouseup', stopDrag);
   document.removeEventListener('touchend', stopDrag);
 });
+
+/**
+ * @slot default - Custom content to override the default slider
+ */
 </script>
 
 <style scoped>

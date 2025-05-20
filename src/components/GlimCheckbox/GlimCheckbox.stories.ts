@@ -14,7 +14,10 @@ const meta = {
       options: ['small', 'default']
     },
     label: { control: 'text' },
-    id: { control: 'text' }
+    id: { control: 'text' },
+    error: { control: 'text' },
+    success: { control: 'text' },
+    indeterminate: { control: 'boolean' }
   },
 } as Meta<typeof GlimCheckbox>
 
@@ -33,7 +36,7 @@ export const Default: Story = {
       return { checked }
     },
     template: `
-      <Checkbox v-model="checked" label="Default checkbox" />
+      <GlimCheckbox v-model="checked" label="Default checkbox" />
       <div style="margin-top: 8px;">Checked: {{ checked }}</div>
     `
   })
@@ -45,13 +48,13 @@ export const Checked: Story = {
     modelValue: true
   },
   render: () => ({
-    components: {GlimCheckbox },
+    components: { GlimCheckbox },
     setup() {
       const checked = ref(true)
       return { checked }
     },
     template: `
-      <Checkbox v-model="checked" label="Checked checkbox" />
+      <GlimCheckbox v-model="checked" label="Checked checkbox" />
       <div style="margin-top: 8px;">Checked: {{ checked }}</div>
     `
   })
@@ -71,8 +74,8 @@ export const DisabledStates: Story = {
     },
     template: `
       <div style="display: flex; flex-direction: column; gap: 16px;">
-        <Checkbox v-model="uncheckedDisabled" label="Disabled unchecked" disabled />
-        <Checkbox v-model="checkedDisabled" label="Disabled checked" disabled />
+        <GlimCheckbox v-model="uncheckedDisabled" label="Disabled unchecked" disabled />
+        <GlimCheckbox v-model="checkedDisabled" label="Disabled checked" disabled />
       </div>
     `
   })
@@ -92,8 +95,8 @@ export const Sizes: Story = {
     },
     template: `
       <div style="display: flex; flex-direction: column; gap: 16px;">
-        <Checkbox v-model="defaultSize" size="default" label="Default size" />
-        <Checkbox v-model="smallSize" size="small" label="Small size" />
+        <GlimCheckbox v-model="defaultSize" size="default" label="Default size" />
+        <GlimCheckbox v-model="smallSize" size="small" label="Small size" />
       </div>
     `
   })
@@ -111,7 +114,7 @@ export const WithoutLabel: Story = {
       return { checked }
     },
     template: `
-      <Checkbox v-model="checked" />
+      <GlimCheckbox v-model="checked" />
     `
   })
 }
@@ -129,9 +132,70 @@ export const WithID: Story = {
       return { checked }
     },
     template: `
-      <Checkbox v-model="checked" id="my-checkbox" label="Checkbox with ID" />
+      <GlimCheckbox v-model="checked" id="my-checkbox" label="Checkbox with ID" />
       <div style="margin-top: 8px;">
         <button @click="checked = !checked">Toggle with external button (using ID)</button>
+      </div>
+    `
+  })
+}
+
+// Error and Success States Story
+export const ValidationStates: Story = {
+  args: {
+    modelValue: false
+  },
+  render: () => ({
+    components: { GlimCheckbox },
+    setup() {
+      const errorChecked = ref(false)
+      const successChecked = ref(true)
+      return { errorChecked, successChecked }
+    },
+    template: `
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <GlimCheckbox 
+          v-model="errorChecked" 
+          label="With error message" 
+          error="This field is required" 
+        />
+        <GlimCheckbox 
+          v-model="successChecked" 
+          label="With success message" 
+          success="Valid selection" 
+        />
+      </div>
+    `
+  })
+}
+
+// Indeterminate State Story
+export const IndeterminateState: Story = {
+  args: {
+    modelValue: false,
+    indeterminate: true
+  },
+  render: () => ({
+    components: { GlimCheckbox },
+    setup() {
+      const checked = ref(false)
+      const indeterminate = ref(true)
+      
+      const toggleIndeterminate = () => {
+        indeterminate.value = !indeterminate.value
+      }
+      
+      return { checked, indeterminate, toggleIndeterminate }
+    },
+    template: `
+      <GlimCheckbox 
+        v-model="checked" 
+        :indeterminate="indeterminate" 
+        label="Indeterminate checkbox" 
+      />
+      <div style="margin-top: 8px;">
+        <button @click="toggleIndeterminate">Toggle indeterminate state</button>
+        <div>Checked: {{ checked }}, Indeterminate: {{ indeterminate }}</div>
       </div>
     `
   })
@@ -151,20 +215,25 @@ export const AllVariants: Story = {
       const checked4 = ref(true)
       const checked5 = ref(false)
       const checked6 = ref(true)
+      const indeterminateCheck = ref(false)
       
       return { 
         checked1, checked2, checked3, 
-        checked4, checked5, checked6 
+        checked4, checked5, checked6,
+        indeterminateCheck
       }
     },
     template: `
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-        <Checkbox v-model="checked1" label="Unchecked" />
-        <Checkbox v-model="checked2" label="Checked" />
-        <Checkbox v-model="checked3" size="small" label="Small unchecked" />
-        <Checkbox v-model="checked4" size="small" label="Small checked" />
-        <Checkbox v-model="checked5" disabled label="Disabled unchecked" />
-        <Checkbox v-model="checked6" disabled label="Disabled checked" />
+        <GlimCheckbox v-model="checked1" label="Unchecked" />
+        <GlimCheckbox v-model="checked2" label="Checked" />
+        <GlimCheckbox v-model="checked3" size="small" label="Small unchecked" />
+        <GlimCheckbox v-model="checked4" size="small" label="Small checked" />
+        <GlimCheckbox v-model="checked5" disabled label="Disabled unchecked" />
+        <GlimCheckbox v-model="checked6" disabled label="Disabled checked" />
+        <GlimCheckbox v-model="indeterminateCheck" indeterminate label="Indeterminate" />
+        <GlimCheckbox v-model="checked1" error="Error message" label="With error" />
+        <GlimCheckbox v-model="checked2" success="Success message" label="With success" />
       </div>
     `
   })

@@ -15,21 +15,20 @@ import { computed } from 'vue'
 import feather from 'feather-icons'
 
 /**
- * @component Icon
+ * @component GlimIcon
  * @description Renders SVG icons from the Feather icon library with customizable size and color.
  * This component provides a simple way to include consistent icons throughout the application.
  * 
- * @example <Icon name="user" />
- * @example <Icon name="heart" size="16" color="red" />
- * @example <Icon name="star" size="32" />
+ * @example <GlimIcon name="user" />
+ * @example <GlimIcon name="heart" size="16" color="red" />
+ * @example <GlimIcon name="star" size="32" />
  * @see {@link https://feathericons.com/|Feather Icons} for available icon names
  */
 
 /**
  * Icon component props
- * @typedef {Object} IconProps
  */
-interface Props {
+export interface GlimIconProps {
   /**
    * Name of the icon from Feather icon set
    * @type {string}
@@ -53,7 +52,7 @@ interface Props {
   color?: 'currentColor' | 'strong' | 'defined' | 'soft' | 'disabled' | 'discrete'
 }
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<GlimIconProps>(), {
   size: 24,
   color: 'currentColor'
 })
@@ -94,6 +93,30 @@ const svgContent = computed(() => {
     height: props.size,
     color: colorValue.value
   })
+})
+
+// Component metadata for component-api
+defineExpose({
+  componentName: 'GlimIcon',
+  description: 'Renders SVG icons from the Feather icon library with customizable size and color',
+  props: {
+    name: {
+      type: 'string',
+      required: true,
+      description: 'Name of the icon from Feather icon set'
+    },
+    size: {
+      type: 'number',
+      default: 24,
+      description: 'Size of the icon in pixels'
+    },
+    color: {
+      type: 'string',
+      default: 'currentColor',
+      description: 'Color variant of the icon',
+      options: ['currentColor', 'strong', 'defined', 'soft', 'disabled', 'discrete']
+    }
+  }
 })
 </script>
 

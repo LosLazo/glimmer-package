@@ -4,6 +4,10 @@ import { GlimTabs } from '../../../src'
 
 type TabsProps = InstanceType<typeof GlimTabs>['$props']
 
+/**
+ * GlimTabs is a tabbed interface component that allows switching between different content sections.
+ * It features an animated indicator that follows the selected tab.
+ */
 const meta = {
   title: 'Components/Tabs',
   component: GlimTabs,

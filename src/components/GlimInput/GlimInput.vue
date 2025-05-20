@@ -38,6 +38,8 @@
           { 'input__field--readonly': readonly }
         ]"
         @input="(e) => $emit('update:modelValue', (e.target as HTMLInputElement).value)"
+        @focus="$emit('focus', $event)"
+        @blur="$emit('blur', $event)"
       />
       <Button
         v-if="showClearButton"
@@ -54,6 +56,7 @@
         :size="Number(iconSize)"
         class="input__icon input__icon--suffix"
       />
+      <slot name="suffix"></slot>
     </div>
     <span 
       v-if="error" 
@@ -71,6 +74,9 @@
     >
       {{ success }}
     </span>
+    <span v-if="$slots.hint" class="input__hint body-xs">
+      <slot name="hint"></slot>
+    </span>
   </div>
 </template>
 
@@ -80,13 +86,14 @@ import Icon from '../GlimIcon/GlimIcon.vue'
 import Button from '../GlimButton/GlimButton.vue'
 
 /**
- * @component Input
+ * @name GlimInput
+ * @component
  * @description A form input component with support for various states, icons, and validation.
  * Provides a consistent interface for text input with built-in error handling and visual feedback.
  * 
- * @example <Input v-model="modelValue" label="Username" placeholder="Enter username" />
- * @example <Input v-model="email" type="email" prefixIcon="mail" error="Invalid email format" />
- * @example <Input v-model="search" suffixIcon="search" showClearButton />
+ * @example <GlimInput v-model="modelValue" label="Username" placeholder="Enter username" />
+ * @example <GlimInput v-model="email" type="email" prefixIcon="mail" error="Invalid email format" />
+ * @example <GlimInput v-model="search" suffixIcon="search" showClearButton />
  */
 
 /**
@@ -203,10 +210,12 @@ const props = withDefaults(defineProps<Props>(), {
 
 /**
  * Events emitted by the Input component
- * @typedef {Object} InputEmits
- * @property {Function} update:modelValue - Emitted when the input value changes
+ * @event update:modelValue - Emitted when the input value changes
+ * @event focus - Emitted when the input receives focus
+ * @event blur - Emitted when the input loses focus
  */
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'focus', 'blur'])
+
 
 /**
  * Local computed value for v-model binding
@@ -241,7 +250,10 @@ const iconSize = computed(() => {
   }
 })
 
-
+// Expose methods that might be needed externally
+defineExpose({
+  clearInput
+})
 </script>
 
 <style>
@@ -252,6 +264,7 @@ const iconSize = computed(() => {
   width: 100%;
 }
 
+/* Container styling */
 .input__container {
   position: relative;
   display: flex;
@@ -267,6 +280,7 @@ const iconSize = computed(() => {
   border: 1px solid var(--glim-color-border-strong);
 }
 
+/* Field styling */
 .input__field {
   width: 100%;
   height: 100%;
@@ -297,6 +311,7 @@ const iconSize = computed(() => {
   padding: 0 var(--glim-dimension-padding-2);
 }
 
+/* Icon styling */
 .input__icon {
   color: var(--glim-color-text-soft);
   flex-shrink: 0;
@@ -310,19 +325,24 @@ const iconSize = computed(() => {
   margin-right: var(--glim-dimension-space-small);
 }
 
+/* Status messages */
+.input__error, .input__success, .input__hint {
+  display: block;
+}
+
 .input__error {
   color: var(--glim-color-system-danger-default);
 }
 
-.input__error--large {
+.input__error--large, .input__success--large {
   line-height: var(--glim-line-height-medium);
 }
 
-.input__error--medium {
+.input__error--medium, .input__success--medium {
   line-height: var(--glim-line-height-small);
 }
 
-.input__error--small {
+.input__error--small, .input__success--small {
   line-height: var(--glim-line-height-xsmall);
 }
 
@@ -330,16 +350,9 @@ const iconSize = computed(() => {
   color: var(--glim-color-system-success-default);
 }
 
-.input__success--large {
-  line-height: var(--glim-line-height-medium);
-}
-
-.input__success--medium {
+.input__hint {
+  color: var(--glim-color-text-soft);
   line-height: var(--glim-line-height-small);
-}
-
-.input__success--small {
-  line-height: var(--glim-line-height-xsmall);
 }
 
 /* Size variants */
@@ -386,6 +399,7 @@ const iconSize = computed(() => {
   color: var(--glim-color-text-disabled);
 }
 
+/* Clear button */
 .input__clear-button {
   margin: 0 var(--glim-dimension-space-tiny);
   opacity: 1;
@@ -397,13 +411,10 @@ const iconSize = computed(() => {
   pointer-events: none;
 }
 
+/* Readonly styling */
 .input__field--readonly {
   cursor: default;
   pointer-events: none;
-}
-
-/* Change appearance of readonly fields without looking disabled */
-.input__field--readonly {
   opacity: 1;
   color: var(--glim-color-text-strong);
 }

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import { GlimBadge } from '../../../src'
 
 const meta = {
-  title: 'Components/Badge',
+  title: 'Components/GlimBadge',
   component: GlimBadge,
   tags: ['autodocs'],
   argTypes: {

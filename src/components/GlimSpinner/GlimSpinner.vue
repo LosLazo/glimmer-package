@@ -13,18 +13,18 @@
 
 <script setup lang="ts">
 /**
- * @component Spinner
+ * @component GlimSpinner
  * @description A loading spinner component that provides visual feedback during asynchronous operations.
  * The spinner can be customized with different sizes and colors.
  * 
- * @example <Spinner />
- * @example <Spinner size="32px" color="var(--glim-color-primary)" />
- * @example <Spinner size="16" color="#ff0000" />
+ * @example <GlimSpinner />
+ * @example <GlimSpinner size="32px" color="var(--glim-color-primary)" />
+ * @example <GlimSpinner size="16" color="#ff0000" />
  */
 
 /**
- * Spinner component props
- * @typedef {Object} SpinnerProps
+ * GlimSpinner component props
+ * @typedef {Object} GlimSpinnerProps
  */
 defineProps({
   /**

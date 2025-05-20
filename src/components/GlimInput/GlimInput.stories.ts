@@ -25,7 +25,10 @@ const meta = {
     prefixIcon: { control: 'text' },
     suffixIcon: { control: 'text' },
     id: { control: 'text' },
-    showClearButton: { control: 'boolean' }
+    showClearButton: { control: 'boolean' },
+    'onUpdate:modelValue': { action: 'update:modelValue' },
+    onFocus: { action: 'focus' },
+    onBlur: { action: 'blur' }
   },
 } as Meta<typeof GlimInput>
 
@@ -241,5 +244,97 @@ export const Types: Story = {
   args: {
     modelValue: '',
     id: 'type-input'
+  }
+}
+
+// Input with Slots
+export const WithSlots: Story = {
+  render: () => ({
+    components: { GlimInput },
+    setup() {
+      const value = ref('')
+      const valueWithHint = ref('')
+      const handleClear = () => {
+        value.value = '';
+      }
+      return { value, valueWithHint, handleClear }
+    },
+    template: `
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <GlimInput 
+          v-model="value" 
+          label="Input with Suffix Slot" 
+          placeholder="Type something..." 
+          id="suffix-slot-input"
+        >
+          <template #suffix>
+            <button style="background: none; border: none; cursor: pointer; color: var(--glim-color-text-soft);" @click="handleClear">
+              Clear
+            </button>
+          </template>
+        </GlimInput>
+        
+        <GlimInput 
+          v-model="valueWithHint" 
+          label="Input with Hint Slot" 
+          placeholder="Type something..." 
+          id="hint-slot-input"
+        >
+          <template #hint>
+            <span>This is a helpful hint about the input field</span>
+          </template>
+        </GlimInput>
+      </div>
+    `
+  }),
+  args: {
+    modelValue: '',
+    id: 'slot-input'
+  }
+}
+
+// Input with Events
+export const WithEvents: Story = {
+  render: () => ({
+    components: { GlimInput },
+    setup() {
+      const value = ref('')
+      const eventLog = ref('Events will show here')
+      
+      const handleFocus = () => {
+        eventLog.value = 'Input focused';
+      }
+      
+      const handleBlur = () => {
+        eventLog.value = 'Input blurred';
+      }
+      
+      const handleInput = (newValue: string) => {
+        eventLog.value = `Value changed to: ${newValue}`;
+      }
+      
+      return { value, eventLog, handleFocus, handleBlur, handleInput }
+    },
+    template: `
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <GlimInput 
+          v-model="value" 
+          label="Input with Events" 
+          placeholder="Click in and out of this field..." 
+          id="events-input"
+          @focus="handleFocus"
+          @blur="handleBlur"
+          @update:modelValue="handleInput"
+        />
+        
+        <div style="padding: 16px; background-color: var(--glim-color-elements-surface-secondary); border-radius: 4px;">
+          <p>Event log: {{ eventLog }}</p>
+        </div>
+      </div>
+    `
+  }),
+  args: {
+    modelValue: '',
+    id: 'events-input'
   }
 } 

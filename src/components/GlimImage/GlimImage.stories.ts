@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import { GlimImage } from '../../../src'
 
 const meta = {
-  title: 'Components/Image',
+  title: 'Components/GlimImage',
   component: GlimImage,
   tags: ['autodocs'],
   argTypes: {

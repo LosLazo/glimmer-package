@@ -28,6 +28,9 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+/**
+ * Default accordion with example items
+ */
 export const Default: Story = {
   args: {
     options: [
@@ -47,6 +50,9 @@ export const Default: Story = {
   }
 }
 
+/**
+ * Accordion with a fixed maximum width
+ */
 export const WithMaxWidth: Story = {
   args: {
     options: [
@@ -63,6 +69,9 @@ export const WithMaxWidth: Story = {
   }
 }
 
+/**
+ * Accordion that spans grid columns
+ */
 export const GridSpan: Story = {
   args: {
     options: [

@@ -8,47 +8,35 @@
 </template>
 
 <script setup lang="ts">
-// withDefaults is a compiler macro and doesn't need to be imported
-
 /**
- * @component Tooltip
+ * @component GlimTooltip
  * @description A tooltip component that displays additional information when hovering over or focusing on an element.
  * Tooltips can be positioned in different directions and can contain text or custom content.
- * 
- * @example <Tooltip text="This is a tooltip" position="top" :visible="visible" />
- * @example <Tooltip position="bottom" :visible="showHelp"><span>Custom tooltip content</span></Tooltip>
- * @example <Tooltip position="left" :visible="true">Help text with <strong>formatting</strong></Tooltip>
+ * @example <GlimTooltip text="This is a tooltip" position="top" :visible="visible" />
+ * @example <GlimTooltip position="bottom" :visible="showHelp"><span>Custom tooltip content</span></GlimTooltip>
+ * @example <GlimTooltip position="left" :visible="true">Help text with <strong>formatting</strong></GlimTooltip>
  */
 
 /**
- * Valid tooltip positions
  * @typedef {'top'|'right'|'bottom'|'left'} TooltipPosition
  */
 
-/**
- * Tooltip component props
- * @typedef {Object} TooltipProps
- */
 interface Props {
   /**
    * Text content to display in the tooltip
-   * Not required if using the default slot for content
    * @type {string}
-   * @default 'Tooltip text'
    */
   text?: string
   
   /**
    * Position of the tooltip relative to its target
    * @type {TooltipPosition}
-   * @default 'top'
    */
   position?: 'top' | 'right' | 'bottom' | 'left'
   
   /**
    * Whether the tooltip is visible
    * @type {boolean}
-   * @default false
    */
   visible?: boolean
 }

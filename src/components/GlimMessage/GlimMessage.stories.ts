@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import Message from '../Message/Message.vue'
+import GlimMessage from './GlimMessage.vue'
 
 const meta = {
-  title: 'Components/Message',
-  component: Message,
+  title: 'Components/GlimMessage',
+  component: GlimMessage,
   tags: ['autodocs'],
   argTypes: {
     title: { control: 'text' },
@@ -13,7 +13,7 @@ const meta = {
       options: ['info', 'success', 'warning', 'error']
     }
   },
-} satisfies Meta<typeof Message>
+} satisfies Meta<typeof GlimMessage>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -57,28 +57,28 @@ export const Error: Story = {
 // All Variants
 export const AllVariants: Story = {
   render: (args) => ({
-    components: { Message },
+    components: { GlimMessage },
     setup() {
       return { args }
     },
     template: `
       <div style="display: flex; flex-direction: column; gap: 16px;">
-        <Message 
+        <GlimMessage 
           title="Information Message" 
           description="This is an informational message that provides helpful details to the user."
           variant="info"
         />
-        <Message 
+        <GlimMessage 
           title="Success Message" 
           description="The operation completed successfully. Your changes have been saved."
           variant="success"
         />
-        <Message 
+        <GlimMessage 
           title="Warning Message" 
           description="Please review your information before proceeding. Some fields may require attention."
           variant="warning"
         />
-        <Message 
+        <GlimMessage 
           title="Error Message" 
           description="An error occurred while processing your request. Please try again later."
           variant="error"

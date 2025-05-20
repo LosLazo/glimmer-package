@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { GlimTooltip, GlimButton } from '../../../src'
 
 const meta = {
-  title: 'Components/Tooltip',
+  title: 'Components/GlimTooltip',
   component: GlimTooltip,
   tags: ['autodocs'],
   argTypes: {

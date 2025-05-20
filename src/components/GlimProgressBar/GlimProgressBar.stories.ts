@@ -1,34 +1,39 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
-import ProgressBar from '../ProgressBar/ProgressBar.vue'
+import GlimProgressBar from './GlimProgressBar.vue'
 
 const meta = {
-  title: 'Components/ProgressBar',
-  component: ProgressBar,
+  title: 'Components/GlimProgressBar',
+  component: GlimProgressBar,
   tags: ['autodocs'],
   argTypes: {
-    progress: { 
+    value: { 
       control: { type: 'range', min: 0, max: 100, step: 1 },
     },
-    looping: { control: 'boolean' }
+    indeterminate: { control: 'boolean' },
+    size: {
+      control: 'select',
+      options: ['small', 'medium', 'large']
+    },
+    height: { control: 'text' }
   },
-} satisfies Meta<typeof ProgressBar>
+} satisfies Meta<typeof GlimProgressBar>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-// Default ProgressBar
+// Default GlimProgressBar
 export const Default: Story = {
   args: {
-    progress: 50,
-    looping: false
+    value: 50,
+    indeterminate: false
   }
 }
 
 // Progress States
 export const ProgressStates: Story = {
   render: (args) => ({
-    components: { ProgressBar },
+    components: { GlimProgressBar },
     setup() {
       return { args }
     },
@@ -36,58 +41,92 @@ export const ProgressStates: Story = {
       <div style="display: flex; flex-direction: column; gap: 24px;">
         <div>
           <div style="margin-bottom: 8px;">No Progress (0%)</div>
-          <ProgressBar v-bind="args" :progress="0" />
+          <GlimProgressBar v-bind="args" :value="0" />
         </div>
         <div>
           <div style="margin-bottom: 8px;">Partial Progress (25%)</div>
-          <ProgressBar v-bind="args" :progress="25" />
+          <GlimProgressBar v-bind="args" :value="25" />
         </div>
         <div>
           <div style="margin-bottom: 8px;">Half Progress (50%)</div>
-          <ProgressBar v-bind="args" :progress="50" />
+          <GlimProgressBar v-bind="args" :value="50" />
         </div>
         <div>
           <div style="margin-bottom: 8px;">Almost Complete (75%)</div>
-          <ProgressBar v-bind="args" :progress="75" />
+          <GlimProgressBar v-bind="args" :value="75" />
         </div>
         <div>
           <div style="margin-bottom: 8px;">Complete (100%)</div>
-          <ProgressBar v-bind="args" :progress="100" />
+          <GlimProgressBar v-bind="args" :value="100" />
         </div>
       </div>
     `
   }),
   args: {
-    looping: false
+    indeterminate: false
   }
 }
 
-// Looping ProgressBar
-export const Looping: Story = {
+// Sizes
+export const Sizes: Story = {
+  render: (args) => ({
+    components: { GlimProgressBar },
+    setup() {
+      return { args }
+    },
+    template: `
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div>
+          <div style="margin-bottom: 8px;">Small</div>
+          <GlimProgressBar v-bind="args" size="small" height="4px" />
+        </div>
+        <div>
+          <div style="margin-bottom: 8px;">Medium (Default)</div>
+          <GlimProgressBar v-bind="args" size="medium" />
+        </div>
+        <div>
+          <div style="margin-bottom: 8px;">Large</div>
+          <GlimProgressBar v-bind="args" size="large" height="12px" />
+        </div>
+        <div>
+          <div style="margin-bottom: 8px;">Custom Height</div>
+          <GlimProgressBar v-bind="args" height="16px" />
+        </div>
+      </div>
+    `
+  }),
   args: {
-    looping: true
+    value: 50,
+    indeterminate: false
+  }
+}
+
+// Indeterminate GlimProgressBar
+export const Indeterminate: Story = {
+  args: {
+    indeterminate: true
   }
 }
 
 // Interactive Demo
 export const Interactive: Story = {
   render: () => ({
-    components: { ProgressBar },
+    components: { GlimProgressBar },
     setup() {
-      const progress = ref(0)
+      const progressValue = ref(0)
       const isRunning = ref(false)
-      const isLooping = ref(false)
+      const isIndeterminate = ref(false)
       
       const startProgress = () => {
         if (isRunning.value) return
         
         isRunning.value = true
-        progress.value = 0
+        progressValue.value = 0
         
         const interval = setInterval(() => {
-          progress.value += 1
+          progressValue.value += 1
           
-          if (progress.value >= 100) {
+          if (progressValue.value >= 100) {
             clearInterval(interval)
             isRunning.value = false
           }
@@ -95,36 +134,36 @@ export const Interactive: Story = {
       }
       
       const resetProgress = () => {
-        progress.value = 0
+        progressValue.value = 0
         isRunning.value = false
       }
       
-      const toggleLooping = () => {
-        isLooping.value = !isLooping.value
+      const toggleIndeterminate = () => {
+        isIndeterminate.value = !isIndeterminate.value
       }
       
       return { 
-        progress, 
-        isLooping, 
+        progressValue, 
+        isIndeterminate, 
         startProgress, 
         resetProgress,
-        toggleLooping
+        toggleIndeterminate
       }
     },
     template: `
       <div>
         <div style="margin-bottom: 16px;">
-          <ProgressBar :progress="progress" :looping="isLooping" />
+          <GlimProgressBar :value="progressValue" :indeterminate="isIndeterminate" />
         </div>
         <div style="display: flex; gap: 8px;">
           <button @click="startProgress" style="padding: 8px 16px;">Start</button>
           <button @click="resetProgress" style="padding: 8px 16px;">Reset</button>
-          <button @click="toggleLooping" style="padding: 8px 16px;">
-            {{ isLooping ? 'Show Progress' : 'Show Looping' }}
+          <button @click="toggleIndeterminate" style="padding: 8px 16px;">
+            {{ isIndeterminate ? 'Show Progress' : 'Show Indeterminate' }}
           </button>
         </div>
         <div style="margin-top: 16px;">
-          Progress: {{ progress }}%
+          Progress: {{ progressValue }}%
         </div>
       </div>
     `

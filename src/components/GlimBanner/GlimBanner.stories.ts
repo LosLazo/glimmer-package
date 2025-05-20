@@ -1,18 +1,36 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { GlimBanner } from '../../../src'
 
+/**
+ * A banner component that displays information or notifications with different variants.
+ * Can be dismissible and supports both a title and description.
+ */
 const meta = {
   title: 'Components/Banner',
   component: GlimBanner,
   tags: ['autodocs'],
   argTypes: {
-    title: { control: 'text' },
-    description: { control: 'text' },
+    title: { 
+      control: 'text',
+      description: 'Title text of the banner'
+    },
+    description: { 
+      control: 'text',
+      description: 'Description text of the banner'
+    },
     variant: { 
       control: 'select', 
-      options: ['default', 'info']
+      options: ['default', 'info'],
+      description: 'Visual style variant of the banner'
     },
-    dismissable: { control: 'boolean' }
+    dismissable: { 
+      control: 'boolean',
+      description: 'Whether the banner can be dismissed'
+    },
+    onDismiss: {
+      action: 'dismissed',
+      description: 'Event emitted when the dismiss button is clicked'
+    }
   },
 } satisfies Meta<typeof GlimBanner>
 

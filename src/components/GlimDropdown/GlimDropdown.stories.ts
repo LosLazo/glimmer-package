@@ -44,7 +44,7 @@ export const Default: Story = {
       return { selectedOption, dropdownItems }
     },
     template: `
-      <Dropdown 
+      <GlimDropdown 
         v-model="selectedOption" 
         label="Select an option" 
         placeholder="Choose an option" 
@@ -72,7 +72,7 @@ export const Sizes: Story = {
     },
     template: `
       <div style="display: flex; flex-direction: column; gap: 24px;">
-        <Dropdown 
+        <GlimDropdown 
           v-model="largeOption" 
           label="Large Dropdown" 
           placeholder="Large size" 
@@ -80,7 +80,7 @@ export const Sizes: Story = {
           id="large-dropdown"
           :items="dropdownItems"
         />
-        <Dropdown 
+        <GlimDropdown 
           v-model="mediumOption" 
           label="Medium Dropdown" 
           placeholder="Medium size (default)" 
@@ -88,7 +88,7 @@ export const Sizes: Story = {
           id="medium-dropdown"
           :items="dropdownItems"
         />
-        <Dropdown 
+        <GlimDropdown 
           v-model="smallOption" 
           label="Small Dropdown" 
           placeholder="Small size" 
@@ -115,7 +115,7 @@ export const WithIcon: Story = {
       return { selectedOption, dropdownItems }
     },
     template: `
-      <Dropdown 
+      <GlimDropdown 
         v-model="selectedOption" 
         label="Dropdown with Icon" 
         placeholder="Select with icon" 
@@ -147,14 +147,14 @@ export const States: Story = {
     },
     template: `
       <div style="display: flex; flex-direction: column; gap: 24px;">
-        <Dropdown 
+        <GlimDropdown 
           v-model="normal" 
           label="Default" 
           placeholder="Normal state"
           id="normal-dropdown"
           :items="dropdownItems"
         />
-        <Dropdown 
+        <GlimDropdown 
           v-model="errorVal" 
           label="Error State" 
           placeholder="Error state"
@@ -162,7 +162,7 @@ export const States: Story = {
           id="error-dropdown"
           :items="dropdownItems"
         />
-        <Dropdown 
+        <GlimDropdown 
           v-model="successVal" 
           label="Success State" 
           placeholder="Success state"
@@ -170,7 +170,7 @@ export const States: Story = {
           id="success-dropdown"
           :items="dropdownItems"
         />
-        <Dropdown 
+        <GlimDropdown 
           v-model="disabled" 
           label="Disabled State" 
           placeholder="Disabled state"
@@ -178,7 +178,7 @@ export const States: Story = {
           id="disabled-dropdown"
           :items="dropdownItems"
         />
-        <Dropdown 
+        <GlimDropdown 
           v-model="editable" 
           label="Editable Dropdown" 
           placeholder="Type or select"
@@ -214,7 +214,7 @@ export const CustomItems: Story = {
       return { selectedOption, customItems }
     },
     template: `
-      <Dropdown 
+      <GlimDropdown 
         v-model="selectedOption" 
         label="Select Country" 
         placeholder="Choose a country" 

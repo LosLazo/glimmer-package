@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { GlimToggle } from '../../../src'
 
 const meta = {
-  title: 'Components/Toggle',
+  title: 'Components/GlimToggle',
   component: GlimToggle,
   tags: ['autodocs'],
   argTypes: {

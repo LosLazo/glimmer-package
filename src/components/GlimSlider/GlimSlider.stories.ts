@@ -2,6 +2,10 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
 import { GlimSlider } from '../../../src'
 
+/**
+ * An interactive slider component for selecting a value within a range.
+ * Features a draggable thumb, visual track/rail, and tooltip showing the current value.
+ */
 const meta = {
   title: 'Components/Slider',
   component: GlimSlider,
@@ -9,12 +13,40 @@ const meta = {
   argTypes: {
     progress: { 
       control: { type: 'range', min: 0, max: 100, step: 1 },
+      description: 'The current value of the slider'
     },
-    min: { control: 'number' },
-    max: { control: 'number' },
-    step: { control: 'number' },
-    isDisabled: { control: 'boolean' }
+    min: { 
+      control: 'number',
+      description: 'The minimum allowed value'
+    },
+    max: { 
+      control: 'number',
+      description: 'The maximum allowed value'
+    },
+    step: { 
+      control: 'number',
+      description: 'The step increment value'
+    },
+    isDisabled: { 
+      control: 'boolean',
+      description: 'Whether the slider is disabled'
+    },
+    'update:progress': {
+      description: 'Emitted continuously as the slider value changes',
+      action: 'update:progress'
+    },
+    'change': {
+      description: 'Emitted when the user stops dragging the slider',
+      action: 'change'
+    }
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'An interactive slider component for selecting a value within a range. Features a draggable thumb, visual track/rail, and tooltip showing the current value.'
+      }
+    }
+  }
 } as Meta<typeof GlimSlider>
 
 export default meta

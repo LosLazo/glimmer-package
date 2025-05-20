@@ -17,13 +17,13 @@
 
 <script setup lang="ts">
 /**
- * @component Avatar
+ * @component GlimAvatar
  * @description A versatile avatar component for displaying user images with fallback icon support.
  * Supports different shapes (circle or squircle) and customizable sizing.
  * 
- * @example <Avatar />
- * @example <Avatar image="/path/to/image.jpg" alt="User Name" />
- * @example <Avatar shape="squircle" size={64} />
+ * @example <GlimAvatar />
+ * @example <GlimAvatar image="/path/to/image.jpg" alt="User Name" />
+ * @example <GlimAvatar shape="squircle" size={64} />
  */
 import Icon from '../GlimIcon/GlimIcon.vue'
 
@@ -34,7 +34,6 @@ import Icon from '../GlimIcon/GlimIcon.vue'
 defineProps({
   /**
    * Image source URL for the avatar
-   * When not provided, falls back to a user icon
    * @type {string}
    * @default 'https://cdn.cosmos.so/962784fe-d06b-4f23-84e5-f0a1efd3a6d6.?format=jpeg'
    */

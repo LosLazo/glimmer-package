@@ -13,12 +13,12 @@
 import { computed } from 'vue';
 
 /**
- * @component Divider
+ * @name GlimDivider
  * @description A versatile divider component for visual separation of content.
  * Supports both horizontal and vertical orientations with various color strengths.
  * @example
- * <Divider />
- * <Divider orientation="vertical" color="strong" margin="16" />
+ * <GlimDivider />
+ * <GlimDivider orientation="vertical" color="strong" margin="16" />
  */
 
 interface Props {
@@ -79,13 +79,13 @@ const marginStyle = computed(() => {
 .divider--horizontal {
   width: 100%;
   height: 1px;
-  background-color: var(--glim-divider-color);
+  background-color: currentColor;
 }
 
 .divider--vertical {
   width: 1px;
   height: 100%;
-  background-color: var(--glim-divider-color);
+  background-color: currentColor;
 }
 
 /* Color variants */

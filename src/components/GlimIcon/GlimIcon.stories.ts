@@ -2,12 +2,18 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import { GlimIcon } from '../../../src'
 
 const meta = {
-  title: 'Components/Icon',
+  title: 'Components/GlimIcon',
   component: GlimIcon,
   tags: ['autodocs'],
   argTypes: {
-    name: { control: 'text' },
-    size: { control: 'number' },
+    name: { 
+      control: 'text',
+      description: 'Name of the icon from Feather icon set'
+    },
+    size: { 
+      control: 'number',
+      description: 'Size of the icon in pixels' 
+    },
     color: { 
       control: 'select',
       options: ['currentColor', 'strong', 'defined', 'soft', 'disabled', 'discrete'],
