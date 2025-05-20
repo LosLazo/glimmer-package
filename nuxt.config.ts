@@ -9,18 +9,18 @@ export default defineNuxtConfig({
     }
   },
   
-  // Configure Vite
-  vite: {
-    optimizeDeps: {
-      include: ['@loslazo/glimmer-package']
-    },
-    resolve: {
-      dedupe: ['vue']
-    }
-  },
+  // // Configure Vite
+  // vite: {
+  //   optimizeDeps: {
+  //     include: ['@loslazo/glimmer-package']
+  //   },
+  //   resolve: {
+  //     dedupe: ['vue']
+  //   }
+  // },
 
-  // Configure build
-  build: {
-    transpile: ['@loslazo/glimmer-package']
-  }
+  // // Configure build
+  // build: {
+  //   transpile: ['@loslazo/glimmer-package']
+  // }
 }) 

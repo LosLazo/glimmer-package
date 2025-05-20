@@ -42,13 +42,14 @@
     "build-storybook": "storybook build",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "prepare": "npm run build",
-    "version": "npm run build && git add -A dist"
+    "version": "npm run build && git add -A dist",
+    "generate-docs": "tsx scripts/generate-docs.ts"
   },
   "peerDependencies": {
-    "@vue/compiler-sfc": "^3.3.0",
     "vue": "^3.3.0"
   },
   "dependencies": {
+    "@vue/compiler-sfc": "^3.3.0",
     "feather-icons": "^4.29.0"
   },
   "devDependencies": {
@@ -77,6 +78,7 @@
     "vite": "^4.5.2",
     "vite-plugin-dts": "^3.6.3",
     "vue": "^3.3.9",
-    "vue-tsc": "^2.0.0"
+    "vue-tsc": "^2.0.0",
+    "tsx": "^4.7.0"
   }
 }

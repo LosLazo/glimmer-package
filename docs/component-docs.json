@@ -1,0 +1,1074 @@
+[
+  {
+    "name": "GlimAccordion",
+    "description": "@component Accordion @description An expandable/collapsible accordion component that displays items with titles and expandable content. Features smooth animations and customizable max-width settings.  @example <Accordion :options=\"[{label: 'Section 1', content: 'This is the content for section 1'}]\" /> @example <Accordion :options=\"accordionItems\" maxWidth=\"600px\" /> @example <Accordion :options=\"faqItems\" maxWidth=\"span 6\" />",
+    "props": {},
+    "events": {},
+    "methods": {
+      "accordionStyles": {
+        "name": "accordionStyles",
+        "description": "@component Accordion @description An expandable/collapsible accordion component that displays items with titles and expandable content. Features smooth animations and customizable max-width settings.  @example <Accordion :options=\"[{label: 'Section 1', content: 'This is the content for section 1'}]\" /> @example <Accordion :options=\"accordionItems\" maxWidth=\"600px\" /> @example <Accordion :options=\"faqItems\" maxWidth=\"span 6\" /> /\nimport { ref, computed } from 'vue'\n\n/   Represents an accordion item with label and content @typedef {Object} AccordionItem @property {string} label - The label displayed in the accordion header @property {string} content - The content displayed when the accordion is expanded /\ninterface AccordionItem {\n  /   The label displayed in the accordion header /\n  label: string;\n  \n  /   The content displayed when the accordion is expanded /\n  content: string;\n}\n\n/   Accordion component props @typedef {Object} AccordionProps /\ninterface Props {\n  /   Array of accordion items to display @type {AccordionItem[]} @required /\n  options?: AccordionItem[];\n  \n  /   Maximum width of the accordion Can be a CSS value (e.g. '600px'), a number (interpreted as pixels), or a grid column span value (e.g. 'span 6') @type {string|number} /\n  maxWidth?: string | number;\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  options: () => [\n    {\n      label: 'Getting Started',\n      content: 'Welcome to our platform! This is a default accordion item that shows when no options are provided.'\n    },\n    {\n      label: 'Features',\n      content: 'Discover our amazing features and how they can help you achieve your goals.'\n    },\n    {\n      label: 'Support',\n      content: 'Need help? Our support team is here to assist you with any questions or concerns.'\n    }\n  ],\n  maxWidth: undefined\n})\n\n/   Computed styles for the accordion based on maxWidth prop Handles different formats of maxWidth (pixels, grid spans, etc.)",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "startExpand": {
+        "name": "startExpand",
+        "description": "@component Accordion @description An expandable/collapsible accordion component that displays items with titles and expandable content. Features smooth animations and customizable max-width settings.  @example <Accordion :options=\"[{label: 'Section 1', content: 'This is the content for section 1'}]\" /> @example <Accordion :options=\"accordionItems\" maxWidth=\"600px\" /> @example <Accordion :options=\"faqItems\" maxWidth=\"span 6\" /> /\nimport { ref, computed } from 'vue'\n\n/   Represents an accordion item with label and content @typedef {Object} AccordionItem @property {string} label - The label displayed in the accordion header @property {string} content - The content displayed when the accordion is expanded /\ninterface AccordionItem {\n  /   The label displayed in the accordion header /\n  label: string;\n  \n  /   The content displayed when the accordion is expanded /\n  content: string;\n}\n\n/   Accordion component props @typedef {Object} AccordionProps /\ninterface Props {\n  /   Array of accordion items to display @type {AccordionItem[]} @required /\n  options?: AccordionItem[];\n  \n  /   Maximum width of the accordion Can be a CSS value (e.g. '600px'), a number (interpreted as pixels), or a grid column span value (e.g. 'span 6') @type {string|number} /\n  maxWidth?: string | number;\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  options: () => [\n    {\n      label: 'Getting Started',\n      content: 'Welcome to our platform! This is a default accordion item that shows when no options are provided.'\n    },\n    {\n      label: 'Features',\n      content: 'Discover our amazing features and how they can help you achieve your goals.'\n    },\n    {\n      label: 'Support',\n      content: 'Need help? Our support team is here to assist you with any questions or concerns.'\n    }\n  ],\n  maxWidth: undefined\n})\n\n/   Computed styles for the accordion based on maxWidth prop Handles different formats of maxWidth (pixels, grid spans, etc.) /\nconst accordionStyles = computed(() => {\n  if (!props.maxWidth) return {}\n  \n  // If it's a number or ends with 'px', treat as pixel value\n  if (typeof props.maxWidth === 'number' || props.maxWidth.endsWith('px')) {\n    return { maxWidth: typeof props.maxWidth === 'number' ? `${props.maxWidth}px` : props.maxWidth }\n  }\n  \n  // If it's a span value (e.g. 'span 6')\n  if (props.maxWidth.startsWith('span')) {\n    return { gridColumn: props.maxWidth }\n  }\n  \n  return { maxWidth: props.maxWidth }\n})\n\n/   Indices of currently expanded accordion items /\nconst expandedIndices = ref<number[]>([])\n\n/   Index of the item currently being expanded (for animation) /\nconst isExpanding = ref<number | null>(null)\n\n/   Index of the item currently being collapsed (for animation) /\nconst isCollapsing = ref<number | null>(null)\n\n/   Start the expand animation for an accordion item @param {number} index - Index of the item being expanded",
+        "params": [
+          {
+            "name": "index",
+            "type": "number",
+            "description": "Parameter index for the method",
+            "required": true
+          }
+        ]
+      },
+      "endExpand": {
+        "name": "endExpand",
+        "description": "@component Accordion @description An expandable/collapsible accordion component that displays items with titles and expandable content. Features smooth animations and customizable max-width settings.  @example <Accordion :options=\"[{label: 'Section 1', content: 'This is the content for section 1'}]\" /> @example <Accordion :options=\"accordionItems\" maxWidth=\"600px\" /> @example <Accordion :options=\"faqItems\" maxWidth=\"span 6\" /> /\nimport { ref, computed } from 'vue'\n\n/   Represents an accordion item with label and content @typedef {Object} AccordionItem @property {string} label - The label displayed in the accordion header @property {string} content - The content displayed when the accordion is expanded /\ninterface AccordionItem {\n  /   The label displayed in the accordion header /\n  label: string;\n  \n  /   The content displayed when the accordion is expanded /\n  content: string;\n}\n\n/   Accordion component props @typedef {Object} AccordionProps /\ninterface Props {\n  /   Array of accordion items to display @type {AccordionItem[]} @required /\n  options?: AccordionItem[];\n  \n  /   Maximum width of the accordion Can be a CSS value (e.g. '600px'), a number (interpreted as pixels), or a grid column span value (e.g. 'span 6') @type {string|number} /\n  maxWidth?: string | number;\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  options: () => [\n    {\n      label: 'Getting Started',\n      content: 'Welcome to our platform! This is a default accordion item that shows when no options are provided.'\n    },\n    {\n      label: 'Features',\n      content: 'Discover our amazing features and how they can help you achieve your goals.'\n    },\n    {\n      label: 'Support',\n      content: 'Need help? Our support team is here to assist you with any questions or concerns.'\n    }\n  ],\n  maxWidth: undefined\n})\n\n/   Computed styles for the accordion based on maxWidth prop Handles different formats of maxWidth (pixels, grid spans, etc.) /\nconst accordionStyles = computed(() => {\n  if (!props.maxWidth) return {}\n  \n  // If it's a number or ends with 'px', treat as pixel value\n  if (typeof props.maxWidth === 'number' || props.maxWidth.endsWith('px')) {\n    return { maxWidth: typeof props.maxWidth === 'number' ? `${props.maxWidth}px` : props.maxWidth }\n  }\n  \n  // If it's a span value (e.g. 'span 6')\n  if (props.maxWidth.startsWith('span')) {\n    return { gridColumn: props.maxWidth }\n  }\n  \n  return { maxWidth: props.maxWidth }\n})\n\n/   Indices of currently expanded accordion items /\nconst expandedIndices = ref<number[]>([])\n\n/   Index of the item currently being expanded (for animation) /\nconst isExpanding = ref<number | null>(null)\n\n/   Index of the item currently being collapsed (for animation) /\nconst isCollapsing = ref<number | null>(null)\n\n/   Start the expand animation for an accordion item @param {number} index - Index of the item being expanded /\nconst startExpand = (index: number) => {\n  isExpanding.value = index\n}\n\n/   End the expand animation"
+      },
+      "startCollapse": {
+        "name": "startCollapse",
+        "description": "@component Accordion @description An expandable/collapsible accordion component that displays items with titles and expandable content. Features smooth animations and customizable max-width settings.  @example <Accordion :options=\"[{label: 'Section 1', content: 'This is the content for section 1'}]\" /> @example <Accordion :options=\"accordionItems\" maxWidth=\"600px\" /> @example <Accordion :options=\"faqItems\" maxWidth=\"span 6\" /> /\nimport { ref, computed } from 'vue'\n\n/   Represents an accordion item with label and content @typedef {Object} AccordionItem @property {string} label - The label displayed in the accordion header @property {string} content - The content displayed when the accordion is expanded /\ninterface AccordionItem {\n  /   The label displayed in the accordion header /\n  label: string;\n  \n  /   The content displayed when the accordion is expanded /\n  content: string;\n}\n\n/   Accordion component props @typedef {Object} AccordionProps /\ninterface Props {\n  /   Array of accordion items to display @type {AccordionItem[]} @required /\n  options?: AccordionItem[];\n  \n  /   Maximum width of the accordion Can be a CSS value (e.g. '600px'), a number (interpreted as pixels), or a grid column span value (e.g. 'span 6') @type {string|number} /\n  maxWidth?: string | number;\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  options: () => [\n    {\n      label: 'Getting Started',\n      content: 'Welcome to our platform! This is a default accordion item that shows when no options are provided.'\n    },\n    {\n      label: 'Features',\n      content: 'Discover our amazing features and how they can help you achieve your goals.'\n    },\n    {\n      label: 'Support',\n      content: 'Need help? Our support team is here to assist you with any questions or concerns.'\n    }\n  ],\n  maxWidth: undefined\n})\n\n/   Computed styles for the accordion based on maxWidth prop Handles different formats of maxWidth (pixels, grid spans, etc.) /\nconst accordionStyles = computed(() => {\n  if (!props.maxWidth) return {}\n  \n  // If it's a number or ends with 'px', treat as pixel value\n  if (typeof props.maxWidth === 'number' || props.maxWidth.endsWith('px')) {\n    return { maxWidth: typeof props.maxWidth === 'number' ? `${props.maxWidth}px` : props.maxWidth }\n  }\n  \n  // If it's a span value (e.g. 'span 6')\n  if (props.maxWidth.startsWith('span')) {\n    return { gridColumn: props.maxWidth }\n  }\n  \n  return { maxWidth: props.maxWidth }\n})\n\n/   Indices of currently expanded accordion items /\nconst expandedIndices = ref<number[]>([])\n\n/   Index of the item currently being expanded (for animation) /\nconst isExpanding = ref<number | null>(null)\n\n/   Index of the item currently being collapsed (for animation) /\nconst isCollapsing = ref<number | null>(null)\n\n/   Start the expand animation for an accordion item @param {number} index - Index of the item being expanded /\nconst startExpand = (index: number) => {\n  isExpanding.value = index\n}\n\n/   End the expand animation /\nconst endExpand = () => {\n  isExpanding.value = null\n}\n\n/   Start the collapse animation for an accordion item @param {number} index - Index of the item being collapsed",
+        "params": [
+          {
+            "name": "index",
+            "type": "number",
+            "description": "Parameter index for the method",
+            "required": true
+          }
+        ]
+      },
+      "endCollapse": {
+        "name": "endCollapse",
+        "description": "@component Accordion @description An expandable/collapsible accordion component that displays items with titles and expandable content. Features smooth animations and customizable max-width settings.  @example <Accordion :options=\"[{label: 'Section 1', content: 'This is the content for section 1'}]\" /> @example <Accordion :options=\"accordionItems\" maxWidth=\"600px\" /> @example <Accordion :options=\"faqItems\" maxWidth=\"span 6\" /> /\nimport { ref, computed } from 'vue'\n\n/   Represents an accordion item with label and content @typedef {Object} AccordionItem @property {string} label - The label displayed in the accordion header @property {string} content - The content displayed when the accordion is expanded /\ninterface AccordionItem {\n  /   The label displayed in the accordion header /\n  label: string;\n  \n  /   The content displayed when the accordion is expanded /\n  content: string;\n}\n\n/   Accordion component props @typedef {Object} AccordionProps /\ninterface Props {\n  /   Array of accordion items to display @type {AccordionItem[]} @required /\n  options?: AccordionItem[];\n  \n  /   Maximum width of the accordion Can be a CSS value (e.g. '600px'), a number (interpreted as pixels), or a grid column span value (e.g. 'span 6') @type {string|number} /\n  maxWidth?: string | number;\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  options: () => [\n    {\n      label: 'Getting Started',\n      content: 'Welcome to our platform! This is a default accordion item that shows when no options are provided.'\n    },\n    {\n      label: 'Features',\n      content: 'Discover our amazing features and how they can help you achieve your goals.'\n    },\n    {\n      label: 'Support',\n      content: 'Need help? Our support team is here to assist you with any questions or concerns.'\n    }\n  ],\n  maxWidth: undefined\n})\n\n/   Computed styles for the accordion based on maxWidth prop Handles different formats of maxWidth (pixels, grid spans, etc.) /\nconst accordionStyles = computed(() => {\n  if (!props.maxWidth) return {}\n  \n  // If it's a number or ends with 'px', treat as pixel value\n  if (typeof props.maxWidth === 'number' || props.maxWidth.endsWith('px')) {\n    return { maxWidth: typeof props.maxWidth === 'number' ? `${props.maxWidth}px` : props.maxWidth }\n  }\n  \n  // If it's a span value (e.g. 'span 6')\n  if (props.maxWidth.startsWith('span')) {\n    return { gridColumn: props.maxWidth }\n  }\n  \n  return { maxWidth: props.maxWidth }\n})\n\n/   Indices of currently expanded accordion items /\nconst expandedIndices = ref<number[]>([])\n\n/   Index of the item currently being expanded (for animation) /\nconst isExpanding = ref<number | null>(null)\n\n/   Index of the item currently being collapsed (for animation) /\nconst isCollapsing = ref<number | null>(null)\n\n/   Start the expand animation for an accordion item @param {number} index - Index of the item being expanded /\nconst startExpand = (index: number) => {\n  isExpanding.value = index\n}\n\n/   End the expand animation /\nconst endExpand = () => {\n  isExpanding.value = null\n}\n\n/   Start the collapse animation for an accordion item @param {number} index - Index of the item being collapsed /\nconst startCollapse = (index: number) => {\n  isCollapsing.value = index\n}\n\n/   End the collapse animation"
+      },
+      "toggleItem": {
+        "name": "toggleItem",
+        "description": "@component Accordion @description An expandable/collapsible accordion component that displays items with titles and expandable content. Features smooth animations and customizable max-width settings.  @example <Accordion :options=\"[{label: 'Section 1', content: 'This is the content for section 1'}]\" /> @example <Accordion :options=\"accordionItems\" maxWidth=\"600px\" /> @example <Accordion :options=\"faqItems\" maxWidth=\"span 6\" /> /\nimport { ref, computed } from 'vue'\n\n/   Represents an accordion item with label and content @typedef {Object} AccordionItem @property {string} label - The label displayed in the accordion header @property {string} content - The content displayed when the accordion is expanded /\ninterface AccordionItem {\n  /   The label displayed in the accordion header /\n  label: string;\n  \n  /   The content displayed when the accordion is expanded /\n  content: string;\n}\n\n/   Accordion component props @typedef {Object} AccordionProps /\ninterface Props {\n  /   Array of accordion items to display @type {AccordionItem[]} @required /\n  options?: AccordionItem[];\n  \n  /   Maximum width of the accordion Can be a CSS value (e.g. '600px'), a number (interpreted as pixels), or a grid column span value (e.g. 'span 6') @type {string|number} /\n  maxWidth?: string | number;\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  options: () => [\n    {\n      label: 'Getting Started',\n      content: 'Welcome to our platform! This is a default accordion item that shows when no options are provided.'\n    },\n    {\n      label: 'Features',\n      content: 'Discover our amazing features and how they can help you achieve your goals.'\n    },\n    {\n      label: 'Support',\n      content: 'Need help? Our support team is here to assist you with any questions or concerns.'\n    }\n  ],\n  maxWidth: undefined\n})\n\n/   Computed styles for the accordion based on maxWidth prop Handles different formats of maxWidth (pixels, grid spans, etc.) /\nconst accordionStyles = computed(() => {\n  if (!props.maxWidth) return {}\n  \n  // If it's a number or ends with 'px', treat as pixel value\n  if (typeof props.maxWidth === 'number' || props.maxWidth.endsWith('px')) {\n    return { maxWidth: typeof props.maxWidth === 'number' ? `${props.maxWidth}px` : props.maxWidth }\n  }\n  \n  // If it's a span value (e.g. 'span 6')\n  if (props.maxWidth.startsWith('span')) {\n    return { gridColumn: props.maxWidth }\n  }\n  \n  return { maxWidth: props.maxWidth }\n})\n\n/   Indices of currently expanded accordion items /\nconst expandedIndices = ref<number[]>([])\n\n/   Index of the item currently being expanded (for animation) /\nconst isExpanding = ref<number | null>(null)\n\n/   Index of the item currently being collapsed (for animation) /\nconst isCollapsing = ref<number | null>(null)\n\n/   Start the expand animation for an accordion item @param {number} index - Index of the item being expanded /\nconst startExpand = (index: number) => {\n  isExpanding.value = index\n}\n\n/   End the expand animation /\nconst endExpand = () => {\n  isExpanding.value = null\n}\n\n/   Start the collapse animation for an accordion item @param {number} index - Index of the item being collapsed /\nconst startCollapse = (index: number) => {\n  isCollapsing.value = index\n}\n\n/   End the collapse animation /\nconst endCollapse = () => {\n  isCollapsing.value = null\n}\n\n/   Toggle expansion state of an accordion item @param {number} index - Index of the item to toggle",
+        "params": [
+          {
+            "name": "index",
+            "type": "number",
+            "description": "Parameter index for the method",
+            "required": true
+          }
+        ]
+      }
+    },
+    "computed": {
+      "accordionStyles": {
+        "name": "accordionStyles",
+        "type": "any",
+        "description": "@component Accordion @description An expandable/collapsible accordion component that displays items with titles and expandable content. Features smooth animations and customizable max-width settings.  @example <Accordion :options=\"[{label: 'Section 1', content: 'This is the content for section 1'}]\" /> @example <Accordion :options=\"accordionItems\" maxWidth=\"600px\" /> @example <Accordion :options=\"faqItems\" maxWidth=\"span 6\" /> /\nimport { ref, computed } from 'vue'\n\n/   Represents an accordion item with label and content @typedef {Object} AccordionItem @property {string} label - The label displayed in the accordion header @property {string} content - The content displayed when the accordion is expanded /\ninterface AccordionItem {\n  /   The label displayed in the accordion header /\n  label: string;\n  \n  /   The content displayed when the accordion is expanded /\n  content: string;\n}\n\n/   Accordion component props @typedef {Object} AccordionProps /\ninterface Props {\n  /   Array of accordion items to display @type {AccordionItem[]} @required /\n  options?: AccordionItem[];\n  \n  /   Maximum width of the accordion Can be a CSS value (e.g. '600px'), a number (interpreted as pixels), or a grid column span value (e.g. 'span 6') @type {string|number} /\n  maxWidth?: string | number;\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  options: () => [\n    {\n      label: 'Getting Started',\n      content: 'Welcome to our platform! This is a default accordion item that shows when no options are provided.'\n    },\n    {\n      label: 'Features',\n      content: 'Discover our amazing features and how they can help you achieve your goals.'\n    },\n    {\n      label: 'Support',\n      content: 'Need help? Our support team is here to assist you with any questions or concerns.'\n    }\n  ],\n  maxWidth: undefined\n})\n\n/   Computed styles for the accordion based on maxWidth prop Handles different formats of maxWidth (pixels, grid spans, etc.)"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimAvatar",
+    "description": "@component Avatar @description A versatile avatar component for displaying user images with fallback icon support. Supports different shapes (circle or squircle) and customizable sizing.  @example <Avatar /> @example <Avatar image=\"/path/to/image.jpg\" alt=\"User Name\" /> @example <Avatar shape=\"squircle\" size={64} />",
+    "props": {
+      "image": {
+        "name": "image",
+        "type": "String",
+        "required": false,
+        "default": "https://cdn.cosmos.so/962784fe-d06b-4f23-84e5-f0a1efd3a6d6.?format=jpeg",
+        "description": "The image prop"
+      },
+      "alt": {
+        "name": "alt",
+        "type": "String",
+        "required": false,
+        "default": "User avatar",
+        "description": "The alt prop"
+      },
+      "size": {
+        "name": "size",
+        "type": "Number",
+        "required": false,
+        "default": "40",
+        "description": "The size prop"
+      },
+      "shape": {
+        "name": "shape",
+        "type": "String",
+        "required": false,
+        "default": "circle",
+        "description": "The shape prop"
+      }
+    },
+    "events": {},
+    "methods": {},
+    "computed": {},
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimBadge",
+    "description": "@component Badge @description Displays a small numerical value or indicator that can be used for notifications, counts, or status indicators. The badge can be displayed as a number with optional maximum value or as a simple dot.  @example <Badge content=\"5\" /> @example <Badge content=\"100\" max=\"99\" /> @example <Badge isDot /> @example <Badge content=\"NEW\" />",
+    "props": {
+      "value": {
+        "name": "value",
+        "type": "any",
+        "required": false,
+        "default": "0",
+        "description": "The value prop"
+      },
+      "max": {
+        "name": "max",
+        "type": "Number",
+        "required": false,
+        "default": "99",
+        "description": "The max prop"
+      },
+      "isDot": {
+        "name": "isDot",
+        "type": "Boolean",
+        "required": false,
+        "default": "false",
+        "description": "The isDot prop"
+      }
+    },
+    "events": {},
+    "methods": {
+      "formattedContent": {
+        "name": "formattedContent",
+        "description": "@component Badge @description Displays a small numerical value or indicator that can be used for notifications, counts, or status indicators. The badge can be displayed as a number with optional maximum value or as a simple dot.  @example <Badge content=\"5\" /> @example <Badge content=\"100\" max=\"99\" /> @example <Badge isDot /> @example <Badge content=\"NEW\" /> /\n\n/   Badge component props @typedef {Object} BadgeProps /\nconst props = defineProps({\n  /   Content to be displayed inside the badge @type {Number|String} @default 0 /\n  value: {\n    type: [Number, String],\n    default: 0\n  },\n  /   Maximum value to show before adding a '+' suffix If the value exceeds this number, it will display as \"{max}+\" @type {Number} @default 99 /\n  max: {\n    type: Number,\n    default: 99\n  },\n  /   Whether to display as a small dot without content When true, the badge appears as a simple colored dot indicator @type {Boolean} @default false /\n  isDot: {\n    type: Boolean,\n    default: false\n  }\n})\n\n/   Formats the badge content based on the max prop @returns {String|Number} Formatted value with '+' suffix if it exceeds the max",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      }
+    },
+    "computed": {
+      "formattedContent": {
+        "name": "formattedContent",
+        "type": "any",
+        "description": "@component Badge @description Displays a small numerical value or indicator that can be used for notifications, counts, or status indicators. The badge can be displayed as a number with optional maximum value or as a simple dot.  @example <Badge content=\"5\" /> @example <Badge content=\"100\" max=\"99\" /> @example <Badge isDot /> @example <Badge content=\"NEW\" /> /\n\n/   Badge component props @typedef {Object} BadgeProps /\nconst props = defineProps({\n  /   Content to be displayed inside the badge @type {Number|String} @default 0 /\n  value: {\n    type: [Number, String],\n    default: 0\n  },\n  /   Maximum value to show before adding a '+' suffix If the value exceeds this number, it will display as \"{max}+\" @type {Number} @default 99 /\n  max: {\n    type: Number,\n    default: 99\n  },\n  /   Whether to display as a small dot without content When true, the badge appears as a simple colored dot indicator @type {Boolean} @default false /\n  isDot: {\n    type: Boolean,\n    default: false\n  }\n})\n\n/   Formats the badge content based on the max prop @returns {String|Number} Formatted value with '+' suffix if it exceeds the max"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimBanner",
+    "description": "No description provided",
+    "props": {
+      "description": {
+        "name": "description",
+        "type": "String",
+        "required": false,
+        "default": "Description",
+        "description": "The description prop"
+      },
+      "title": {
+        "name": "title",
+        "type": "String",
+        "required": false,
+        "default": "Title",
+        "description": "The title prop"
+      },
+      "variant": {
+        "name": "variant",
+        "type": "String",
+        "required": false,
+        "default": "default",
+        "description": "The variant prop"
+      },
+      "dismissable": {
+        "name": "dismissable",
+        "type": "Boolean",
+        "required": false,
+        "default": "false",
+        "description": "The dismissable prop"
+      }
+    },
+    "events": {
+      "dismiss": {
+        "name": "dismiss",
+        "description": "Emitted when dismiss occurs"
+      }
+    },
+    "methods": {},
+    "computed": {},
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimButton",
+    "description": "@component Button @description A versatile button component with multiple variants, sizes, and states. Supports icons, loading states, and inverse color schemes.  @example <Button>Click me</Button> @example <Button variant=\"secondary\" size=\"medium\">Secondary Button</Button> @example <Button prefixIcon=\"arrow-right\">With Icon</Button> @example <Button loading>Loading</Button>",
+    "props": {
+      "disabled": {
+        "name": "disabled",
+        "type": "Boolean",
+        "required": false,
+        "default": "false",
+        "description": "The disabled prop"
+      },
+      "prefixIcon": {
+        "name": "prefixIcon",
+        "type": "String",
+        "required": false,
+        "description": "The prefixIcon prop"
+      },
+      "suffixIcon": {
+        "name": "suffixIcon",
+        "type": "String",
+        "required": false,
+        "description": "The suffixIcon prop"
+      },
+      "size": {
+        "name": "size",
+        "type": "String",
+        "required": false,
+        "default": "medium",
+        "description": "The size prop"
+      },
+      "loading": {
+        "name": "loading",
+        "type": "Boolean",
+        "required": false,
+        "default": "false",
+        "description": "The loading prop"
+      },
+      "primary": {
+        "name": "primary",
+        "type": "Main",
+        "description": "The primary prop"
+      },
+      "secondary": {
+        "name": "secondary",
+        "type": "Alternative",
+        "description": "The secondary prop"
+      },
+      "ghost": {
+        "name": "ghost",
+        "type": "Subtle",
+        "description": "The ghost prop"
+      },
+      "danger": {
+        "name": "danger",
+        "type": "Destructive",
+        "description": "The danger prop"
+      },
+      "variant": {
+        "name": "variant",
+        "type": "String",
+        "required": false,
+        "default": "primary",
+        "description": "The variant prop"
+      },
+      "inverse": {
+        "name": "inverse",
+        "type": "Boolean",
+        "required": false,
+        "default": "false",
+        "description": "The inverse prop"
+      },
+      "type": {
+        "name": "type",
+        "type": "String",
+        "required": false,
+        "default": "button",
+        "description": "The type prop"
+      },
+      "name": {
+        "name": "name",
+        "type": "String",
+        "required": false,
+        "description": "The name prop"
+      }
+    },
+    "events": {},
+    "methods": {
+      "handleClick": {
+        "name": "handleClick",
+        "description": "@component Button @description A versatile button component with multiple variants, sizes, and states. Supports icons, loading states, and inverse color schemes.  @example <Button>Click me</Button> @example <Button variant=\"secondary\" size=\"medium\">Secondary Button</Button> @example <Button prefixIcon=\"arrow-right\">With Icon</Button> @example <Button loading>Loading</Button> /\n\nconst props = defineProps({\n  /   Whether the button is disabled @type {boolean} @default false /\n  disabled: {\n    type: Boolean,\n    default: false\n  },\n\n  /   Icon to display before the button content Uses Feather icon names @type {string} @default '' /\n  prefixIcon: {\n    type: String,\n    default: ''\n  },\n\n  /   Icon to display after the button content Uses Feather icon names @type {string} @default '' /\n  suffixIcon: {\n    type: String,\n    default: ''\n  },\n\n  /   Size of the button Controls padding, font size, and overall dimensions @type {'large'|'medium'|'small'} @default 'medium' /\n  size: {\n    type: String as () => 'large' | 'medium' | 'small',\n    default: 'medium',\n    validator: (value: string) => ['large', 'medium', 'small'].includes(value)\n  },\n\n  /   Whether the button is in loading state When true, displays a spinner and disables interactions @type {boolean} @default false /\n  loading: {\n    type: Boolean,\n    default: false\n  },\n\n  /   Visual style variant of the button - primary: Main call-to-action - secondary: Alternative or less prominent action - ghost: Subtle or auxiliary action (previously tertiary) - danger: Destructive or warning action @type {'primary'|'secondary'|'ghost'|'danger'} @default 'primary' /\n  variant: {\n    type: String as () => 'primary' | 'secondary' | 'ghost' | 'danger',\n    default: 'primary',\n    validator: (value: string) => ['primary', 'secondary', 'ghost', 'danger'].includes(value)\n  },\n\n  /   Whether to use inverse color scheme Useful for buttons on dark backgrounds @type {boolean} @default false /\n  inverse: {\n    type: Boolean,\n    default: false\n  },\n  \n  /   Button type attribute (button, submit, reset) @type {'button'|'submit'|'reset'} @default 'button' /\n  type: {\n    type: String as () => 'button' | 'submit' | 'reset',\n    default: 'button',\n    validator: (value: string) => ['button', 'submit', 'reset'].includes(value)\n  },\n  \n  /   Name attribute for the button @type {string} @default '' /\n  name: {\n    type: String,\n    default: ''\n  }\n})\n\n/   Icon sizes mapped to button sizes @private /\nconst ICON_SIZE_MAP = {\n  large: 20,\n  medium: 16,\n  small: 12\n} as const\n\n/   Computes the icon size based on button size @private /\nconst iconSize = computed<number>(() => {\n  return ICON_SIZE_MAP[props.size as keyof typeof ICON_SIZE_MAP] || 16\n})\n\n/   Define emitted events /\nconst emit = defineEmits<{\n  /   Emitted when the button is clicked and not disabled or loading /\n  'click': []\n}>()\n\n/   Handle button click event @private"
+      },
+      "iconSize": {
+        "name": "iconSize",
+        "description": "@component Button @description A versatile button component with multiple variants, sizes, and states. Supports icons, loading states, and inverse color schemes.  @example <Button>Click me</Button> @example <Button variant=\"secondary\" size=\"medium\">Secondary Button</Button> @example <Button prefixIcon=\"arrow-right\">With Icon</Button> @example <Button loading>Loading</Button> /\n\nconst props = defineProps({\n  /   Whether the button is disabled @type {boolean} @default false /\n  disabled: {\n    type: Boolean,\n    default: false\n  },\n\n  /   Icon to display before the button content Uses Feather icon names @type {string} @default '' /\n  prefixIcon: {\n    type: String,\n    default: ''\n  },\n\n  /   Icon to display after the button content Uses Feather icon names @type {string} @default '' /\n  suffixIcon: {\n    type: String,\n    default: ''\n  },\n\n  /   Size of the button Controls padding, font size, and overall dimensions @type {'large'|'medium'|'small'} @default 'medium' /\n  size: {\n    type: String as () => 'large' | 'medium' | 'small',\n    default: 'medium',\n    validator: (value: string) => ['large', 'medium', 'small'].includes(value)\n  },\n\n  /   Whether the button is in loading state When true, displays a spinner and disables interactions @type {boolean} @default false /\n  loading: {\n    type: Boolean,\n    default: false\n  },\n\n  /   Visual style variant of the button - primary: Main call-to-action - secondary: Alternative or less prominent action - ghost: Subtle or auxiliary action (previously tertiary) - danger: Destructive or warning action @type {'primary'|'secondary'|'ghost'|'danger'} @default 'primary' /\n  variant: {\n    type: String as () => 'primary' | 'secondary' | 'ghost' | 'danger',\n    default: 'primary',\n    validator: (value: string) => ['primary', 'secondary', 'ghost', 'danger'].includes(value)\n  },\n\n  /   Whether to use inverse color scheme Useful for buttons on dark backgrounds @type {boolean} @default false /\n  inverse: {\n    type: Boolean,\n    default: false\n  },\n  \n  /   Button type attribute (button, submit, reset) @type {'button'|'submit'|'reset'} @default 'button' /\n  type: {\n    type: String as () => 'button' | 'submit' | 'reset',\n    default: 'button',\n    validator: (value: string) => ['button', 'submit', 'reset'].includes(value)\n  },\n  \n  /   Name attribute for the button @type {string} @default '' /\n  name: {\n    type: String,\n    default: ''\n  }\n})\n\n/   Icon sizes mapped to button sizes @private /\nconst ICON_SIZE_MAP = {\n  large: 20,\n  medium: 16,\n  small: 12\n} as const\n\n/   Computes the icon size based on button size @private",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      }
+    },
+    "computed": {},
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimCard",
+    "description": "@component Card @description A versatile card component for displaying content with optional image and action slots. Cards can be used for various purposes such as product cards, article previews, or feature highlights.  @example <Card title=\"Card Title\" text=\"Card description text\" /> @example <Card title=\"Product Name\" text=\"Product description\" imageSrc=\"/images/product.jpg\" /> @example <Card title=\"Spanning Card\" width=\"span 2\"> <template #actions> <Button>Action</Button> </template> </Card>",
+    "props": {},
+    "events": {},
+    "methods": {
+      "cardStyle": {
+        "name": "cardStyle",
+        "description": "@component Card @description A versatile card component for displaying content with optional image and action slots. Cards can be used for various purposes such as product cards, article previews, or feature highlights.  @example <Card title=\"Card Title\" text=\"Card description text\" /> @example <Card title=\"Product Name\" text=\"Product description\" imageSrc=\"/images/product.jpg\" /> @example <Card title=\"Spanning Card\" width=\"span 2\"> <template #actions> <Button>Action</Button> </template> </Card> /\n\n/   Valid values for width prop @typedef {number|`${number}`|`span ${number}`|'auto'} WidthValue /\ntype WidthValue = number | `${number}` | `span ${number}` | 'auto'\n\n/   Card component props @typedef {Object} CardProps /\ninterface Props {\n  \n  /   Main title of the card @type {string} /\n  title?: string\n  \n  /   Description or content text @type {string} /\n  text?: string\n  \n  /   URL or path to the card's image @type {string} /\n  imageSrc?: string\n  \n  /   Alt text for the image (for accessibility) @type {string} /\n  imageAlt?: string\n  \n  /   Aspect ratio of the image @type {'1x1'|'16x9'|'4x3'|'4x5'|'3x2'|'5x4'} /\n  imageAspectRatio?: '1x1' | '16x9' | '4x3' | '4x5' | '3x2' | '5x4'\n  \n  /   Orientation of the image @type {'landscape'|'portrait'} /\n  imageOrientation?: 'landscape' | 'portrait'\n  \n  /   URL when the card is clickable @type {string} /\n  href?: string\n  \n  /   Width of the card - can be pixels, a CSS value, or a grid span @type {WidthValue} /\n  width?: WidthValue\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  title: 'Title',\n  text: 'Text',\n  imageSrc: 'https://cdn.cosmos.so/962784fe-d06b-4f23-84e5-f0a1efd3a6d6.?format=jpeg',\n  imageAlt: 'Image Alt',\n  imageAspectRatio: '4x3',\n  imageOrientation: 'landscape',\n  href: '',\n  width: 'auto'\n})\n\n/   Computed CSS styles for the card based on the width prop @returns {Object} CSS style object",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      }
+    },
+    "computed": {
+      "cardStyle": {
+        "name": "cardStyle",
+        "type": "any",
+        "description": "@component Card @description A versatile card component for displaying content with optional image and action slots. Cards can be used for various purposes such as product cards, article previews, or feature highlights.  @example <Card title=\"Card Title\" text=\"Card description text\" /> @example <Card title=\"Product Name\" text=\"Product description\" imageSrc=\"/images/product.jpg\" /> @example <Card title=\"Spanning Card\" width=\"span 2\"> <template #actions> <Button>Action</Button> </template> </Card> /\n\n/   Valid values for width prop @typedef {number|`${number}`|`span ${number}`|'auto'} WidthValue /\ntype WidthValue = number | `${number}` | `span ${number}` | 'auto'\n\n/   Card component props @typedef {Object} CardProps /\ninterface Props {\n  \n  /   Main title of the card @type {string} /\n  title?: string\n  \n  /   Description or content text @type {string} /\n  text?: string\n  \n  /   URL or path to the card's image @type {string} /\n  imageSrc?: string\n  \n  /   Alt text for the image (for accessibility) @type {string} /\n  imageAlt?: string\n  \n  /   Aspect ratio of the image @type {'1x1'|'16x9'|'4x3'|'4x5'|'3x2'|'5x4'} /\n  imageAspectRatio?: '1x1' | '16x9' | '4x3' | '4x5' | '3x2' | '5x4'\n  \n  /   Orientation of the image @type {'landscape'|'portrait'} /\n  imageOrientation?: 'landscape' | 'portrait'\n  \n  /   URL when the card is clickable @type {string} /\n  href?: string\n  \n  /   Width of the card - can be pixels, a CSS value, or a grid span @type {WidthValue} /\n  width?: WidthValue\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  title: 'Title',\n  text: 'Text',\n  imageSrc: 'https://cdn.cosmos.so/962784fe-d06b-4f23-84e5-f0a1efd3a6d6.?format=jpeg',\n  imageAlt: 'Image Alt',\n  imageAspectRatio: '4x3',\n  imageOrientation: 'landscape',\n  href: '',\n  width: 'auto'\n})\n\n/   Computed CSS styles for the card based on the width prop @returns {Object} CSS style object"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimCheckbox",
+    "description": "@component Checkbox @description A checkbox component for boolean inputs with customizable label and sizing. Follows accessibility best practices and provides visual feedback for different states.  @example <Checkbox v-model=\"isChecked\" /> @example <Checkbox v-model=\"agreeToTerms\" label=\"I agree to the terms and conditions\" /> @example <Checkbox v-model=\"rememberMe\" size=\"small\" label=\"Remember me\" /> @example <Checkbox v-model=\"isDisabled\" disabled />",
+    "props": {},
+    "events": {},
+    "methods": {
+      "toggle": {
+        "name": "toggle",
+        "description": "Method toggle"
+      }
+    },
+    "computed": {},
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimDivider",
+    "description": "@component Divider @description A versatile divider component for visual separation of content. Supports both horizontal and vertical orientations with various color strengths. @example <Divider /> <Divider orientation=\"vertical\" color=\"strong\" margin=\"16\" />",
+    "props": {},
+    "events": {},
+    "methods": {
+      "marginStyle": {
+        "name": "marginStyle",
+        "description": "Method marginStyle",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      }
+    },
+    "computed": {
+      "marginStyle": {
+        "name": "marginStyle",
+        "type": "any",
+        "description": "Computed property marginStyle"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimDropdown",
+    "description": "@component Dropdown @description An input component with dropdown menu functionality. Combines the functionality of an input field with selectable options. @example <Dropdown id=\"dropdown1\" v-model=\"selectedOption\" :items=\"[{label: 'Option 1'}, {label: 'Option 2'}]\" label=\"Select an option\" />",
+    "props": {},
+    "events": {},
+    "methods": {
+      "displayValue": {
+        "name": "displayValue",
+        "description": "@component Dropdown @description An input component with dropdown menu functionality. Combines the functionality of an input field with selectable options. @example <Dropdown id=\"dropdown1\" v-model=\"selectedOption\" :items=\"[{label: 'Option 1'}, {label: 'Option 2'}]\" label=\"Select an option\" /> /\n\ninterface Props {\n  /   Current value of the input field @required /\n  modelValue: string\n  \n  /   Label text for the input field @default 'Label' /\n  label?: string\n  \n  /   Placeholder text for the input field @default 'Placeholder' /\n  placeholder?: string\n  \n  /   Size of the input field @default 'medium' /\n  size?: 'large' | 'medium' | 'small'\n  \n  /   Whether the input is disabled @default false /\n  disabled?: boolean\n  \n  /   Error message to display @default '' /\n  error?: string\n  \n  /   Success message to display @default '' /\n  success?: string\n  \n  /   Icon to display before the input text @default '' /\n  prefixIcon?: string\n  \n  /   Unique identifier for the input field @required /\n  id: string\n  \n  /   Array of options to display in the dropdown @required /\n  items: Array<{ label: string; value?: string; selected?: boolean }>\n  \n  /   Whether the input text can be edited manually @default false /\n  editable?: boolean\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  label: 'Label',\n  placeholder: 'Placeholder',\n  size: 'medium',\n  disabled: false,\n  error: '',\n  success: '',\n  prefixIcon: '',\n  editable: false\n})\n\n/   Define emitted events /\nconst emit = defineEmits<{\n  /   Emitted when the input value changes @param value - The new input value /\n  'update:modelValue': [value: string]\n  \n  /   Emitted when an option is selected from the dropdown @param item - The selected item object /\n  'select': [item: { label: string; value?: string }]\n}>()\n\n/   Whether the dropdown is currently expanded @private /\nconst isExpanded = ref(false)\n\n/   The value to display in the input field @private",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "processedOptions": {
+        "name": "processedOptions",
+        "description": "@component Dropdown @description An input component with dropdown menu functionality. Combines the functionality of an input field with selectable options. @example <Dropdown id=\"dropdown1\" v-model=\"selectedOption\" :items=\"[{label: 'Option 1'}, {label: 'Option 2'}]\" label=\"Select an option\" /> /\n\ninterface Props {\n  /   Current value of the input field @required /\n  modelValue: string\n  \n  /   Label text for the input field @default 'Label' /\n  label?: string\n  \n  /   Placeholder text for the input field @default 'Placeholder' /\n  placeholder?: string\n  \n  /   Size of the input field @default 'medium' /\n  size?: 'large' | 'medium' | 'small'\n  \n  /   Whether the input is disabled @default false /\n  disabled?: boolean\n  \n  /   Error message to display @default '' /\n  error?: string\n  \n  /   Success message to display @default '' /\n  success?: string\n  \n  /   Icon to display before the input text @default '' /\n  prefixIcon?: string\n  \n  /   Unique identifier for the input field @required /\n  id: string\n  \n  /   Array of options to display in the dropdown @required /\n  items: Array<{ label: string; value?: string; selected?: boolean }>\n  \n  /   Whether the input text can be edited manually @default false /\n  editable?: boolean\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  label: 'Label',\n  placeholder: 'Placeholder',\n  size: 'medium',\n  disabled: false,\n  error: '',\n  success: '',\n  prefixIcon: '',\n  editable: false\n})\n\n/   Define emitted events /\nconst emit = defineEmits<{\n  /   Emitted when the input value changes @param value - The new input value /\n  'update:modelValue': [value: string]\n  \n  /   Emitted when an option is selected from the dropdown @param item - The selected item object /\n  'select': [item: { label: string; value?: string }]\n}>()\n\n/   Whether the dropdown is currently expanded @private /\nconst isExpanded = ref(false)\n\n/   The value to display in the input field @private /\nconst displayValue = computed(() => {\n  return props.modelValue || props.placeholder || ''\n})\n\n/   Processed options with selected state @private",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "toggleDropdown": {
+        "name": "toggleDropdown",
+        "description": "@component Dropdown @description An input component with dropdown menu functionality. Combines the functionality of an input field with selectable options. @example <Dropdown id=\"dropdown1\" v-model=\"selectedOption\" :items=\"[{label: 'Option 1'}, {label: 'Option 2'}]\" label=\"Select an option\" /> /\n\ninterface Props {\n  /   Current value of the input field @required /\n  modelValue: string\n  \n  /   Label text for the input field @default 'Label' /\n  label?: string\n  \n  /   Placeholder text for the input field @default 'Placeholder' /\n  placeholder?: string\n  \n  /   Size of the input field @default 'medium' /\n  size?: 'large' | 'medium' | 'small'\n  \n  /   Whether the input is disabled @default false /\n  disabled?: boolean\n  \n  /   Error message to display @default '' /\n  error?: string\n  \n  /   Success message to display @default '' /\n  success?: string\n  \n  /   Icon to display before the input text @default '' /\n  prefixIcon?: string\n  \n  /   Unique identifier for the input field @required /\n  id: string\n  \n  /   Array of options to display in the dropdown @required /\n  items: Array<{ label: string; value?: string; selected?: boolean }>\n  \n  /   Whether the input text can be edited manually @default false /\n  editable?: boolean\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  label: 'Label',\n  placeholder: 'Placeholder',\n  size: 'medium',\n  disabled: false,\n  error: '',\n  success: '',\n  prefixIcon: '',\n  editable: false\n})\n\n/   Define emitted events /\nconst emit = defineEmits<{\n  /   Emitted when the input value changes @param value - The new input value /\n  'update:modelValue': [value: string]\n  \n  /   Emitted when an option is selected from the dropdown @param item - The selected item object /\n  'select': [item: { label: string; value?: string }]\n}>()\n\n/   Whether the dropdown is currently expanded @private /\nconst isExpanded = ref(false)\n\n/   The value to display in the input field @private /\nconst displayValue = computed(() => {\n  return props.modelValue || props.placeholder || ''\n})\n\n/   Processed options with selected state @private /\nconst processedOptions = computed(() => {\n  return props.items.map(item => ({\n    ...item,\n    selected: item.label === props.modelValue\n  }))\n})\n\n/   Toggle the dropdown expansion state"
+      },
+      "handleInputChange": {
+        "name": "handleInputChange",
+        "description": "@component Dropdown @description An input component with dropdown menu functionality. Combines the functionality of an input field with selectable options. @example <Dropdown id=\"dropdown1\" v-model=\"selectedOption\" :items=\"[{label: 'Option 1'}, {label: 'Option 2'}]\" label=\"Select an option\" /> /\n\ninterface Props {\n  /   Current value of the input field @required /\n  modelValue: string\n  \n  /   Label text for the input field @default 'Label' /\n  label?: string\n  \n  /   Placeholder text for the input field @default 'Placeholder' /\n  placeholder?: string\n  \n  /   Size of the input field @default 'medium' /\n  size?: 'large' | 'medium' | 'small'\n  \n  /   Whether the input is disabled @default false /\n  disabled?: boolean\n  \n  /   Error message to display @default '' /\n  error?: string\n  \n  /   Success message to display @default '' /\n  success?: string\n  \n  /   Icon to display before the input text @default '' /\n  prefixIcon?: string\n  \n  /   Unique identifier for the input field @required /\n  id: string\n  \n  /   Array of options to display in the dropdown @required /\n  items: Array<{ label: string; value?: string; selected?: boolean }>\n  \n  /   Whether the input text can be edited manually @default false /\n  editable?: boolean\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  label: 'Label',\n  placeholder: 'Placeholder',\n  size: 'medium',\n  disabled: false,\n  error: '',\n  success: '',\n  prefixIcon: '',\n  editable: false\n})\n\n/   Define emitted events /\nconst emit = defineEmits<{\n  /   Emitted when the input value changes @param value - The new input value /\n  'update:modelValue': [value: string]\n  \n  /   Emitted when an option is selected from the dropdown @param item - The selected item object /\n  'select': [item: { label: string; value?: string }]\n}>()\n\n/   Whether the dropdown is currently expanded @private /\nconst isExpanded = ref(false)\n\n/   The value to display in the input field @private /\nconst displayValue = computed(() => {\n  return props.modelValue || props.placeholder || ''\n})\n\n/   Processed options with selected state @private /\nconst processedOptions = computed(() => {\n  return props.items.map(item => ({\n    ...item,\n    selected: item.label === props.modelValue\n  }))\n})\n\n/   Toggle the dropdown expansion state /\nconst toggleDropdown = () => {\n  if (!props.disabled) {\n    isExpanded.value = !isExpanded.value\n  }\n}\n\n/   Handle input field value changes @param value - The new input value",
+        "params": [
+          {
+            "name": "value",
+            "type": "string",
+            "description": "Parameter value for the method",
+            "required": true
+          }
+        ]
+      },
+      "handleItemClick": {
+        "name": "handleItemClick",
+        "description": "@component Dropdown @description An input component with dropdown menu functionality. Combines the functionality of an input field with selectable options. @example <Dropdown id=\"dropdown1\" v-model=\"selectedOption\" :items=\"[{label: 'Option 1'}, {label: 'Option 2'}]\" label=\"Select an option\" /> /\n\ninterface Props {\n  /   Current value of the input field @required /\n  modelValue: string\n  \n  /   Label text for the input field @default 'Label' /\n  label?: string\n  \n  /   Placeholder text for the input field @default 'Placeholder' /\n  placeholder?: string\n  \n  /   Size of the input field @default 'medium' /\n  size?: 'large' | 'medium' | 'small'\n  \n  /   Whether the input is disabled @default false /\n  disabled?: boolean\n  \n  /   Error message to display @default '' /\n  error?: string\n  \n  /   Success message to display @default '' /\n  success?: string\n  \n  /   Icon to display before the input text @default '' /\n  prefixIcon?: string\n  \n  /   Unique identifier for the input field @required /\n  id: string\n  \n  /   Array of options to display in the dropdown @required /\n  items: Array<{ label: string; value?: string; selected?: boolean }>\n  \n  /   Whether the input text can be edited manually @default false /\n  editable?: boolean\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  label: 'Label',\n  placeholder: 'Placeholder',\n  size: 'medium',\n  disabled: false,\n  error: '',\n  success: '',\n  prefixIcon: '',\n  editable: false\n})\n\n/   Define emitted events /\nconst emit = defineEmits<{\n  /   Emitted when the input value changes @param value - The new input value /\n  'update:modelValue': [value: string]\n  \n  /   Emitted when an option is selected from the dropdown @param item - The selected item object /\n  'select': [item: { label: string; value?: string }]\n}>()\n\n/   Whether the dropdown is currently expanded @private /\nconst isExpanded = ref(false)\n\n/   The value to display in the input field @private /\nconst displayValue = computed(() => {\n  return props.modelValue || props.placeholder || ''\n})\n\n/   Processed options with selected state @private /\nconst processedOptions = computed(() => {\n  return props.items.map(item => ({\n    ...item,\n    selected: item.label === props.modelValue\n  }))\n})\n\n/   Toggle the dropdown expansion state /\nconst toggleDropdown = () => {\n  if (!props.disabled) {\n    isExpanded.value = !isExpanded.value\n  }\n}\n\n/   Handle input field value changes @param value - The new input value /\nconst handleInputChange = (value: string) => {\n  if (props.editable) {\n    emit('update:modelValue', value)\n  }\n}\n\n/   Handle item selection from the dropdown @param item - The selected item",
+        "params": [
+          {
+            "name": "item",
+            "type": "{ label",
+            "description": "Parameter item for the method",
+            "required": true
+          }
+        ]
+      },
+      "handleClickOutside": {
+        "name": "handleClickOutside",
+        "description": "@component Dropdown @description An input component with dropdown menu functionality. Combines the functionality of an input field with selectable options. @example <Dropdown id=\"dropdown1\" v-model=\"selectedOption\" :items=\"[{label: 'Option 1'}, {label: 'Option 2'}]\" label=\"Select an option\" /> /\n\ninterface Props {\n  /   Current value of the input field @required /\n  modelValue: string\n  \n  /   Label text for the input field @default 'Label' /\n  label?: string\n  \n  /   Placeholder text for the input field @default 'Placeholder' /\n  placeholder?: string\n  \n  /   Size of the input field @default 'medium' /\n  size?: 'large' | 'medium' | 'small'\n  \n  /   Whether the input is disabled @default false /\n  disabled?: boolean\n  \n  /   Error message to display @default '' /\n  error?: string\n  \n  /   Success message to display @default '' /\n  success?: string\n  \n  /   Icon to display before the input text @default '' /\n  prefixIcon?: string\n  \n  /   Unique identifier for the input field @required /\n  id: string\n  \n  /   Array of options to display in the dropdown @required /\n  items: Array<{ label: string; value?: string; selected?: boolean }>\n  \n  /   Whether the input text can be edited manually @default false /\n  editable?: boolean\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  label: 'Label',\n  placeholder: 'Placeholder',\n  size: 'medium',\n  disabled: false,\n  error: '',\n  success: '',\n  prefixIcon: '',\n  editable: false\n})\n\n/   Define emitted events /\nconst emit = defineEmits<{\n  /   Emitted when the input value changes @param value - The new input value /\n  'update:modelValue': [value: string]\n  \n  /   Emitted when an option is selected from the dropdown @param item - The selected item object /\n  'select': [item: { label: string; value?: string }]\n}>()\n\n/   Whether the dropdown is currently expanded @private /\nconst isExpanded = ref(false)\n\n/   The value to display in the input field @private /\nconst displayValue = computed(() => {\n  return props.modelValue || props.placeholder || ''\n})\n\n/   Processed options with selected state @private /\nconst processedOptions = computed(() => {\n  return props.items.map(item => ({\n    ...item,\n    selected: item.label === props.modelValue\n  }))\n})\n\n/   Toggle the dropdown expansion state /\nconst toggleDropdown = () => {\n  if (!props.disabled) {\n    isExpanded.value = !isExpanded.value\n  }\n}\n\n/   Handle input field value changes @param value - The new input value /\nconst handleInputChange = (value: string) => {\n  if (props.editable) {\n    emit('update:modelValue', value)\n  }\n}\n\n/   Handle item selection from the dropdown @param item - The selected item /\nconst handleItemClick = (item: { label: string; value?: string }) => {\n  emit('update:modelValue', item.label)\n  emit('select', item)\n  isExpanded.value = false\n}\n\n/   Close dropdown when clicking outside @private",
+        "params": [
+          {
+            "name": "event",
+            "type": "MouseEvent",
+            "description": "Parameter event for the method",
+            "required": true
+          }
+        ]
+      }
+    },
+    "computed": {
+      "displayValue": {
+        "name": "displayValue",
+        "type": "any",
+        "description": "@component Dropdown @description An input component with dropdown menu functionality. Combines the functionality of an input field with selectable options. @example <Dropdown id=\"dropdown1\" v-model=\"selectedOption\" :items=\"[{label: 'Option 1'}, {label: 'Option 2'}]\" label=\"Select an option\" /> /\n\ninterface Props {\n  /   Current value of the input field @required /\n  modelValue: string\n  \n  /   Label text for the input field @default 'Label' /\n  label?: string\n  \n  /   Placeholder text for the input field @default 'Placeholder' /\n  placeholder?: string\n  \n  /   Size of the input field @default 'medium' /\n  size?: 'large' | 'medium' | 'small'\n  \n  /   Whether the input is disabled @default false /\n  disabled?: boolean\n  \n  /   Error message to display @default '' /\n  error?: string\n  \n  /   Success message to display @default '' /\n  success?: string\n  \n  /   Icon to display before the input text @default '' /\n  prefixIcon?: string\n  \n  /   Unique identifier for the input field @required /\n  id: string\n  \n  /   Array of options to display in the dropdown @required /\n  items: Array<{ label: string; value?: string; selected?: boolean }>\n  \n  /   Whether the input text can be edited manually @default false /\n  editable?: boolean\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  label: 'Label',\n  placeholder: 'Placeholder',\n  size: 'medium',\n  disabled: false,\n  error: '',\n  success: '',\n  prefixIcon: '',\n  editable: false\n})\n\n/   Define emitted events /\nconst emit = defineEmits<{\n  /   Emitted when the input value changes @param value - The new input value /\n  'update:modelValue': [value: string]\n  \n  /   Emitted when an option is selected from the dropdown @param item - The selected item object /\n  'select': [item: { label: string; value?: string }]\n}>()\n\n/   Whether the dropdown is currently expanded @private /\nconst isExpanded = ref(false)\n\n/   The value to display in the input field @private"
+      },
+      "processedOptions": {
+        "name": "processedOptions",
+        "type": "any",
+        "description": "@component Dropdown @description An input component with dropdown menu functionality. Combines the functionality of an input field with selectable options. @example <Dropdown id=\"dropdown1\" v-model=\"selectedOption\" :items=\"[{label: 'Option 1'}, {label: 'Option 2'}]\" label=\"Select an option\" /> /\n\ninterface Props {\n  /   Current value of the input field @required /\n  modelValue: string\n  \n  /   Label text for the input field @default 'Label' /\n  label?: string\n  \n  /   Placeholder text for the input field @default 'Placeholder' /\n  placeholder?: string\n  \n  /   Size of the input field @default 'medium' /\n  size?: 'large' | 'medium' | 'small'\n  \n  /   Whether the input is disabled @default false /\n  disabled?: boolean\n  \n  /   Error message to display @default '' /\n  error?: string\n  \n  /   Success message to display @default '' /\n  success?: string\n  \n  /   Icon to display before the input text @default '' /\n  prefixIcon?: string\n  \n  /   Unique identifier for the input field @required /\n  id: string\n  \n  /   Array of options to display in the dropdown @required /\n  items: Array<{ label: string; value?: string; selected?: boolean }>\n  \n  /   Whether the input text can be edited manually @default false /\n  editable?: boolean\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  label: 'Label',\n  placeholder: 'Placeholder',\n  size: 'medium',\n  disabled: false,\n  error: '',\n  success: '',\n  prefixIcon: '',\n  editable: false\n})\n\n/   Define emitted events /\nconst emit = defineEmits<{\n  /   Emitted when the input value changes @param value - The new input value /\n  'update:modelValue': [value: string]\n  \n  /   Emitted when an option is selected from the dropdown @param item - The selected item object /\n  'select': [item: { label: string; value?: string }]\n}>()\n\n/   Whether the dropdown is currently expanded @private /\nconst isExpanded = ref(false)\n\n/   The value to display in the input field @private /\nconst displayValue = computed(() => {\n  return props.modelValue || props.placeholder || ''\n})\n\n/   Processed options with selected state @private"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimIcon",
+    "description": "@component Icon @description Renders SVG icons from the Feather icon library with customizable size and color. This component provides a simple way to include consistent icons throughout the application.  @example <Icon name=\"user\" /> @example <Icon name=\"heart\" size=\"16\" color=\"red\" /> @example <Icon name=\"star\" size=\"32\" /> @see {@link https://feathericons.com/|Feather Icons} for available icon names",
+    "props": {},
+    "events": {},
+    "methods": {
+      "colorValue": {
+        "name": "colorValue",
+        "description": "@component Icon @description Renders SVG icons from the Feather icon library with customizable size and color. This component provides a simple way to include consistent icons throughout the application.  @example <Icon name=\"user\" /> @example <Icon name=\"heart\" size=\"16\" color=\"red\" /> @example <Icon name=\"star\" size=\"32\" /> @see {@link https://feathericons.com/|Feather Icons} for available icon names /\n\n/   Icon component props @typedef {Object} IconProps /\ninterface Props {\n  /   Name of the icon from Feather icon set @type {string} @required @see {@link https://feathericons.com/|Available Icons} /\n  name: string\n  \n  /   Size of the icon in pixels @type {number} @default 24 /\n  size?: number\n  \n  /   Color variant of the icon @type {'currentColor' | 'strong' | 'defined' | 'soft' | 'disabled' | 'discrete'} @default 'currentColor' /\n  color?: 'currentColor' | 'strong' | 'defined' | 'soft' | 'disabled' | 'discrete'\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  size: 24,\n  color: 'currentColor'\n})\n\n/   Computed color value based on the color variant @returns {string} CSS color value",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "svgContent": {
+        "name": "svgContent",
+        "description": "@component Icon @description Renders SVG icons from the Feather icon library with customizable size and color. This component provides a simple way to include consistent icons throughout the application.  @example <Icon name=\"user\" /> @example <Icon name=\"heart\" size=\"16\" color=\"red\" /> @example <Icon name=\"star\" size=\"32\" /> @see {@link https://feathericons.com/|Feather Icons} for available icon names /\n\n/   Icon component props @typedef {Object} IconProps /\ninterface Props {\n  /   Name of the icon from Feather icon set @type {string} @required @see {@link https://feathericons.com/|Available Icons} /\n  name: string\n  \n  /   Size of the icon in pixels @type {number} @default 24 /\n  size?: number\n  \n  /   Color variant of the icon @type {'currentColor' | 'strong' | 'defined' | 'soft' | 'disabled' | 'discrete'} @default 'currentColor' /\n  color?: 'currentColor' | 'strong' | 'defined' | 'soft' | 'disabled' | 'discrete'\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  size: 24,\n  color: 'currentColor'\n})\n\n/   Computed color value based on the color variant @returns {string} CSS color value /\nconst colorValue = computed(() => {\n  switch (props.color) {\n    case 'strong':\n      return 'var(--glim-color-text-strong)'\n    case 'defined':\n      return 'var(--glim-color-text-defined)'\n    case 'soft':\n      return 'var(--glim-color-text-soft)'\n    case 'disabled':\n      return 'var(--glim-color-text-disabled)'\n    case 'discrete':\n      return 'var(--glim-color-text-discrete)'\n    default:\n      return 'currentColor'\n  }\n})\n\n/   Computed SVG content based on the icon name @returns {string} Raw SVG HTML string or empty string if icon not found",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      }
+    },
+    "computed": {
+      "colorValue": {
+        "name": "colorValue",
+        "type": "any",
+        "description": "@component Icon @description Renders SVG icons from the Feather icon library with customizable size and color. This component provides a simple way to include consistent icons throughout the application.  @example <Icon name=\"user\" /> @example <Icon name=\"heart\" size=\"16\" color=\"red\" /> @example <Icon name=\"star\" size=\"32\" /> @see {@link https://feathericons.com/|Feather Icons} for available icon names /\n\n/   Icon component props @typedef {Object} IconProps /\ninterface Props {\n  /   Name of the icon from Feather icon set @type {string} @required @see {@link https://feathericons.com/|Available Icons} /\n  name: string\n  \n  /   Size of the icon in pixels @type {number} @default 24 /\n  size?: number\n  \n  /   Color variant of the icon @type {'currentColor' | 'strong' | 'defined' | 'soft' | 'disabled' | 'discrete'} @default 'currentColor' /\n  color?: 'currentColor' | 'strong' | 'defined' | 'soft' | 'disabled' | 'discrete'\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  size: 24,\n  color: 'currentColor'\n})\n\n/   Computed color value based on the color variant @returns {string} CSS color value"
+      },
+      "svgContent": {
+        "name": "svgContent",
+        "type": "any",
+        "description": "@component Icon @description Renders SVG icons from the Feather icon library with customizable size and color. This component provides a simple way to include consistent icons throughout the application.  @example <Icon name=\"user\" /> @example <Icon name=\"heart\" size=\"16\" color=\"red\" /> @example <Icon name=\"star\" size=\"32\" /> @see {@link https://feathericons.com/|Feather Icons} for available icon names /\n\n/   Icon component props @typedef {Object} IconProps /\ninterface Props {\n  /   Name of the icon from Feather icon set @type {string} @required @see {@link https://feathericons.com/|Available Icons} /\n  name: string\n  \n  /   Size of the icon in pixels @type {number} @default 24 /\n  size?: number\n  \n  /   Color variant of the icon @type {'currentColor' | 'strong' | 'defined' | 'soft' | 'disabled' | 'discrete'} @default 'currentColor' /\n  color?: 'currentColor' | 'strong' | 'defined' | 'soft' | 'disabled' | 'discrete'\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  size: 24,\n  color: 'currentColor'\n})\n\n/   Computed color value based on the color variant @returns {string} CSS color value /\nconst colorValue = computed(() => {\n  switch (props.color) {\n    case 'strong':\n      return 'var(--glim-color-text-strong)'\n    case 'defined':\n      return 'var(--glim-color-text-defined)'\n    case 'soft':\n      return 'var(--glim-color-text-soft)'\n    case 'disabled':\n      return 'var(--glim-color-text-disabled)'\n    case 'discrete':\n      return 'var(--glim-color-text-discrete)'\n    default:\n      return 'currentColor'\n  }\n})\n\n/   Computed SVG content based on the icon name @returns {string} Raw SVG HTML string or empty string if icon not found"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimImage",
+    "description": "@component Image @description A responsive image component that maintains aspect ratio and supports various image formats. Handles different aspect ratios and orientations, and provides a placeholder when no image is available.  @example <Image src=\"/images/photo.jpg\" alt=\"A beautiful landscape\" /> @example <Image src=\"/images/portrait.jpg\" aspectRatio=\"4x5\" orientation=\"portrait\" /> @example <Image backgroundColor=\"#f0f0f0\" aspectRatio=\"1x1\" />",
+    "props": {},
+    "events": {},
+    "methods": {},
+    "computed": {
+      "isPortrait": {
+        "name": "isPortrait",
+        "type": "any",
+        "description": "@component Image @description A responsive image component that maintains aspect ratio and supports various image formats. Handles different aspect ratios and orientations, and provides a placeholder when no image is available.  @example <Image src=\"/images/photo.jpg\" alt=\"A beautiful landscape\" /> @example <Image src=\"/images/portrait.jpg\" aspectRatio=\"4x5\" orientation=\"portrait\" /> @example <Image backgroundColor=\"#f0f0f0\" aspectRatio=\"1x1\" /> /\n\n/   Valid aspect ratio options @typedef {'1x1'|'16x9'|'4x3'|'4x5'|'3x2'|'5x4'} AspectRatio /\ntype AspectRatio = '1x1' | '16x9' | '4x3' | '4x5' | '3x2' | '5x4'\n\n/   Image orientation options @typedef {'landscape'|'portrait'} Orientation /\ntype Orientation = 'landscape' | 'portrait'\n\n/   Image component props @typedef {Object} ImageProps /\ninterface Props {\n  /   Source URL for the image @type {string} @default 'https://cdn.cosmos.so/962784fe-d06b-4f23-84e5-f0a1efd3a6d6.?format=jpeg' /\n  src?: string\n  \n  /   Alt text for accessibility @type {string} @default 'Image Alt' /\n  alt?: string\n  \n  /   Aspect ratio of the image container @type {AspectRatio} @default '16x9' /\n  aspectRatio?: AspectRatio\n  \n  /   Orientation of the image @type {Orientation} @default 'landscape' /\n  orientation?: Orientation\n  \n  /   Background color when no image is provided Can be any valid CSS color value @type {string} @default 'transparent' /\n  backgroundColor?: string\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  src: 'https://cdn.cosmos.so/962784fe-d06b-4f23-84e5-f0a1efd3a6d6.?format=jpeg',\n  alt: 'Image Alt',\n  aspectRatio: '16x9',\n  orientation: 'landscape',\n  backgroundColor: 'transparent'\n})\n\n/   Computed property to determine if the image should be displayed in portrait mode @returns {boolean} True if orientation is 'portrait'"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimInput",
+    "description": "@component Input @description A form input component with support for various states, icons, and validation. Provides a consistent interface for text input with built-in error handling and visual feedback.  @example <Input v-model=\"modelValue\" label=\"Username\" placeholder=\"Enter username\" /> @example <Input v-model=\"email\" type=\"email\" prefixIcon=\"mail\" error=\"Invalid email format\" /> @example <Input v-model=\"search\" suffixIcon=\"search\" showClearButton />",
+    "props": {},
+    "events": {},
+    "methods": {
+      "clearInput": {
+        "name": "clearInput",
+        "description": "@component Input @description A form input component with support for various states, icons, and validation. Provides a consistent interface for text input with built-in error handling and visual feedback.  @example <Input v-model=\"modelValue\" label=\"Username\" placeholder=\"Enter username\" /> @example <Input v-model=\"email\" type=\"email\" prefixIcon=\"mail\" error=\"Invalid email format\" /> @example <Input v-model=\"search\" suffixIcon=\"search\" showClearButton /> /\n\n/   Input component props @typedef {Object} InputProps /\ninterface Props {\n  /   Current value of the input (v-model) @type {string} @required /\n  modelValue: string\n  \n  /   Label text displayed above the input @type {string} @default 'Label' /\n  label?: string\n  \n  /   Placeholder text displayed when input is empty @type {string} @default 'Placeholder' /\n  placeholder?: string\n  \n  /   HTML input type (text, password, email, etc.) @type {string} @default 'text' /\n  type?: string\n  \n  /   Size variant of the input @type {'large'|'medium'|'small'} @default 'medium' /\n  size?: 'large' | 'medium' | 'small'\n  \n  /   Whether the input is disabled @type {boolean} @default false /\n  disabled?: boolean\n  \n  /   Whether the input is read-only @type {boolean} @default false /\n  readonly?: boolean\n  \n  /   Error message to display below the input @type {string} @default '' /\n  error?: string\n  \n  /   Success message to display below the input @type {string} @default '' /\n  success?: string\n  \n  /   Icon to display at the start of the input @type {string} @default '' /\n  prefixIcon?: string\n  \n  /   Icon to display at the end of the input @type {string} @default '' /\n  suffixIcon?: string\n  \n  /   Unique identifier for the input element Used for accessibility (connecting label and error messages) @type {string} @required /\n  id: string\n  \n  /   Whether to show a clear button when the input has a value @type {boolean} @default false /\n  showClearButton?: boolean\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  label: 'Label',\n  placeholder: 'Placeholder',\n  type: 'text',\n  size: 'medium',\n  disabled: false,\n  readonly: false,\n  error: '',\n  success: '',\n  prefixIcon: '',\n  suffixIcon: '',\n  showClearButton: false\n})\n\n/   Events emitted by the Input component @typedef {Object} InputEmits @property {Function} update:modelValue - Emitted when the input value changes /\nconst emit = defineEmits(['update:modelValue'])\n\n/   Local computed value for v-model binding @private /\nconst localValue = computed({\n  get: () => props.modelValue,\n  set: (value: string) => emit('update:modelValue', value)\n})\n\n/   Clears the input value"
+      },
+      "iconSize": {
+        "name": "iconSize",
+        "description": "@component Input @description A form input component with support for various states, icons, and validation. Provides a consistent interface for text input with built-in error handling and visual feedback.  @example <Input v-model=\"modelValue\" label=\"Username\" placeholder=\"Enter username\" /> @example <Input v-model=\"email\" type=\"email\" prefixIcon=\"mail\" error=\"Invalid email format\" /> @example <Input v-model=\"search\" suffixIcon=\"search\" showClearButton /> /\n\n/   Input component props @typedef {Object} InputProps /\ninterface Props {\n  /   Current value of the input (v-model) @type {string} @required /\n  modelValue: string\n  \n  /   Label text displayed above the input @type {string} @default 'Label' /\n  label?: string\n  \n  /   Placeholder text displayed when input is empty @type {string} @default 'Placeholder' /\n  placeholder?: string\n  \n  /   HTML input type (text, password, email, etc.) @type {string} @default 'text' /\n  type?: string\n  \n  /   Size variant of the input @type {'large'|'medium'|'small'} @default 'medium' /\n  size?: 'large' | 'medium' | 'small'\n  \n  /   Whether the input is disabled @type {boolean} @default false /\n  disabled?: boolean\n  \n  /   Whether the input is read-only @type {boolean} @default false /\n  readonly?: boolean\n  \n  /   Error message to display below the input @type {string} @default '' /\n  error?: string\n  \n  /   Success message to display below the input @type {string} @default '' /\n  success?: string\n  \n  /   Icon to display at the start of the input @type {string} @default '' /\n  prefixIcon?: string\n  \n  /   Icon to display at the end of the input @type {string} @default '' /\n  suffixIcon?: string\n  \n  /   Unique identifier for the input element Used for accessibility (connecting label and error messages) @type {string} @required /\n  id: string\n  \n  /   Whether to show a clear button when the input has a value @type {boolean} @default false /\n  showClearButton?: boolean\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  label: 'Label',\n  placeholder: 'Placeholder',\n  type: 'text',\n  size: 'medium',\n  disabled: false,\n  readonly: false,\n  error: '',\n  success: '',\n  prefixIcon: '',\n  suffixIcon: '',\n  showClearButton: false\n})\n\n/   Events emitted by the Input component @typedef {Object} InputEmits @property {Function} update:modelValue - Emitted when the input value changes /\nconst emit = defineEmits(['update:modelValue'])\n\n/   Local computed value for v-model binding @private /\nconst localValue = computed({\n  get: () => props.modelValue,\n  set: (value: string) => emit('update:modelValue', value)\n})\n\n/   Clears the input value /\nconst clearInput = () => {\n  emit('update:modelValue', '')\n}\n\n/   Computed property for icon size based on input size @returns {number} Size of icon in pixels",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      }
+    },
+    "computed": {
+      "iconSize": {
+        "name": "iconSize",
+        "type": "any",
+        "description": "@component Input @description A form input component with support for various states, icons, and validation. Provides a consistent interface for text input with built-in error handling and visual feedback.  @example <Input v-model=\"modelValue\" label=\"Username\" placeholder=\"Enter username\" /> @example <Input v-model=\"email\" type=\"email\" prefixIcon=\"mail\" error=\"Invalid email format\" /> @example <Input v-model=\"search\" suffixIcon=\"search\" showClearButton /> /\n\n/   Input component props @typedef {Object} InputProps /\ninterface Props {\n  /   Current value of the input (v-model) @type {string} @required /\n  modelValue: string\n  \n  /   Label text displayed above the input @type {string} @default 'Label' /\n  label?: string\n  \n  /   Placeholder text displayed when input is empty @type {string} @default 'Placeholder' /\n  placeholder?: string\n  \n  /   HTML input type (text, password, email, etc.) @type {string} @default 'text' /\n  type?: string\n  \n  /   Size variant of the input @type {'large'|'medium'|'small'} @default 'medium' /\n  size?: 'large' | 'medium' | 'small'\n  \n  /   Whether the input is disabled @type {boolean} @default false /\n  disabled?: boolean\n  \n  /   Whether the input is read-only @type {boolean} @default false /\n  readonly?: boolean\n  \n  /   Error message to display below the input @type {string} @default '' /\n  error?: string\n  \n  /   Success message to display below the input @type {string} @default '' /\n  success?: string\n  \n  /   Icon to display at the start of the input @type {string} @default '' /\n  prefixIcon?: string\n  \n  /   Icon to display at the end of the input @type {string} @default '' /\n  suffixIcon?: string\n  \n  /   Unique identifier for the input element Used for accessibility (connecting label and error messages) @type {string} @required /\n  id: string\n  \n  /   Whether to show a clear button when the input has a value @type {boolean} @default false /\n  showClearButton?: boolean\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  label: 'Label',\n  placeholder: 'Placeholder',\n  type: 'text',\n  size: 'medium',\n  disabled: false,\n  readonly: false,\n  error: '',\n  success: '',\n  prefixIcon: '',\n  suffixIcon: '',\n  showClearButton: false\n})\n\n/   Events emitted by the Input component @typedef {Object} InputEmits @property {Function} update:modelValue - Emitted when the input value changes /\nconst emit = defineEmits(['update:modelValue'])\n\n/   Local computed value for v-model binding @private /\nconst localValue = computed({\n  get: () => props.modelValue,\n  set: (value: string) => emit('update:modelValue', value)\n})\n\n/   Clears the input value /\nconst clearInput = () => {\n  emit('update:modelValue', '')\n}\n\n/   Computed property for icon size based on input size @returns {number} Size of icon in pixels"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimMenu",
+    "description": "No description provided",
+    "props": {
+      "items": {
+        "name": "items",
+        "type": "MenuItem[]",
+        "description": "The items prop",
+        "required": true
+      }
+    },
+    "events": {
+      "click": {
+        "name": "click",
+        "description": "Emitted when click occurs",
+        "params": [
+          {
+            "name": "item",
+            "type": "MenuItem",
+            "description": "Parameter item for the event"
+          }
+        ]
+      }
+    },
+    "methods": {},
+    "computed": {},
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimMessage",
+    "description": "No description provided",
+    "props": {
+      "title": {
+        "name": "title",
+        "type": "String",
+        "required": true,
+        "default": "Title",
+        "description": "The title prop"
+      },
+      "description": {
+        "name": "description",
+        "type": "String",
+        "required": true,
+        "default": "Description",
+        "description": "The description prop"
+      },
+      "variant": {
+        "name": "variant",
+        "type": "String",
+        "required": false,
+        "default": "info",
+        "description": "The variant prop"
+      }
+    },
+    "events": {},
+    "methods": {
+      "getIconFromVariant": {
+        "name": "getIconFromVariant",
+        "description": "Method getIconFromVariant",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      }
+    },
+    "computed": {
+      "getIconFromVariant": {
+        "name": "getIconFromVariant",
+        "type": "any",
+        "description": "Computed property getIconFromVariant"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimProgressBar",
+    "description": "Current progress value (0-100)",
+    "props": {
+      "value": {
+        "name": "value",
+        "type": "Number",
+        "required": true,
+        "default": "0",
+        "description": "The value prop"
+      },
+      "showValue": {
+        "name": "showValue",
+        "type": "Boolean",
+        "required": false,
+        "default": "false",
+        "description": "The showValue prop"
+      },
+      "size": {
+        "name": "size",
+        "type": "String",
+        "required": false,
+        "default": "medium",
+        "description": "The size prop"
+      },
+      "indeterminate": {
+        "name": "indeterminate",
+        "type": "Boolean",
+        "required": false,
+        "default": "false",
+        "description": "The indeterminate prop"
+      },
+      "height": {
+        "name": "height",
+        "type": "any",
+        "required": false,
+        "default": "8px",
+        "description": "The height prop"
+      }
+    },
+    "events": {},
+    "methods": {},
+    "computed": {
+      "progress": {
+        "name": "progress",
+        "type": "any",
+        "description": "Computed property progress"
+      },
+      "looping": {
+        "name": "looping",
+        "type": "any",
+        "description": "Computed property looping"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimSegmentedControls",
+    "description": "@component SegmentedControls @description A component that provides a set of mutually exclusive options, similar to radio buttons but with a cohesive, button-like appearance. Commonly used for switching between views or toggling related options. @example <SegmentedControls v-model=\"selectedOption\" :items=\"[ { id: 'day', label: 'Day' }, { id: 'week', label: 'Week' }, { id: 'month', label: 'Month', disabled: true } ]\" size=\"default\" />",
+    "props": {},
+    "events": {},
+    "methods": {
+      "updateBackgroundPosition": {
+        "name": "updateBackgroundPosition",
+        "description": "Method updateBackgroundPosition"
+      },
+      "defaultModelValue": {
+        "name": "defaultModelValue",
+        "description": "Method defaultModelValue",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "selectedValue": {
+        "name": "selectedValue",
+        "description": "Method selectedValue",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "selectSegment": {
+        "name": "selectSegment",
+        "description": "@component SegmentedControls @description A component that provides a set of mutually exclusive options, similar to radio buttons but with a cohesive, button-like appearance. Commonly used for switching between views or toggling related options. @example <SegmentedControls v-model=\"selectedOption\" :items=\"[ { id: 'day', label: 'Day' }, { id: 'week', label: 'Week' }, { id: 'month', label: 'Month', disabled: true } ]\" size=\"default\" /> /\n\nimport { computed, onMounted, ref, watch, nextTick } from 'vue';\n\ninterface Props {\n  /   The selected value, should match an item's id /\n  modelValue: string | number | undefined;\n  \n  /   Array of items to display as segments /\n  items: Array<{\n    /   Unique identifier for the segment /\n    id: string | number;\n    \n    /   Display text for the segment /\n    label: string;\n    \n    /   Whether the segment is disabled /\n    disabled?: boolean;\n  }>;\n  \n  /   Size of the segmented controls @default 'default' /\n  size?: 'small' | 'default';\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  modelValue: undefined,\n  size: 'default',\n  items: () => [\n    { id: 'option1', label: 'Option 1' },\n    { id: 'option2', label: 'Option 2' },\n    { id: 'option3', label: 'Option 3' }\n  ]\n});\n\n// Add computed property for default value\nconst defaultModelValue = computed(() => {\n  return props.items[0]?.id || ''\n})\n\n// Add computed property for selected value\nconst selectedValue = computed(() => {\n  // If modelValue is undefined, use the first item's id\n  if (props.modelValue === undefined) {\n    return defaultModelValue.value\n  }\n  return props.modelValue\n})\n\n/   Define emitted events /\nconst emit = defineEmits<{\n  /   Emitted when the selected segment changes @param value - The id of the selected segment /\n  'update:modelValue': [value: string | number];\n}>();\n\n/   Select a segment by its id @param id - The id of the segment to select",
+        "params": [
+          {
+            "name": "id",
+            "type": "string | number",
+            "description": "Parameter id for the method",
+            "required": true
+          }
+        ]
+      },
+      "backgroundStyle": {
+        "name": "backgroundStyle",
+        "description": "Method backgroundStyle",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "items": {
+        "name": "items",
+        "description": "Method items",
+        "params": [
+          {
+            "name": "'.segmented-controls__item'",
+            "type": "any",
+            "description": "Parameter '.segmented-controls__item' for the method",
+            "required": true
+          }
+        ]
+      }
+    },
+    "computed": {
+      "defaultModelValue": {
+        "name": "defaultModelValue",
+        "type": "any",
+        "description": "Computed property defaultModelValue"
+      },
+      "selectedValue": {
+        "name": "selectedValue",
+        "type": "any",
+        "description": "Computed property selectedValue"
+      },
+      "backgroundStyle": {
+        "name": "backgroundStyle",
+        "type": "any",
+        "description": "Computed property backgroundStyle"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimSlider",
+    "description": "An interactive slider component for selecting a value within a range. Features a draggable thumb, visual track/rail, and tooltip showing the current value.",
+    "props": {},
+    "events": {},
+    "methods": {
+      "percentage": {
+        "name": "percentage",
+        "description": "Method percentage",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "displayValue": {
+        "name": "displayValue",
+        "description": "Method displayValue",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "startDrag": {
+        "name": "startDrag",
+        "description": "An interactive slider component for selecting a value within a range. Features a draggable thumb, visual track/rail, and tooltip showing the current value. /\n\ninterface SliderProps {\n  /  The current value of the slider /\n  progress: number;\n  \n  /  The minimum allowed value /\n  min?: number;\n  \n  /  The maximum allowed value /\n  max?: number;\n  \n  /  The step increment value /\n  step?: number;\n  \n  /  Whether the slider is disabled /\n  isDisabled?: boolean;\n}\n\nconst props = withDefaults(defineProps<SliderProps>(), {\n  min: 0,\n  max: 100,\n  step: 1,\n  isDisabled: false\n});\n\nconst emit = defineEmits<{\n  /  Emitted continuously as the slider value changes /\n  'update:progress': [value: number];\n  \n  /  Emitted when the user stops dragging the slider /\n  'change': [value: number];\n}>();\n\nconst internalValue = ref(props.progress);\nconst isDragging = ref(false);\nconst sliderEl = ref<HTMLElement | null>(null);\nconst railEl = ref<HTMLElement | null>(null);\n\nwatch(() => props.progress, (newVal) => {\n  internalValue.value = newVal;\n});\n\nconst percentage = computed(() => {\n  return ((internalValue.value - props.min) / (props.max - props.min)) 100;\n});\n\nconst displayValue = computed(() => {\n  return Math.round(internalValue.value);\n});\n\n/   Handles the start of a drag operation",
+        "params": [
+          {
+            "name": "event",
+            "type": "MouseEvent | TouchEvent",
+            "description": "Parameter event for the method",
+            "required": true
+          }
+        ]
+      },
+      "updateValueFromEvent": {
+        "name": "updateValueFromEvent",
+        "description": "An interactive slider component for selecting a value within a range. Features a draggable thumb, visual track/rail, and tooltip showing the current value. /\n\ninterface SliderProps {\n  /  The current value of the slider /\n  progress: number;\n  \n  /  The minimum allowed value /\n  min?: number;\n  \n  /  The maximum allowed value /\n  max?: number;\n  \n  /  The step increment value /\n  step?: number;\n  \n  /  Whether the slider is disabled /\n  isDisabled?: boolean;\n}\n\nconst props = withDefaults(defineProps<SliderProps>(), {\n  min: 0,\n  max: 100,\n  step: 1,\n  isDisabled: false\n});\n\nconst emit = defineEmits<{\n  /  Emitted continuously as the slider value changes /\n  'update:progress': [value: number];\n  \n  /  Emitted when the user stops dragging the slider /\n  'change': [value: number];\n}>();\n\nconst internalValue = ref(props.progress);\nconst isDragging = ref(false);\nconst sliderEl = ref<HTMLElement | null>(null);\nconst railEl = ref<HTMLElement | null>(null);\n\nwatch(() => props.progress, (newVal) => {\n  internalValue.value = newVal;\n});\n\nconst percentage = computed(() => {\n  return ((internalValue.value - props.min) / (props.max - props.min)) 100;\n});\n\nconst displayValue = computed(() => {\n  return Math.round(internalValue.value);\n});\n\n/   Handles the start of a drag operation /\nconst startDrag = (event: MouseEvent | TouchEvent) => {\n  if (props.isDisabled) return;\n  \n  event.preventDefault();\n  isDragging.value = true;\n  \n  updateValueFromEvent(event);\n  \n  document.addEventListener('mousemove', onDrag);\n  document.addEventListener('touchmove', onDrag, { passive: false });\n  document.addEventListener('mouseup', stopDrag);\n  document.addEventListener('touchend', stopDrag);\n};\n\n/   Updates the slider value based on the current pointer position",
+        "params": [
+          {
+            "name": "event",
+            "type": "MouseEvent | TouchEvent",
+            "description": "Parameter event for the method",
+            "required": true
+          }
+        ]
+      },
+      "onDrag": {
+        "name": "onDrag",
+        "description": "An interactive slider component for selecting a value within a range. Features a draggable thumb, visual track/rail, and tooltip showing the current value. /\n\ninterface SliderProps {\n  /  The current value of the slider /\n  progress: number;\n  \n  /  The minimum allowed value /\n  min?: number;\n  \n  /  The maximum allowed value /\n  max?: number;\n  \n  /  The step increment value /\n  step?: number;\n  \n  /  Whether the slider is disabled /\n  isDisabled?: boolean;\n}\n\nconst props = withDefaults(defineProps<SliderProps>(), {\n  min: 0,\n  max: 100,\n  step: 1,\n  isDisabled: false\n});\n\nconst emit = defineEmits<{\n  /  Emitted continuously as the slider value changes /\n  'update:progress': [value: number];\n  \n  /  Emitted when the user stops dragging the slider /\n  'change': [value: number];\n}>();\n\nconst internalValue = ref(props.progress);\nconst isDragging = ref(false);\nconst sliderEl = ref<HTMLElement | null>(null);\nconst railEl = ref<HTMLElement | null>(null);\n\nwatch(() => props.progress, (newVal) => {\n  internalValue.value = newVal;\n});\n\nconst percentage = computed(() => {\n  return ((internalValue.value - props.min) / (props.max - props.min)) 100;\n});\n\nconst displayValue = computed(() => {\n  return Math.round(internalValue.value);\n});\n\n/   Handles the start of a drag operation /\nconst startDrag = (event: MouseEvent | TouchEvent) => {\n  if (props.isDisabled) return;\n  \n  event.preventDefault();\n  isDragging.value = true;\n  \n  updateValueFromEvent(event);\n  \n  document.addEventListener('mousemove', onDrag);\n  document.addEventListener('touchmove', onDrag, { passive: false });\n  document.addEventListener('mouseup', stopDrag);\n  document.addEventListener('touchend', stopDrag);\n};\n\n/   Updates the slider value based on the current pointer position /\nconst updateValueFromEvent = (event: MouseEvent | TouchEvent) => {\n  if (!railEl.value) return;\n  \n  const rect = railEl.value.getBoundingClientRect();\n  \n  let clientX: number;\n  if ('clientX' in event) {\n    clientX = event.clientX;\n  } else {\n    clientX = event.touches[0].clientX;\n  }\n  \n  let position = (clientX - rect.left) / rect.width;\n  position = Math.max(0, Math.min(position, 1));\n  \n  const newValue = props.min + position (props.max - props.min);\n  const steppedValue = Math.round(newValue / props.step) props.step;\n  const clampedValue = Math.max(props.min, Math.min(props.max, steppedValue));\n  \n  internalValue.value = clampedValue;\n  emit('update:progress', clampedValue);\n};\n\n/   Handles the drag movement",
+        "params": [
+          {
+            "name": "event",
+            "type": "MouseEvent | TouchEvent",
+            "description": "Parameter event for the method",
+            "required": true
+          }
+        ]
+      },
+      "stopDrag": {
+        "name": "stopDrag",
+        "description": "An interactive slider component for selecting a value within a range. Features a draggable thumb, visual track/rail, and tooltip showing the current value. /\n\ninterface SliderProps {\n  /  The current value of the slider /\n  progress: number;\n  \n  /  The minimum allowed value /\n  min?: number;\n  \n  /  The maximum allowed value /\n  max?: number;\n  \n  /  The step increment value /\n  step?: number;\n  \n  /  Whether the slider is disabled /\n  isDisabled?: boolean;\n}\n\nconst props = withDefaults(defineProps<SliderProps>(), {\n  min: 0,\n  max: 100,\n  step: 1,\n  isDisabled: false\n});\n\nconst emit = defineEmits<{\n  /  Emitted continuously as the slider value changes /\n  'update:progress': [value: number];\n  \n  /  Emitted when the user stops dragging the slider /\n  'change': [value: number];\n}>();\n\nconst internalValue = ref(props.progress);\nconst isDragging = ref(false);\nconst sliderEl = ref<HTMLElement | null>(null);\nconst railEl = ref<HTMLElement | null>(null);\n\nwatch(() => props.progress, (newVal) => {\n  internalValue.value = newVal;\n});\n\nconst percentage = computed(() => {\n  return ((internalValue.value - props.min) / (props.max - props.min)) 100;\n});\n\nconst displayValue = computed(() => {\n  return Math.round(internalValue.value);\n});\n\n/   Handles the start of a drag operation /\nconst startDrag = (event: MouseEvent | TouchEvent) => {\n  if (props.isDisabled) return;\n  \n  event.preventDefault();\n  isDragging.value = true;\n  \n  updateValueFromEvent(event);\n  \n  document.addEventListener('mousemove', onDrag);\n  document.addEventListener('touchmove', onDrag, { passive: false });\n  document.addEventListener('mouseup', stopDrag);\n  document.addEventListener('touchend', stopDrag);\n};\n\n/   Updates the slider value based on the current pointer position /\nconst updateValueFromEvent = (event: MouseEvent | TouchEvent) => {\n  if (!railEl.value) return;\n  \n  const rect = railEl.value.getBoundingClientRect();\n  \n  let clientX: number;\n  if ('clientX' in event) {\n    clientX = event.clientX;\n  } else {\n    clientX = event.touches[0].clientX;\n  }\n  \n  let position = (clientX - rect.left) / rect.width;\n  position = Math.max(0, Math.min(position, 1));\n  \n  const newValue = props.min + position (props.max - props.min);\n  const steppedValue = Math.round(newValue / props.step) props.step;\n  const clampedValue = Math.max(props.min, Math.min(props.max, steppedValue));\n  \n  internalValue.value = clampedValue;\n  emit('update:progress', clampedValue);\n};\n\n/   Handles the drag movement /\nconst onDrag = (event: MouseEvent | TouchEvent) => {\n  if (!isDragging.value) return;\n  \n  if ('touches' in event) {\n    event.preventDefault();\n  }\n  \n  updateValueFromEvent(event);\n};\n\n/   Stops the dragging operation and cleans up event listeners"
+      }
+    },
+    "computed": {
+      "percentage": {
+        "name": "percentage",
+        "type": "any",
+        "description": "Computed property percentage"
+      },
+      "displayValue": {
+        "name": "displayValue",
+        "type": "any",
+        "description": "Computed property displayValue"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimSpinner",
+    "description": "@component Spinner @description A loading spinner component that provides visual feedback during asynchronous operations. The spinner can be customized with different sizes and colors.  @example <Spinner /> @example <Spinner size=\"32px\" color=\"var(--glim-color-primary)\" /> @example <Spinner size=\"16\" color=\"#ff0000\" />",
+    "props": {
+      "size": {
+        "name": "size",
+        "type": "any",
+        "required": false,
+        "default": "24",
+        "description": "The size prop"
+      },
+      "color": {
+        "name": "color",
+        "type": "String",
+        "required": false,
+        "default": "currentColor",
+        "description": "The color prop"
+      }
+    },
+    "events": {},
+    "methods": {},
+    "computed": {},
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimTabs",
+    "description": "@component Tabs @description A tabbed interface component that allows switching between different content sections. Features an animated indicator that follows the selected tab.  @example <Tabs v-model=\"activeTab\" :items=\"[{id: 'tab1', label: 'First Tab'}, {id: 'tab2', label: 'Second Tab'}]\" /> @example <Tabs v-model=\"activeSection\" :items=\"tabs\" /> @example <Tabs v-model=\"view\" :items=\"[{id: 1, label: 'Details'}, {id: 2, label: 'Reviews', disabled: true}]\" />",
+    "props": {},
+    "events": {},
+    "methods": {
+      "defaultModelValue": {
+        "name": "defaultModelValue",
+        "description": "@component Tabs @description A tabbed interface component that allows switching between different content sections. Features an animated indicator that follows the selected tab.  @example <Tabs v-model=\"activeTab\" :items=\"[{id: 'tab1', label: 'First Tab'}, {id: 'tab2', label: 'Second Tab'}]\" /> @example <Tabs v-model=\"activeSection\" :items=\"tabs\" /> @example <Tabs v-model=\"view\" :items=\"[{id: 1, label: 'Details'}, {id: 2, label: 'Reviews', disabled: true}]\" /> /\n\n/   Tab item interface @typedef {Object} TabItem @property {string|number} id - Unique identifier for the tab @property {string} label - Display text for the tab @property {boolean} [disabled] - Whether the tab is disabled /\n\n/   Tabs component props @typedef {Object} TabsProps /\ninterface TabItem {\n  id: string | number;\n  label: string;\n  disabled?: boolean;\n}\n\ninterface Props {\n  /   Currently selected tab ID (v-model) @type {string|number} @required /\n  modelValue: string | number;\n  \n  /   Array of tab items to display @type {TabItem[]} @required /\n  items: TabItem[];\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  modelValue: 'tab1',\n  items: () => [\n    { id: 'tab1', label: 'Tab 1' },\n    { id: 'tab2', label: 'Tab 2' },\n    { id: 'tab3', label: 'Tab 3' }\n  ]\n});\n\n/   Events emitted by the Tabs component @typedef {Object} TabsEmits @property {Function} update:modelValue - Emitted when a tab is selected /\nconst emit = defineEmits<{\n  'update:modelValue': [value: string | number];\n}>();\n\n/   Add computed property for default value",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "selectedTab": {
+        "name": "selectedTab",
+        "description": "@component Tabs @description A tabbed interface component that allows switching between different content sections. Features an animated indicator that follows the selected tab.  @example <Tabs v-model=\"activeTab\" :items=\"[{id: 'tab1', label: 'First Tab'}, {id: 'tab2', label: 'Second Tab'}]\" /> @example <Tabs v-model=\"activeSection\" :items=\"tabs\" /> @example <Tabs v-model=\"view\" :items=\"[{id: 1, label: 'Details'}, {id: 2, label: 'Reviews', disabled: true}]\" /> /\n\n/   Tab item interface @typedef {Object} TabItem @property {string|number} id - Unique identifier for the tab @property {string} label - Display text for the tab @property {boolean} [disabled] - Whether the tab is disabled /\n\n/   Tabs component props @typedef {Object} TabsProps /\ninterface TabItem {\n  id: string | number;\n  label: string;\n  disabled?: boolean;\n}\n\ninterface Props {\n  /   Currently selected tab ID (v-model) @type {string|number} @required /\n  modelValue: string | number;\n  \n  /   Array of tab items to display @type {TabItem[]} @required /\n  items: TabItem[];\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  modelValue: 'tab1',\n  items: () => [\n    { id: 'tab1', label: 'Tab 1' },\n    { id: 'tab2', label: 'Tab 2' },\n    { id: 'tab3', label: 'Tab 3' }\n  ]\n});\n\n/   Events emitted by the Tabs component @typedef {Object} TabsEmits @property {Function} update:modelValue - Emitted when a tab is selected /\nconst emit = defineEmits<{\n  'update:modelValue': [value: string | number];\n}>();\n\n/   Add computed property for default value /\nconst defaultModelValue = computed(() => {\n  return props.items[0]?.id || 'tab1'\n})\n\n/   Computed value to ensure consistent type handling",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "selectTab": {
+        "name": "selectTab",
+        "description": "@component Tabs @description A tabbed interface component that allows switching between different content sections. Features an animated indicator that follows the selected tab.  @example <Tabs v-model=\"activeTab\" :items=\"[{id: 'tab1', label: 'First Tab'}, {id: 'tab2', label: 'Second Tab'}]\" /> @example <Tabs v-model=\"activeSection\" :items=\"tabs\" /> @example <Tabs v-model=\"view\" :items=\"[{id: 1, label: 'Details'}, {id: 2, label: 'Reviews', disabled: true}]\" /> /\n\n/   Tab item interface @typedef {Object} TabItem @property {string|number} id - Unique identifier for the tab @property {string} label - Display text for the tab @property {boolean} [disabled] - Whether the tab is disabled /\n\n/   Tabs component props @typedef {Object} TabsProps /\ninterface TabItem {\n  id: string | number;\n  label: string;\n  disabled?: boolean;\n}\n\ninterface Props {\n  /   Currently selected tab ID (v-model) @type {string|number} @required /\n  modelValue: string | number;\n  \n  /   Array of tab items to display @type {TabItem[]} @required /\n  items: TabItem[];\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  modelValue: 'tab1',\n  items: () => [\n    { id: 'tab1', label: 'Tab 1' },\n    { id: 'tab2', label: 'Tab 2' },\n    { id: 'tab3', label: 'Tab 3' }\n  ]\n});\n\n/   Events emitted by the Tabs component @typedef {Object} TabsEmits @property {Function} update:modelValue - Emitted when a tab is selected /\nconst emit = defineEmits<{\n  'update:modelValue': [value: string | number];\n}>();\n\n/   Add computed property for default value /\nconst defaultModelValue = computed(() => {\n  return props.items[0]?.id || 'tab1'\n})\n\n/   Computed value to ensure consistent type handling /\nconst selectedTab = computed(() => {\n  // If modelValue is undefined, use the first item's id\n  if (props.modelValue === undefined) {\n    return defaultModelValue.value\n  }\n  // If items are numbers, convert modelValue to number\n  if (props.items.length > 0 && typeof props.items[0].id === 'number') {\n    return Number(props.modelValue)\n  }\n  return String(props.modelValue)\n});\n\n/   Selects a tab by its ID and emits the update event Does nothing if the tab is disabled @param {string|number} id - ID of the tab to select",
+        "params": [
+          {
+            "name": "id",
+            "type": "string | number",
+            "description": "Parameter id for the method",
+            "required": true
+          }
+        ]
+      }
+    },
+    "computed": {
+      "defaultModelValue": {
+        "name": "defaultModelValue",
+        "type": "any",
+        "description": "@component Tabs @description A tabbed interface component that allows switching between different content sections. Features an animated indicator that follows the selected tab.  @example <Tabs v-model=\"activeTab\" :items=\"[{id: 'tab1', label: 'First Tab'}, {id: 'tab2', label: 'Second Tab'}]\" /> @example <Tabs v-model=\"activeSection\" :items=\"tabs\" /> @example <Tabs v-model=\"view\" :items=\"[{id: 1, label: 'Details'}, {id: 2, label: 'Reviews', disabled: true}]\" /> /\n\n/   Tab item interface @typedef {Object} TabItem @property {string|number} id - Unique identifier for the tab @property {string} label - Display text for the tab @property {boolean} [disabled] - Whether the tab is disabled /\n\n/   Tabs component props @typedef {Object} TabsProps /\ninterface TabItem {\n  id: string | number;\n  label: string;\n  disabled?: boolean;\n}\n\ninterface Props {\n  /   Currently selected tab ID (v-model) @type {string|number} @required /\n  modelValue: string | number;\n  \n  /   Array of tab items to display @type {TabItem[]} @required /\n  items: TabItem[];\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  modelValue: 'tab1',\n  items: () => [\n    { id: 'tab1', label: 'Tab 1' },\n    { id: 'tab2', label: 'Tab 2' },\n    { id: 'tab3', label: 'Tab 3' }\n  ]\n});\n\n/   Events emitted by the Tabs component @typedef {Object} TabsEmits @property {Function} update:modelValue - Emitted when a tab is selected /\nconst emit = defineEmits<{\n  'update:modelValue': [value: string | number];\n}>();\n\n/   Add computed property for default value"
+      },
+      "selectedTab": {
+        "name": "selectedTab",
+        "type": "any",
+        "description": "@component Tabs @description A tabbed interface component that allows switching between different content sections. Features an animated indicator that follows the selected tab.  @example <Tabs v-model=\"activeTab\" :items=\"[{id: 'tab1', label: 'First Tab'}, {id: 'tab2', label: 'Second Tab'}]\" /> @example <Tabs v-model=\"activeSection\" :items=\"tabs\" /> @example <Tabs v-model=\"view\" :items=\"[{id: 1, label: 'Details'}, {id: 2, label: 'Reviews', disabled: true}]\" /> /\n\n/   Tab item interface @typedef {Object} TabItem @property {string|number} id - Unique identifier for the tab @property {string} label - Display text for the tab @property {boolean} [disabled] - Whether the tab is disabled /\n\n/   Tabs component props @typedef {Object} TabsProps /\ninterface TabItem {\n  id: string | number;\n  label: string;\n  disabled?: boolean;\n}\n\ninterface Props {\n  /   Currently selected tab ID (v-model) @type {string|number} @required /\n  modelValue: string | number;\n  \n  /   Array of tab items to display @type {TabItem[]} @required /\n  items: TabItem[];\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  modelValue: 'tab1',\n  items: () => [\n    { id: 'tab1', label: 'Tab 1' },\n    { id: 'tab2', label: 'Tab 2' },\n    { id: 'tab3', label: 'Tab 3' }\n  ]\n});\n\n/   Events emitted by the Tabs component @typedef {Object} TabsEmits @property {Function} update:modelValue - Emitted when a tab is selected /\nconst emit = defineEmits<{\n  'update:modelValue': [value: string | number];\n}>();\n\n/   Add computed property for default value /\nconst defaultModelValue = computed(() => {\n  return props.items[0]?.id || 'tab1'\n})\n\n/   Computed value to ensure consistent type handling"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimToggle",
+    "description": "@component Toggle @description A toggle switch component for boolean inputs, similar to a checkbox but with a sliding visual design. Used for enabling/disabling settings or features.  @example <Toggle v-model=\"enabled\" /> @example <Toggle v-model=\"darkMode\" size=\"small\" /> @example <Toggle v-model=\"notifications\" disabled />",
+    "props": {},
+    "events": {},
+    "methods": {
+      "isActive": {
+        "name": "isActive",
+        "description": "@component Toggle @description A toggle switch component for boolean inputs, similar to a checkbox but with a sliding visual design. Used for enabling/disabling settings or features.  @example <Toggle v-model=\"enabled\" /> @example <Toggle v-model=\"darkMode\" size=\"small\" /> @example <Toggle v-model=\"notifications\" disabled /> /\n\n/   Toggle component props @typedef {Object} ToggleProps /\nimport { computed } from 'vue';\n\ninterface Props {\n  /   Current state of the toggle (v-model) @type {boolean|string} @required /\n  modelValue: boolean | string;\n  \n  /   Whether the toggle is disabled @type {boolean} @default false /\n  disabled?: boolean;\n  \n  /   Size variant for the toggle @type {'small'|'default'} @default 'default' /\n  size?: 'small' | 'default';\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  disabled: false,\n  size: 'default'\n});\n\n/   Events emitted by the Toggle component @typedef {Object} ToggleEmits @property {Function} update:modelValue - Emitted when the toggle state changes /\nconst emit = defineEmits<{\n  'update:modelValue': [value: boolean];\n}>();\n\n/   Computed value to handle both boolean and string inputs",
+        "params": [
+          {
+            "name": "(",
+            "type": "any",
+            "description": "Parameter ( for the method",
+            "required": true
+          }
+        ]
+      },
+      "toggle": {
+        "name": "toggle",
+        "description": "@component Toggle @description A toggle switch component for boolean inputs, similar to a checkbox but with a sliding visual design. Used for enabling/disabling settings or features.  @example <Toggle v-model=\"enabled\" /> @example <Toggle v-model=\"darkMode\" size=\"small\" /> @example <Toggle v-model=\"notifications\" disabled /> /\n\n/   Toggle component props @typedef {Object} ToggleProps /\nimport { computed } from 'vue';\n\ninterface Props {\n  /   Current state of the toggle (v-model) @type {boolean|string} @required /\n  modelValue: boolean | string;\n  \n  /   Whether the toggle is disabled @type {boolean} @default false /\n  disabled?: boolean;\n  \n  /   Size variant for the toggle @type {'small'|'default'} @default 'default' /\n  size?: 'small' | 'default';\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  disabled: false,\n  size: 'default'\n});\n\n/   Events emitted by the Toggle component @typedef {Object} ToggleEmits @property {Function} update:modelValue - Emitted when the toggle state changes /\nconst emit = defineEmits<{\n  'update:modelValue': [value: boolean];\n}>();\n\n/   Computed value to handle both boolean and string inputs /\nconst isActive = computed(() => {\n  if (typeof props.modelValue === 'string') {\n    return props.modelValue === 'true';\n  }\n  return props.modelValue;\n});\n\n/   Toggles the switch state when clicked Does nothing if the toggle is disabled"
+      }
+    },
+    "computed": {
+      "isActive": {
+        "name": "isActive",
+        "type": "any",
+        "description": "@component Toggle @description A toggle switch component for boolean inputs, similar to a checkbox but with a sliding visual design. Used for enabling/disabling settings or features.  @example <Toggle v-model=\"enabled\" /> @example <Toggle v-model=\"darkMode\" size=\"small\" /> @example <Toggle v-model=\"notifications\" disabled /> /\n\n/   Toggle component props @typedef {Object} ToggleProps /\nimport { computed } from 'vue';\n\ninterface Props {\n  /   Current state of the toggle (v-model) @type {boolean|string} @required /\n  modelValue: boolean | string;\n  \n  /   Whether the toggle is disabled @type {boolean} @default false /\n  disabled?: boolean;\n  \n  /   Size variant for the toggle @type {'small'|'default'} @default 'default' /\n  size?: 'small' | 'default';\n}\n\nconst props = withDefaults(defineProps<Props>(), {\n  disabled: false,\n  size: 'default'\n});\n\n/   Events emitted by the Toggle component @typedef {Object} ToggleEmits @property {Function} update:modelValue - Emitted when the toggle state changes /\nconst emit = defineEmits<{\n  'update:modelValue': [value: boolean];\n}>();\n\n/   Computed value to handle both boolean and string inputs"
+      }
+    },
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  },
+  {
+    "name": "GlimTooltip",
+    "description": "@component Tooltip @description A tooltip component that displays additional information when hovering over or focusing on an element. Tooltips can be positioned in different directions and can contain text or custom content.  @example <Tooltip text=\"This is a tooltip\" position=\"top\" :visible=\"visible\" /> @example <Tooltip position=\"bottom\" :visible=\"showHelp\"><span>Custom tooltip content</span></Tooltip> @example <Tooltip position=\"left\" :visible=\"true\">Help text with <strong>formatting</strong></Tooltip>",
+    "props": {},
+    "events": {},
+    "methods": {},
+    "computed": {},
+    "tokens": {
+      "colors": [],
+      "dimensions": [],
+      "strings": []
+    }
+  }
+]

@@ -113,3 +113,68 @@ The package uses Vite for building and includes:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Component Documentation
+
+This library includes an automatic documentation generator that extracts component API information from the source code.
+
+### Generating Documentation
+
+Run the following command to generate documentation:
+
+```bash
+npm run generate-docs
+```
+
+This will analyze all components and create a `component-docs.json` file in the `docs` directory.
+
+### CLI Options
+
+The documentation generator supports several command-line options:
+
+```bash
+npm run generate-docs -- [options]
+
+Options:
+  -i, --input <path>     Path to components directory (default: src/components)
+  -o, --output <path>    Output directory for generated docs (default: docs)
+  -f, --filename <name>  Name of the output file (default: component-docs.json)
+  -h, --help             Show this help message
+```
+
+### Documentation Format
+
+The documentation is generated in JSON format following the ComponentAPI structure defined in `api/types/component-api.ts`. For each component, it extracts:
+
+- Component name and description
+- Props with types, default values, and descriptions
+- Events with parameter information
+- Methods with parameter and return type information
+- Computed properties
+- Design tokens (if defined)
+
+### Improving Documentation
+
+To improve the documentation quality, consider adding JSDoc comments to your components:
+
+```vue
+<script setup lang="ts">
+/**
+ * A button component with various styles and states.
+ */
+interface Props {
+  /** The variant style of the button */
+  variant?: 'primary' | 'secondary' | 'tertiary';
+  
+  /** Whether the button is in a loading state */
+  loading?: boolean;
+}
+
+defineProps<Props>();
+
+/** Emitted when the button is clicked */
+const emit = defineEmits<{
+  (e: 'click', value: string): void
+}>();
+</script>
+```
