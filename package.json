@@ -43,7 +43,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "prepare": "npm run build",
     "version": "npm run build && git add -A dist",
-    "generate-docs": "tsx scripts/generate-docs.ts"
+    "generate-docs": "tsx scripts/generate-docs.ts",
+    "generate-css-vars": "node scripts/generate-css-vars.js",
+    "generate-token-data": "node scripts/generate-token-data.js"
   },
   "peerDependencies": {
     "vue": "^3.3.0"
