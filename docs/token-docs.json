@@ -1,2272 +1,3323 @@
 {
-  "variables": [
-    {
-      "id": 1,
-      "name": "--glim-color-neutral-solid-1000",
-      "value": {
-        "base": "rgba(16, 16, 16, 1)",
-        "light": "rgba(16, 16, 16, 1)",
-        "dark": "rgba(16, 16, 16, 1)"
-      }
-    },
-    {
-      "id": 2,
-      "name": "--glim-color-neutral-solid-950",
-      "value": {
-        "base": "rgba(26, 26, 26, 1)",
-        "light": "rgba(26, 26, 26, 1)",
-        "dark": "rgba(26, 26, 26, 1)"
-      }
-    },
-    {
-      "id": 3,
-      "name": "--glim-color-neutral-solid-900",
-      "value": {
-        "base": "rgba(36, 36, 36, 1)",
-        "light": "rgba(36, 36, 36, 1)",
-        "dark": "rgba(36, 36, 36, 1)"
-      }
-    },
-    {
-      "id": 4,
-      "name": "--glim-color-neutral-solid-850",
-      "value": {
-        "base": "rgba(50, 50, 50, 1)",
-        "light": "rgba(50, 50, 50, 1)",
-        "dark": "rgba(50, 50, 50, 1)"
-      }
-    },
-    {
-      "id": 5,
-      "name": "--glim-color-neutral-solid-800",
-      "value": {
-        "base": "rgba(67, 67, 67, 1)",
-        "light": "rgba(67, 67, 67, 1)",
-        "dark": "rgba(67, 67, 67, 1)"
-      }
-    },
-    {
-      "id": 6,
-      "name": "--glim-color-neutral-solid-700",
-      "value": {
-        "base": "rgba(87, 87, 87, 1)",
-        "light": "rgba(87, 87, 87, 1)",
-        "dark": "rgba(87, 87, 87, 1)"
-      }
-    },
-    {
-      "id": 7,
-      "name": "--glim-color-neutral-solid-600",
-      "value": {
-        "base": "rgba(112, 112, 112, 1)",
-        "light": "rgba(112, 112, 112, 1)",
-        "dark": "rgba(112, 112, 112, 1)"
-      }
-    },
-    {
-      "id": 8,
-      "name": "--glim-color-neutral-solid-500",
-      "value": {
-        "base": "rgba(136, 136, 136, 1)",
-        "light": "rgba(136, 136, 136, 1)",
-        "dark": "rgba(136, 136, 136, 1)"
-      }
-    },
-    {
-      "id": 9,
-      "name": "--glim-color-neutral-solid-400",
-      "value": {
-        "base": "rgba(161, 161, 161, 1)",
-        "light": "rgba(161, 161, 161, 1)",
-        "dark": "rgba(161, 161, 161, 1)"
-      }
-    },
-    {
-      "id": 10,
-      "name": "--glim-color-neutral-solid-300",
-      "value": {
-        "base": "rgba(188, 188, 188, 1)",
-        "light": "rgba(188, 188, 188, 1)",
-        "dark": "rgba(188, 188, 188, 1)"
-      }
-    },
-    {
-      "id": 11,
-      "name": "--glim-color-neutral-solid-200",
-      "value": {
-        "base": "rgba(207, 207, 207, 1)",
-        "light": "rgba(207, 207, 207, 1)",
-        "dark": "rgba(207, 207, 207, 1)"
-      }
-    },
-    {
-      "id": 12,
-      "name": "--glim-color-neutral-solid-150",
-      "value": {
-        "base": "rgba(228, 228, 228, 1)",
-        "light": "rgba(228, 228, 228, 1)",
-        "dark": "rgba(228, 228, 228, 1)"
-      }
-    },
-    {
-      "id": 13,
-      "name": "--glim-color-neutral-solid-100",
-      "value": {
-        "base": "rgba(239, 239, 239, 1)",
-        "light": "rgba(239, 239, 239, 1)",
-        "dark": "rgba(239, 239, 239, 1)"
-      }
-    },
-    {
-      "id": 14,
-      "name": "--glim-color-neutral-solid-50",
-      "value": {
-        "base": "rgba(249, 249, 249, 1)",
-        "light": "rgba(249, 249, 249, 1)",
-        "dark": "rgba(249, 249, 249, 1)"
-      }
-    },
-    {
-      "id": 15,
-      "name": "--glim-color-neutral-opacity-950",
-      "value": {
-        "base": "rgba(17, 17, 17, 1)",
-        "light": "rgba(17, 17, 17, 1)",
-        "dark": "rgba(17, 17, 17, 1)"
-      }
-    },
-    {
-      "id": 16,
-      "name": "--glim-color-neutral-opacity-700",
-      "value": {
-        "base": "rgba(26, 26, 26, 0.76)",
-        "light": "rgba(26, 26, 26, 0.76)",
-        "dark": "rgba(26, 26, 26, 0.76)"
-      }
-    },
-    {
-      "id": 17,
-      "name": "--glim-color-neutral-opacity-600",
-      "value": {
-        "base": "rgba(26, 26, 26, 0.62)",
-        "light": "rgba(26, 26, 26, 0.62)",
-        "dark": "rgba(26, 26, 26, 0.62)"
-      }
-    },
-    {
-      "id": 18,
-      "name": "--glim-color-neutral-opacity-500",
-      "value": {
-        "base": "rgba(26, 26, 26, 0.5)",
-        "light": "rgba(26, 26, 26, 0.5)",
-        "dark": "rgba(26, 26, 26, 0.5)"
-      }
-    },
-    {
-      "id": 19,
-      "name": "--glim-color-neutral-opacity-400",
-      "value": {
-        "base": "rgba(26, 26, 26, 0.36)",
-        "light": "rgba(26, 26, 26, 0.36)",
-        "dark": "rgba(26, 26, 26, 0.36)"
-      }
-    },
-    {
-      "id": 20,
-      "name": "--glim-color-neutral-opacity-200",
-      "value": {
-        "base": "rgba(26, 26, 26, 0.25)",
-        "light": "rgba(26, 26, 26, 0.25)",
-        "dark": "rgba(26, 26, 26, 0.25)"
-      }
-    },
-    {
-      "id": 21,
-      "name": "--glim-color-neutral-opacity-100",
-      "value": {
-        "base": "rgba(26, 26, 26, 0.14)",
-        "light": "rgba(26, 26, 26, 0.14)",
-        "dark": "rgba(26, 26, 26, 0.14)"
-      }
-    },
-    {
-      "id": 22,
-      "name": "--glim-color-neutral-opacity-inverse-950",
-      "value": {
-        "base": "rgba(255, 255, 255, 1)",
-        "light": "rgba(255, 255, 255, 1)",
-        "dark": "rgba(255, 255, 255, 1)"
-      }
-    },
-    {
-      "id": 23,
-      "name": "--glim-color-brand-primary-1000",
-      "value": {
-        "base": "rgba(48, 0, 78, 1)",
-        "light": "rgba(48, 0, 78, 1)",
-        "dark": "rgba(48, 0, 78, 1)"
-      }
-    },
-    {
-      "id": 24,
-      "name": "--glim-color-brand-secondary-1000",
-      "value": {
-        "base": "rgba(0, 2, 26, 1)",
-        "light": "rgba(0, 2, 26, 1)",
-        "dark": "rgba(0, 2, 26, 1)"
-      }
-    },
-    {
-      "id": 25,
-      "name": "--glim-color-brand-secondary-950",
-      "value": {
-        "base": "rgba(0, 2, 36, 1)",
-        "light": "rgba(0, 2, 36, 1)",
-        "dark": "rgba(0, 2, 36, 1)"
-      }
-    },
-    {
-      "id": 26,
-      "name": "--glim-color-brand-secondary-900",
-      "value": {
-        "base": "var(--glim-color-brand-secondary-900)",
-        "light": "var(--glim-color-brand-secondary-900)",
-        "dark": "var(--glim-color-brand-secondary-900)"
-      }
-    },
-    {
-      "id": 27,
-      "name": "--glim-color-brand-secondary-850",
-      "value": {
-        "base": "rgba(4, 8, 67, 1)",
-        "light": "rgba(4, 8, 67, 1)",
-        "dark": "rgba(4, 8, 67, 1)"
-      }
-    },
-    {
-      "id": 28,
-      "name": "--glim-color-brand-secondary-800",
-      "value": {
-        "base": "var(--glim-color-brand-secondary-800)",
-        "light": "var(--glim-color-brand-secondary-800)",
-        "dark": "var(--glim-color-brand-secondary-800)"
-      }
-    },
-    {
-      "id": 29,
-      "name": "--glim-color-brand-secondary-700",
-      "value": {
-        "base": "var(--glim-color-brand-secondary-700)",
-        "light": "var(--glim-color-brand-secondary-700)",
-        "dark": "var(--glim-color-brand-secondary-700)"
-      }
-    },
-    {
-      "id": 30,
-      "name": "--glim-color-brand-secondary-600",
-      "value": {
-        "base": "var(--glim-color-brand-secondary-600)",
-        "light": "var(--glim-color-brand-secondary-600)",
-        "dark": "var(--glim-color-brand-secondary-600)"
-      }
-    },
-    {
-      "id": 31,
-      "name": "--glim-color-brand-secondary-500",
-      "value": {
-        "base": "var(--glim-color-brand-secondary-500)",
-        "light": "var(--glim-color-brand-secondary-500)",
-        "dark": "var(--glim-color-brand-secondary-500)"
-      }
-    },
-    {
-      "id": 32,
-      "name": "--glim-color-brand-secondary-400",
-      "value": {
-        "base": "var(--glim-color-brand-secondary-400)",
-        "light": "var(--glim-color-brand-secondary-400)",
-        "dark": "var(--glim-color-brand-secondary-400)"
-      }
-    },
-    {
-      "id": 33,
-      "name": "--glim-color-brand-secondary-300",
-      "value": {
-        "base": "var(--glim-color-brand-secondary-300)",
-        "light": "var(--glim-color-brand-secondary-300)",
-        "dark": "var(--glim-color-brand-secondary-300)"
-      }
-    },
-    {
-      "id": 34,
-      "name": "--glim-color-brand-secondary-200",
-      "value": {
-        "base": "var(--glim-color-brand-secondary-200)",
-        "light": "var(--glim-color-brand-secondary-200)",
-        "dark": "var(--glim-color-brand-secondary-200)"
-      }
-    },
-    {
-      "id": 35,
-      "name": "--glim-color-brand-secondary-150",
-      "value": {
-        "base": "rgba(122, 131, 255, 1)",
-        "light": "rgba(122, 131, 255, 1)",
-        "dark": "rgba(122, 131, 255, 1)"
-      }
-    },
-    {
-      "id": 36,
-      "name": "--glim-color-brand-secondary-100",
-      "value": {
-        "base": "var(--glim-color-brand-secondary-100)",
-        "light": "var(--glim-color-brand-secondary-100)",
-        "dark": "var(--glim-color-brand-secondary-100)"
-      }
-    },
-    {
-      "id": 37,
-      "name": "--glim-color-brand-secondary-50",
-      "value": {
-        "base": "var(--glim-color-brand-secondary-50)",
-        "light": "var(--glim-color-brand-secondary-50)",
-        "dark": "var(--glim-color-brand-secondary-50)"
-      }
-    },
-    {
-      "id": 38,
-      "name": "--glim-color-brand-primary-950",
-      "value": {
-        "base": "rgba(62, 0, 100, 1)",
-        "light": "rgba(62, 0, 100, 1)",
-        "dark": "rgba(62, 0, 100, 1)"
-      }
-    },
-    {
-      "id": 39,
-      "name": "--glim-color-brand-primary-900",
-      "value": {
-        "base": "var(--glim-color-brand-primary-900)",
-        "light": "var(--glim-color-brand-primary-900)",
-        "dark": "var(--glim-color-brand-primary-900)"
-      }
-    },
-    {
-      "id": 40,
-      "name": "--glim-color-brand-primary-850",
-      "value": {
-        "base": "rgba(90, 0, 146, 1)",
-        "light": "rgba(90, 0, 146, 1)",
-        "dark": "rgba(90, 0, 146, 1)"
-      }
-    },
-    {
-      "id": 41,
-      "name": "--glim-color-brand-primary-800",
-      "value": {
-        "base": "var(--glim-color-brand-primary-800)",
-        "light": "var(--glim-color-brand-primary-800)",
-        "dark": "var(--glim-color-brand-primary-800)"
-      }
-    },
-    {
-      "id": 42,
-      "name": "--glim-color-brand-primary-700",
-      "value": {
-        "base": "var(--glim-color-brand-primary-700)",
-        "light": "var(--glim-color-brand-primary-700)",
-        "dark": "var(--glim-color-brand-primary-700)"
-      }
-    },
-    {
-      "id": 43,
-      "name": "--glim-color-brand-primary-600",
-      "value": {
-        "base": "var(--glim-color-brand-primary-600)",
-        "light": "var(--glim-color-brand-primary-600)",
-        "dark": "var(--glim-color-brand-primary-600)"
-      }
-    },
-    {
-      "id": 44,
-      "name": "--glim-color-brand-primary-500",
-      "value": {
-        "base": "var(--glim-color-brand-primary-500)",
-        "light": "var(--glim-color-brand-primary-500)",
-        "dark": "var(--glim-color-brand-primary-500)"
-      }
-    },
-    {
-      "id": 45,
-      "name": "--glim-color-brand-primary-400",
-      "value": {
-        "base": "var(--glim-color-brand-primary-400)",
-        "light": "var(--glim-color-brand-primary-400)",
-        "dark": "var(--glim-color-brand-primary-400)"
-      }
-    },
-    {
-      "id": 46,
-      "name": "--glim-color-brand-primary-300",
-      "value": {
-        "base": "var(--glim-color-brand-primary-300)",
-        "light": "var(--glim-color-brand-primary-300)",
-        "dark": "var(--glim-color-brand-primary-300)"
-      }
-    },
-    {
-      "id": 47,
-      "name": "--glim-color-brand-primary-200",
-      "value": {
-        "base": "var(--glim-color-brand-primary-200)",
-        "light": "var(--glim-color-brand-primary-200)",
-        "dark": "var(--glim-color-brand-primary-200)"
-      }
-    },
-    {
-      "id": 48,
-      "name": "--glim-color-brand-primary-150",
-      "value": {
-        "base": "rgba(225, 181, 252, 1)",
-        "light": "rgba(225, 181, 252, 1)",
-        "dark": "rgba(225, 181, 252, 1)"
-      }
-    },
-    {
-      "id": 49,
-      "name": "--glim-color-brand-primary-100",
-      "value": {
-        "base": "var(--glim-color-brand-primary-100)",
-        "light": "var(--glim-color-brand-primary-100)",
-        "dark": "var(--glim-color-brand-primary-100)"
-      }
-    },
-    {
-      "id": 50,
-      "name": "--glim-color-brand-primary-50",
-      "value": {
-        "base": "var(--glim-color-brand-primary-50)",
-        "light": "var(--glim-color-brand-primary-50)",
-        "dark": "var(--glim-color-brand-primary-50)"
-      }
-    },
-    {
-      "id": 51,
-      "name": "--glim-color-neutral-opacity-inverse-700",
-      "value": {
-        "base": "rgba(229, 229, 229, 0.87)",
-        "light": "rgba(229, 229, 229, 0.87)",
-        "dark": "rgba(229, 229, 229, 0.87)"
-      }
-    },
-    {
-      "id": 52,
-      "name": "--glim-color-neutral-opacity-inverse-600",
-      "value": {
-        "base": "rgba(229, 229, 229, 0.75)",
-        "light": "rgba(229, 229, 229, 0.75)",
-        "dark": "rgba(229, 229, 229, 0.75)"
-      }
-    },
-    {
-      "id": 53,
-      "name": "--glim-color-neutral-opacity-inverse-500",
-      "value": {
-        "base": "rgba(229, 229, 229, 0.63)",
-        "light": "rgba(229, 229, 229, 0.63)",
-        "dark": "rgba(229, 229, 229, 0.63)"
-      }
-    },
-    {
-      "id": 54,
-      "name": "--glim-color-neutral-opacity-inverse-400",
-      "value": {
-        "base": "rgba(229, 229, 229, 0.49)",
-        "light": "rgba(229, 229, 229, 0.49)",
-        "dark": "rgba(229, 229, 229, 0.49)"
-      }
-    },
-    {
-      "id": 55,
-      "name": "--glim-color-neutral-opacity-inverse-200",
-      "value": {
-        "base": "rgba(229, 229, 229, 0.33)",
-        "light": "rgba(229, 229, 229, 0.33)",
-        "dark": "rgba(229, 229, 229, 0.33)"
-      }
-    },
-    {
-      "id": 56,
-      "name": "--glim-color-neutral-opacity-inverse-100",
-      "value": {
-        "base": "rgba(229, 229, 229, 0.12)",
-        "light": "rgba(229, 229, 229, 0.12)",
-        "dark": "rgba(229, 229, 229, 0.12)"
-      }
-    },
-    {
-      "id": 57,
-      "name": "--glim-color-elevation-scrim",
-      "value": {
-        "base": "rgba(0, 0, 0, 0.38)",
-        "light": "rgba(0, 0, 0, 0.38)",
-        "dark": "rgba(0, 0, 0, 0.5)"
-      }
-    },
-    {
-      "id": 58,
-      "name": "--glim-color-interaction-danger-default",
-      "value": {
-        "base": "rgba(216, 59, 58, 1)",
-        "light": "rgba(216, 59, 58, 1)",
-        "dark": "rgba(216, 59, 58, 1)"
-      }
-    },
-    {
-      "id": 59,
-      "name": "--glim-color-interaction-danger-danger-hover",
-      "value": {
-        "base": "rgba(188, 48, 47, 1)",
-        "light": "rgba(188, 48, 47, 1)",
-        "dark": "rgba(188, 48, 47, 1)"
-      }
-    },
-    {
-      "id": 60,
-      "name": "--glim-color-interaction-danger-pressed",
-      "value": {
-        "base": "rgba(133, 41, 41, 1)",
-        "light": "rgba(133, 41, 41, 1)",
-        "dark": "rgba(133, 41, 41, 1)"
-      }
-    },
-    {
-      "id": 61,
-      "name": "--glim-color-interaction-danger-focus",
-      "value": {
-        "base": "rgba(188, 48, 47, 1)",
-        "light": "rgba(188, 48, 47, 1)",
-        "dark": "rgba(188, 48, 47, 1)"
-      }
-    },
-    {
-      "id": 62,
-      "name": "--glim-color-interaction-danger-disabled",
-      "value": {
-        "base": "rgba(255, 224, 224, 1)",
-        "light": "rgba(255, 224, 224, 1)",
-        "dark": "rgba(49, 17, 17, 1)"
-      }
-    },
-    {
-      "id": 63,
-      "name": "--glim-color-interaction-danger-resting",
-      "value": {
-        "base": "rgba(247, 186, 186, 1)",
-        "light": "rgba(247, 186, 186, 1)",
-        "dark": "rgba(49, 17, 17, 1)"
-      }
-    },
-    {
-      "id": 64,
-      "name": "--glim-color-system-success-strong",
-      "value": {
-        "base": "rgba(21, 50, 23, 1)",
-        "light": "rgba(21, 50, 23, 1)",
-        "dark": "rgba(209, 250, 209, 1)"
-      }
-    },
-    {
-      "id": 65,
-      "name": "--glim-color-system-success-default",
-      "value": {
-        "base": "rgba(59, 166, 63, 1)",
-        "light": "rgba(59, 166, 63, 1)",
-        "dark": "rgba(59, 166, 63, 1)"
-      }
-    },
-    {
-      "id": 66,
-      "name": "--glim-color-system-success-subtle",
-      "value": {
-        "base": "rgba(209, 250, 209, 1)",
-        "light": "rgba(209, 250, 209, 1)",
-        "dark": "rgba(21, 50, 23, 1)"
-      }
-    },
-    {
-      "id": 67,
-      "name": "--glim-color-system-warning-strong",
-      "value": {
-        "base": "rgba(89, 51, 5, 1)",
-        "light": "rgba(89, 51, 5, 1)",
-        "dark": "rgba(255, 217, 170, 1)"
-      }
-    },
-    {
-      "id": 68,
-      "name": "--glim-color-system-warning-default",
-      "value": {
-        "base": "rgba(255, 146, 13, 1)",
-        "light": "rgba(255, 146, 13, 1)",
-        "dark": "rgba(255, 146, 13, 1)"
-      }
-    },
-    {
-      "id": 69,
-      "name": "--glim-color-system-warning-subtle",
-      "value": {
-        "base": "rgba(255, 217, 170, 1)",
-        "light": "rgba(255, 217, 170, 1)",
-        "dark": "rgba(89, 51, 5, 1)"
-      }
-    },
-    {
-      "id": 70,
-      "name": "--glim-color-system-error-strong",
-      "value": {
-        "base": "rgba(65, 22, 22, 1)",
-        "light": "rgba(65, 22, 22, 1)",
-        "dark": "rgba(255, 224, 224, 1)"
-      }
-    },
-    {
-      "id": 71,
-      "name": "--glim-color-system-error-default",
-      "value": {
-        "base": "rgba(216, 59, 58, 1)",
-        "light": "rgba(216, 59, 58, 1)",
-        "dark": "rgba(216, 59, 58, 1)"
-      }
-    },
-    {
-      "id": 72,
-      "name": "--glim-color-system-error-subtle",
-      "value": {
-        "base": "rgba(255, 224, 224, 1)",
-        "light": "rgba(255, 224, 224, 1)",
-        "dark": "rgba(65, 22, 22, 1)"
-      }
-    },
-    {
-      "id": 73,
-      "name": "--glim-color-permanent-white",
-      "value": {
-        "base": "rgba(255, 255, 255, 1)",
-        "light": "rgba(255, 255, 255, 1)",
-        "dark": "rgba(255, 255, 255, 1)"
-      }
-    },
-    {
-      "id": 74,
-      "name": "--glim-color-permanent-black",
-      "value": {
-        "base": "rgba(0, 0, 0, 1)",
-        "light": "rgba(0, 0, 0, 1)",
-        "dark": "rgba(0, 0, 0, 1)"
-      }
-    },
-    {
-      "id": 75,
-      "name": "--glim-color-brand-primary-background-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-1000)",
-        "light": "var(--glim-color-neutral-solid-1000)",
-        "dark": "var(--glim-color-neutral-solid-1000)"
-      }
-    },
-    {
-      "id": 76,
-      "name": "--glim-color-text-strong",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-950)",
-        "light": "var(--glim-color-neutral-opacity-950)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-950)"
-      }
-    },
-    {
-      "id": 77,
-      "name": "--glim-color-text-defined",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-700)",
-        "light": "var(--glim-color-neutral-opacity-700)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-700)"
-      }
-    },
-    {
-      "id": 78,
-      "name": "--glim-color-text-soft",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-600)",
-        "light": "var(--glim-color-neutral-opacity-600)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-600)"
-      }
-    },
-    {
-      "id": 79,
-      "name": "--glim-color-text-subtle",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-500)",
-        "light": "var(--glim-color-neutral-opacity-500)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-500)"
-      }
-    },
-    {
-      "id": 80,
-      "name": "--glim-color-text-disabled",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-400)",
-        "light": "var(--glim-color-neutral-opacity-400)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-400)"
-      }
-    },
-    {
-      "id": 81,
-      "name": "--glim-color-text-supertype",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-1000)",
-        "light": "var(--glim-color-neutral-solid-1000)",
-        "dark": "var(--glim-color-neutral-solid-50)"
-      }
-    },
-    {
-      "id": 82,
-      "name": "--glim-color-text-defined-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-700)",
-        "light": "var(--glim-color-neutral-opacity-inverse-700)",
-        "dark": "var(--glim-color-neutral-opacity-700)"
-      }
-    },
-    {
-      "id": 83,
-      "name": "--glim-color-text-soft-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-600)",
-        "light": "var(--glim-color-neutral-opacity-inverse-600)",
-        "dark": "var(--glim-color-neutral-opacity-600)"
-      }
-    },
-    {
-      "id": 84,
-      "name": "--glim-color-text-subtle-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-500)",
-        "light": "var(--glim-color-neutral-opacity-inverse-500)",
-        "dark": "var(--glim-color-neutral-opacity-500)"
-      }
-    },
-    {
-      "id": 85,
-      "name": "--glim-color-text-disabled-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-400)",
-        "light": "var(--glim-color-neutral-opacity-inverse-400)",
-        "dark": "var(--glim-color-neutral-opacity-400)"
-      }
-    },
-    {
-      "id": 86,
-      "name": "--glim-color-text-supertype-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-50)",
-        "light": "var(--glim-color-neutral-solid-50)",
-        "dark": "var(--glim-color-neutral-opacity-950)"
-      }
-    },
-    {
-      "id": 87,
-      "name": "--glim-color-text-strong-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-950)",
-        "light": "var(--glim-color-neutral-opacity-inverse-950)",
-        "dark": "var(--glim-color-neutral-opacity-950)"
-      }
-    },
-    {
-      "id": 88,
-      "name": "--glim-color-interaction-link",
-      "value": {
-        "base": "var(--glim-color-brand-primary-600)",
-        "light": "var(--glim-color-brand-primary-600)",
-        "dark": "var(--glim-color-brand-primary-600)"
-      }
-    },
-    {
-      "id": 89,
-      "name": "--glim-color-elevation-base",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-50)",
-        "light": "var(--glim-color-neutral-solid-50)",
-        "dark": "var(--glim-color-neutral-solid-1000)"
-      }
-    },
-    {
-      "id": 90,
-      "name": "--glim-color-interaction-link-visited",
-      "value": {
-        "base": "var(--glim-color-brand-primary-950)",
-        "light": "var(--glim-color-brand-primary-950)",
-        "dark": "var(--glim-color-brand-primary-150)"
-      }
-    },
-    {
-      "id": 91,
-      "name": "--glim-color-elevation-layer-1",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-100)",
-        "light": "var(--glim-color-neutral-solid-100)",
-        "dark": "var(--glim-color-neutral-solid-950)"
-      }
-    },
-    {
-      "id": 92,
-      "name": "--glim-color-elevation-layer-2",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-50)",
-        "light": "var(--glim-color-neutral-solid-50)",
-        "dark": "var(--glim-color-neutral-solid-900)"
-      }
-    },
-    {
-      "id": 93,
-      "name": "--glim-color-elevation-layer-3",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-100)",
-        "light": "var(--glim-color-neutral-solid-100)",
-        "dark": "var(--glim-color-neutral-solid-850)"
-      }
-    },
-    {
-      "id": 94,
-      "name": "--glim-color-elevation-top",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-50)",
-        "light": "var(--glim-color-neutral-solid-50)",
-        "dark": "var(--glim-color-neutral-solid-900)"
-      }
-    },
-    {
-      "id": 95,
-      "name": "--glim-color-elevation-background-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-1000)",
-        "light": "var(--glim-color-neutral-solid-1000)",
-        "dark": "var(--glim-color-neutral-solid-50)"
-      }
-    },
-    {
-      "id": 96,
-      "name": "--glim-color-elevation-layer-1-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-950)",
-        "light": "var(--glim-color-neutral-solid-950)",
-        "dark": "var(--glim-color-neutral-solid-100)"
-      }
-    },
-    {
-      "id": 97,
-      "name": "--glim-color-bg-elements-1000",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-950)",
-        "light": "var(--glim-color-neutral-solid-950)",
-        "dark": "var(--glim-color-neutral-solid-150)"
-      }
-    },
-    {
-      "id": 98,
-      "name": "--glim-color-bg-elements-900",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-900)",
-        "light": "var(--glim-color-neutral-solid-900)",
-        "dark": "var(--glim-color-neutral-solid-200)"
-      }
-    },
-    {
-      "id": 99,
-      "name": "--glim-color-bg-elements-800",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-800)",
-        "light": "var(--glim-color-neutral-solid-800)",
-        "dark": "var(--glim-color-neutral-solid-300)"
-      }
-    },
-    {
-      "id": 100,
-      "name": "--glim-color-bg-elements-700",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-700)",
-        "light": "var(--glim-color-neutral-solid-700)",
-        "dark": "var(--glim-color-neutral-solid-400)"
-      }
-    },
-    {
-      "id": 101,
-      "name": "--glim-color-bg-elements-600",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-600)",
-        "light": "var(--glim-color-neutral-solid-600)",
-        "dark": "var(--glim-color-neutral-solid-500)"
-      }
-    },
-    {
-      "id": 102,
-      "name": "--glim-color-bg-elements-500",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-500)",
-        "light": "var(--glim-color-neutral-solid-500)",
-        "dark": "var(--glim-color-neutral-solid-600)"
-      }
-    },
-    {
-      "id": 103,
-      "name": "--glim-color-bg-elements-400",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-400)",
-        "light": "var(--glim-color-neutral-solid-400)",
-        "dark": "var(--glim-color-neutral-solid-700)"
-      }
-    },
-    {
-      "id": 104,
-      "name": "--glim-color-bg-elements-300",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-300)",
-        "light": "var(--glim-color-neutral-solid-300)",
-        "dark": "var(--glim-color-neutral-solid-800)"
-      }
-    },
-    {
-      "id": 105,
-      "name": "--glim-color-bg-elements-200",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-200)",
-        "light": "var(--glim-color-neutral-solid-200)",
-        "dark": "var(--glim-color-neutral-solid-850)"
-      }
-    },
-    {
-      "id": 106,
-      "name": "--glim-color-bg-elements-100",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-150)",
-        "light": "var(--glim-color-neutral-solid-150)",
-        "dark": "var(--glim-color-neutral-solid-900)"
-      }
-    },
-    {
-      "id": 107,
-      "name": "--glim-color-interaction-hover",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-100)",
-        "light": "var(--glim-color-neutral-opacity-100)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-100)"
-      }
-    },
-    {
-      "id": 108,
-      "name": "--glim-color-interaction-pressed",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-400)",
-        "light": "var(--glim-color-neutral-opacity-400)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-400)"
-      }
-    },
-    {
-      "id": 109,
-      "name": "--glim-color-interaction-expanded",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-100)",
-        "light": "var(--glim-color-neutral-opacity-100)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-100)"
-      }
-    },
-    {
-      "id": 110,
-      "name": "--glim-color-interaction-hover-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-100)",
-        "light": "var(--glim-color-neutral-opacity-inverse-100)",
-        "dark": "var(--glim-color-neutral-opacity-100)"
-      }
-    },
-    {
-      "id": 111,
-      "name": "--glim-color-interaction-pressed-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-400)",
-        "light": "var(--glim-color-neutral-opacity-inverse-400)",
-        "dark": "var(--glim-color-neutral-opacity-400)"
-      }
-    },
-    {
-      "id": 112,
-      "name": "--glim-color-interaction-expanded-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-100)",
-        "light": "var(--glim-color-neutral-opacity-inverse-100)",
-        "dark": "var(--glim-color-neutral-opacity-100)"
-      }
-    },
-    {
-      "id": 113,
-      "name": "--glim-color-elements-default",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-1000)",
-        "light": "var(--glim-color-neutral-solid-1000)",
-        "dark": "var(--glim-color-neutral-solid-50)"
-      }
-    },
-    {
-      "id": 114,
-      "name": "--glim-color-elements-hover",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-900)",
-        "light": "var(--glim-color-neutral-solid-900)",
-        "dark": "var(--glim-color-neutral-solid-200)"
-      }
-    },
-    {
-      "id": 115,
-      "name": "--glim-color-elements-pressed",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-950)",
-        "light": "var(--glim-color-neutral-solid-950)",
-        "dark": "var(--glim-color-neutral-solid-400)"
-      }
-    },
-    {
-      "id": 116,
-      "name": "--glim-color-elements-focus",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-1000)",
-        "light": "var(--glim-color-neutral-solid-1000)",
-        "dark": "var(--glim-color-neutral-solid-100)"
-      }
-    },
-    {
-      "id": 117,
-      "name": "--glim-color-elements-disabled",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-300)",
-        "light": "var(--glim-color-neutral-solid-300)",
-        "dark": "var(--glim-color-neutral-solid-900)"
-      }
-    },
-    {
-      "id": 118,
-      "name": "--glim-color-elements-resting",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-150)",
-        "light": "var(--glim-color-neutral-solid-150)",
-        "dark": "var(--glim-color-neutral-solid-900)"
-      }
-    },
-    {
-      "id": 119,
-      "name": "--glim-color-elements-default-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-50)",
-        "light": "var(--glim-color-neutral-solid-50)",
-        "dark": "var(--glim-color-neutral-solid-1000)"
-      }
-    },
-    {
-      "id": 120,
-      "name": "--glim-color-elements-hover-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-200)",
-        "light": "var(--glim-color-neutral-solid-200)",
-        "dark": "var(--glim-color-neutral-solid-900)"
-      }
-    },
-    {
-      "id": 121,
-      "name": "--glim-color-elements-pressed-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-400)",
-        "light": "var(--glim-color-neutral-solid-400)",
-        "dark": "var(--glim-color-neutral-solid-950)"
-      }
-    },
-    {
-      "id": 122,
-      "name": "--glim-color-elements-focus-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-100)",
-        "light": "var(--glim-color-neutral-solid-100)",
-        "dark": "var(--glim-color-neutral-solid-1000)"
-      }
-    },
-    {
-      "id": 123,
-      "name": "--glim-color-elements-disabled-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-150)",
-        "light": "var(--glim-color-neutral-solid-150)",
-        "dark": "var(--glim-color-neutral-solid-300)"
-      }
-    },
-    {
-      "id": 124,
-      "name": "--glim-color-elements-resting-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-150)",
-        "light": "var(--glim-color-neutral-solid-150)",
-        "dark": "var(--glim-color-neutral-solid-150)"
-      }
-    },
-    {
-      "id": 125,
-      "name": "--glim-color-border-strong",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-950)",
-        "light": "var(--glim-color-neutral-opacity-950)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-950)"
-      }
-    },
-    {
-      "id": 126,
-      "name": "--glim-color-border-defined",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-700)",
-        "light": "var(--glim-color-neutral-opacity-700)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-700)"
-      }
-    },
-    {
-      "id": 127,
-      "name": "--glim-color-border-soft",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-600)",
-        "light": "var(--glim-color-neutral-opacity-600)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-600)"
-      }
-    },
-    {
-      "id": 128,
-      "name": "--glim-color-border-subtle",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-500)",
-        "light": "var(--glim-color-neutral-opacity-500)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-500)"
-      }
-    },
-    {
-      "id": 129,
-      "name": "--glim-color-border-disabled",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-400)",
-        "light": "var(--glim-color-neutral-opacity-400)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-400)"
-      }
-    },
-    {
-      "id": 130,
-      "name": "--glim-color-border-discrete",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-100)",
-        "light": "var(--glim-color-neutral-opacity-100)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-200)"
-      }
-    },
-    {
-      "id": 131,
-      "name": "--glim-color-interaction-focus",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-950)",
-        "light": "var(--glim-color-neutral-solid-950)",
-        "dark": "var(--glim-color-neutral-solid-150)"
-      }
-    },
-    {
-      "id": 132,
-      "name": "--glim-color-border-strong-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-950)",
-        "light": "var(--glim-color-neutral-opacity-inverse-950)",
-        "dark": "var(--glim-color-neutral-opacity-950)"
-      }
-    },
-    {
-      "id": 133,
-      "name": "--glim-color-border-defined-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-700)",
-        "light": "var(--glim-color-neutral-opacity-inverse-700)",
-        "dark": "var(--glim-color-neutral-opacity-700)"
-      }
-    },
-    {
-      "id": 134,
-      "name": "--glim-color-border-soft-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-600)",
-        "light": "var(--glim-color-neutral-opacity-inverse-600)",
-        "dark": "var(--glim-color-neutral-opacity-600)"
-      }
-    },
-    {
-      "id": 135,
-      "name": "--glim-color-border-subtle-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-500)",
-        "light": "var(--glim-color-neutral-opacity-inverse-500)",
-        "dark": "var(--glim-color-neutral-opacity-500)"
-      }
-    },
-    {
-      "id": 136,
-      "name": "--glim-color-border-disabled-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-400)",
-        "light": "var(--glim-color-neutral-opacity-inverse-400)",
-        "dark": "var(--glim-color-neutral-opacity-400)"
-      }
-    },
-    {
-      "id": 137,
-      "name": "--glim-color-elevation-layer-2-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-900)",
-        "light": "var(--glim-color-neutral-solid-900)",
-        "dark": "var(--glim-color-neutral-solid-50)"
-      }
-    },
-    {
-      "id": 138,
-      "name": "--glim-color-border-discrete-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-200)",
-        "light": "var(--glim-color-neutral-opacity-inverse-200)",
-        "dark": "var(--glim-color-neutral-opacity-100)"
-      }
-    },
-    {
-      "id": 139,
-      "name": "--glim-color-elevation-layer-3-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-850)",
-        "light": "var(--glim-color-neutral-solid-850)",
-        "dark": "var(--glim-color-neutral-solid-100)"
-      }
-    },
-    {
-      "id": 140,
-      "name": "--glim-color-elevation-top-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-900)",
-        "light": "var(--glim-color-neutral-solid-900)",
-        "dark": "var(--glim-color-neutral-solid-50)"
-      }
-    },
-    {
-      "id": 141,
-      "name": "--glim-color-interaction-link-brand",
-      "value": {
-        "base": "var(--glim-color-brand-primary-950)",
-        "light": "var(--glim-color-brand-primary-950)",
-        "dark": "var(--glim-color-brand-primary-50)"
-      }
-    },
-    {
-      "id": 142,
-      "name": "--glim-color-transparent-strong",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-950)",
-        "light": "var(--glim-color-neutral-opacity-950)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-950)"
-      }
-    },
-    {
-      "id": 143,
-      "name": "--glim-color-transparent-defined",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-700)",
-        "light": "var(--glim-color-neutral-opacity-700)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-700)"
-      }
-    },
-    {
-      "id": 144,
-      "name": "--glim-color-transparent-soft",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-600)",
-        "light": "var(--glim-color-neutral-opacity-600)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-600)"
-      }
-    },
-    {
-      "id": 145,
-      "name": "--glim-color-transparent-subtle",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-500)",
-        "light": "var(--glim-color-neutral-opacity-500)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-500)"
-      }
-    },
-    {
-      "id": 146,
-      "name": "--glim-color-transparent-disabled",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-400)",
-        "light": "var(--glim-color-neutral-opacity-400)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-400)"
-      }
-    },
-    {
-      "id": 147,
-      "name": "--glim-color-transparent-discrete",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-100)",
-        "light": "var(--glim-color-neutral-opacity-100)",
-        "dark": "var(--glim-color-neutral-opacity-inverse-100)"
-      }
-    },
-    {
-      "id": 148,
-      "name": "--glim-color-transparent-strong-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-950)",
-        "light": "var(--glim-color-neutral-opacity-inverse-950)",
-        "dark": "var(--glim-color-neutral-opacity-950)"
-      }
-    },
-    {
-      "id": 149,
-      "name": "--glim-color-transparent-defined-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-700)",
-        "light": "var(--glim-color-neutral-opacity-inverse-700)",
-        "dark": "var(--glim-color-neutral-opacity-700)"
-      }
-    },
-    {
-      "id": 150,
-      "name": "--glim-color-transparent-soft-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-600)",
-        "light": "var(--glim-color-neutral-opacity-inverse-600)",
-        "dark": "var(--glim-color-neutral-opacity-600)"
-      }
-    },
-    {
-      "id": 151,
-      "name": "--glim-color-transparent-subtle-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-500)",
-        "light": "var(--glim-color-neutral-opacity-inverse-500)",
-        "dark": "var(--glim-color-neutral-opacity-500)"
-      }
-    },
-    {
-      "id": 152,
-      "name": "--glim-color-transparent-disabled-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-400)",
-        "light": "var(--glim-color-neutral-opacity-inverse-400)",
-        "dark": "var(--glim-color-neutral-opacity-400)"
-      }
-    },
-    {
-      "id": 153,
-      "name": "--glim-color-transparent-discrete-inverse",
-      "value": {
-        "base": "var(--glim-color-neutral-opacity-inverse-100)",
-        "light": "var(--glim-color-neutral-opacity-inverse-100)",
-        "dark": "var(--glim-color-neutral-opacity-100)"
-      }
-    },
-    {
-      "id": 154,
-      "name": "--glim-color-interaction-link-inverse",
-      "value": {
-        "base": "var(--glim-color-brand-primary-700)",
-        "light": "var(--glim-color-brand-primary-700)",
-        "dark": "var(--glim-color-brand-primary-500)"
-      }
-    },
-    {
-      "id": 155,
-      "name": "--glim-color-solid-1000",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-950)",
-        "light": "var(--glim-color-neutral-solid-950)",
-        "dark": "var(--glim-color-neutral-solid-150)"
-      }
-    },
-    {
-      "id": 156,
-      "name": "--glim-color-system-info-strong",
-      "value": {
-        "base": "var(--glim-color-solid-1000)",
-        "light": "var(--glim-color-solid-1000)",
-        "dark": "var(--glim-color-solid-1000)"
-      }
-    },
-    {
-      "id": 157,
-      "name": "--glim-color-solid-600",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-600)",
-        "light": "var(--glim-color-neutral-solid-600)",
-        "dark": "var(--glim-color-neutral-solid-500)"
-      }
-    },
-    {
-      "id": 158,
-      "name": "--glim-color-system-info-default",
-      "value": {
-        "base": "var(--glim-color-solid-600)",
-        "light": "var(--glim-color-solid-600)",
-        "dark": "var(--glim-color-solid-600)"
-      }
-    },
-    {
-      "id": 159,
-      "name": "--glim-color-solid-100",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-150)",
-        "light": "var(--glim-color-neutral-solid-150)",
-        "dark": "var(--glim-color-neutral-solid-900)"
-      }
-    },
-    {
-      "id": 160,
-      "name": "--glim-color-system-info-subtle",
-      "value": {
-        "base": "var(--glim-color-solid-100)",
-        "light": "var(--glim-color-solid-100)",
-        "dark": "var(--glim-color-solid-100)"
-      }
-    },
-    {
-      "id": 161,
-      "name": "--glim-color-solid-900",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-900)",
-        "light": "var(--glim-color-neutral-solid-900)",
-        "dark": "var(--glim-color-neutral-solid-200)"
-      }
-    },
-    {
-      "id": 162,
-      "name": "--glim-color-solid-800",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-800)",
-        "light": "var(--glim-color-neutral-solid-800)",
-        "dark": "var(--glim-color-neutral-solid-300)"
-      }
-    },
-    {
-      "id": 163,
-      "name": "--glim-color-solid-700",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-700)",
-        "light": "var(--glim-color-neutral-solid-700)",
-        "dark": "var(--glim-color-neutral-solid-400)"
-      }
-    },
-    {
-      "id": 164,
-      "name": "--glim-color-solid-500",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-500)",
-        "light": "var(--glim-color-neutral-solid-500)",
-        "dark": "var(--glim-color-neutral-solid-600)"
-      }
-    },
-    {
-      "id": 165,
-      "name": "--glim-color-solid-400",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-400)",
-        "light": "var(--glim-color-neutral-solid-400)",
-        "dark": "var(--glim-color-neutral-solid-700)"
-      }
-    },
-    {
-      "id": 166,
-      "name": "--glim-color-solid-300",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-300)",
-        "light": "var(--glim-color-neutral-solid-300)",
-        "dark": "var(--glim-color-neutral-solid-800)"
-      }
-    },
-    {
-      "id": 167,
-      "name": "--glim-color-solid-200",
-      "value": {
-        "base": "var(--glim-color-neutral-solid-200)",
-        "light": "var(--glim-color-neutral-solid-200)",
-        "dark": "var(--glim-color-neutral-solid-850)"
-      }
-    },
-    {
-      "id": 168,
-      "name": "--glim-dimension-dimensions-unit-0",
-      "value": {
-        "base": "2px",
-        "light": "2px",
-        "dark": "2px"
-      }
-    },
-    {
-      "id": 169,
-      "name": "--glim-dimension-dimensions-unit-1",
-      "value": {
-        "base": "4px",
-        "light": "4px",
-        "dark": "4px"
-      }
-    },
-    {
-      "id": 170,
-      "name": "--glim-dimension-dimensions-unit-2",
-      "value": {
-        "base": "8px",
-        "light": "8px",
-        "dark": "8px"
-      }
-    },
-    {
-      "id": 171,
-      "name": "--glim-dimension-dimensions-unit-3",
-      "value": {
-        "base": "12px",
-        "light": "12px",
-        "dark": "12px"
-      }
-    },
-    {
-      "id": 172,
-      "name": "--glim-dimension-dimensions-unit-4",
-      "value": {
-        "base": "16px",
-        "light": "16px",
-        "dark": "16px"
-      }
-    },
-    {
-      "id": 173,
-      "name": "--glim-dimension-dimensions-unit-5",
-      "value": {
-        "base": "20px",
-        "light": "20px",
-        "dark": "20px"
-      }
-    },
-    {
-      "id": 174,
-      "name": "--glim-dimension-dimensions-unit-6",
-      "value": {
-        "base": "24px",
-        "light": "24px",
-        "dark": "24px"
-      }
-    },
-    {
-      "id": 175,
-      "name": "--glim-dimension-dimensions-unit-7",
-      "value": {
-        "base": "32px",
-        "light": "32px",
-        "dark": "32px"
-      }
-    },
-    {
-      "id": 176,
-      "name": "--glim-dimension-dimensions-unit-8",
-      "value": {
-        "base": "40px",
-        "light": "40px",
-        "dark": "40px"
-      }
-    },
-    {
-      "id": 177,
-      "name": "--glim-dimension-dimensions-unit-9",
-      "value": {
-        "base": "48px",
-        "light": "48px",
-        "dark": "48px"
-      }
-    },
-    {
-      "id": 178,
-      "name": "--glim-dimension-dimensions-unit-10",
-      "value": {
-        "base": "56px",
-        "light": "56px",
-        "dark": "56px"
-      }
-    },
-    {
-      "id": 179,
-      "name": "--glim-dimension-dimensions-unit-11",
-      "value": {
-        "base": "64px",
-        "light": "64px",
-        "dark": "64px"
-      }
-    },
-    {
-      "id": 180,
-      "name": "--glim-dimension-dimensions-unit-12",
-      "value": {
-        "base": "80px",
-        "light": "80px",
-        "dark": "80px"
-      }
-    },
-    {
-      "id": 181,
-      "name": "--glim-dimension-dimensions-unit-13",
-      "value": {
-        "base": "96px",
-        "light": "96px",
-        "dark": "96px"
-      }
-    },
-    {
-      "id": 182,
-      "name": "--glim-dimension-dimensions-unit-14",
-      "value": {
-        "base": "120px",
-        "light": "120px",
-        "dark": "120px"
-      }
-    },
-    {
-      "id": 183,
-      "name": "--glim-dimension-border-focus",
-      "value": {
-        "base": "2px",
-        "light": "2px",
-        "dark": "2px"
-      }
-    },
-    {
-      "id": 184,
-      "name": "--glim-dimension-font-size-12",
-      "value": {
-        "base": "12px",
-        "light": "12px",
-        "dark": "12px"
-      }
-    },
-    {
-      "id": 185,
-      "name": "--glim-dimension-font-size-14",
-      "value": {
-        "base": "14px",
-        "light": "14px",
-        "dark": "14px"
-      }
-    },
-    {
-      "id": 186,
-      "name": "--glim-dimension-font-size-16",
-      "value": {
-        "base": "16px",
-        "light": "16px",
-        "dark": "16px"
-      }
-    },
-    {
-      "id": 187,
-      "name": "--glim-dimension-font-size-20",
-      "value": {
-        "base": "20px",
-        "light": "20px",
-        "dark": "20px"
-      }
-    },
-    {
-      "id": 188,
-      "name": "--glim-dimension-font-size-24",
-      "value": {
-        "base": "24px",
-        "light": "24px",
-        "dark": "24px"
-      }
-    },
-    {
-      "id": 189,
-      "name": "--glim-dimension-font-size-32",
-      "value": {
-        "base": "32px",
-        "light": "32px",
-        "dark": "32px"
-      }
-    },
-    {
-      "id": 190,
-      "name": "--glim-dimension-font-size-40",
-      "value": {
-        "base": "40px",
-        "light": "40px",
-        "dark": "40px"
-      }
-    },
-    {
-      "id": 191,
-      "name": "--glim-dimension-font-size-48",
-      "value": {
-        "base": "48px",
-        "light": "48px",
-        "dark": "48px"
-      }
-    },
-    {
-      "id": 192,
-      "name": "--glim-dimension-font-size-56",
-      "value": {
-        "base": "56px",
-        "light": "56px",
-        "dark": "56px"
-      }
-    },
-    {
-      "id": 193,
-      "name": "--glim-dimension-font-size-64",
-      "value": {
-        "base": "64px",
-        "light": "64px",
-        "dark": "64px"
-      }
-    },
-    {
-      "id": 194,
-      "name": "--glim-dimension-font-size-96",
-      "value": {
-        "base": "96px",
-        "light": "96px",
-        "dark": "96px"
-      }
-    },
-    {
-      "id": 195,
-      "name": "--glim-dimension-font-size-112",
-      "value": {
-        "base": "112px",
-        "light": "112px",
-        "dark": "112px"
-      }
-    },
-    {
-      "id": 196,
-      "name": "--glim-dimension-font-size-156",
-      "value": {
-        "base": "156px",
-        "light": "156px",
-        "dark": "156px"
-      }
-    },
-    {
-      "id": 197,
-      "name": "--glim-dimension-font-size-216",
-      "value": {
-        "base": "216px",
-        "light": "216px",
-        "dark": "216px"
-      }
-    },
-    {
-      "id": 198,
-      "name": "--glim-dimension-size-1",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-2)",
-        "light": "var(--glim-dimension-dimensions-unit-2)",
-        "dark": "var(--glim-dimension-dimensions-unit-2)"
-      }
-    },
-    {
-      "id": 199,
-      "name": "--glim-dimension-radius-1",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-0)",
-        "light": "var(--glim-dimension-dimensions-unit-0)",
-        "dark": "var(--glim-dimension-dimensions-unit-0)"
-      }
-    },
-    {
-      "id": 200,
-      "name": "--glim-dimension-radius-2",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-1)",
-        "light": "var(--glim-dimension-dimensions-unit-1)",
-        "dark": "var(--glim-dimension-dimensions-unit-1)"
-      }
-    },
-    {
-      "id": 201,
-      "name": "--glim-dimension-radius-3",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-2)",
-        "light": "var(--glim-dimension-dimensions-unit-2)",
-        "dark": "var(--glim-dimension-dimensions-unit-2)"
-      }
-    },
-    {
-      "id": 202,
-      "name": "--glim-dimension-radius-4",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-3)",
-        "light": "var(--glim-dimension-dimensions-unit-3)",
-        "dark": "var(--glim-dimension-dimensions-unit-3)"
-      }
-    },
-    {
-      "id": 203,
-      "name": "--glim-dimension-size-2",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-4)",
-        "light": "var(--glim-dimension-dimensions-unit-4)",
-        "dark": "var(--glim-dimension-dimensions-unit-4)"
-      }
-    },
-    {
-      "id": 204,
-      "name": "--glim-dimension-size-3",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-6)",
-        "light": "var(--glim-dimension-dimensions-unit-6)",
-        "dark": "var(--glim-dimension-dimensions-unit-6)"
-      }
-    },
-    {
-      "id": 205,
-      "name": "--glim-dimension-size-4",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-8)",
-        "light": "var(--glim-dimension-dimensions-unit-8)",
-        "dark": "var(--glim-dimension-dimensions-unit-8)"
-      }
-    },
-    {
-      "id": 206,
-      "name": "--glim-dimension-size-5",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-10)",
-        "light": "var(--glim-dimension-dimensions-unit-10)",
-        "dark": "var(--glim-dimension-dimensions-unit-10)"
-      }
-    },
-    {
-      "id": 207,
-      "name": "--glim-dimension-size-0-5",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-1)",
-        "light": "var(--glim-dimension-dimensions-unit-1)",
-        "dark": "var(--glim-dimension-dimensions-unit-1)"
-      }
-    },
-    {
-      "id": 208,
-      "name": "--glim-dimension-radius-5",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-5)",
-        "light": "var(--glim-dimension-dimensions-unit-5)",
-        "dark": "var(--glim-dimension-dimensions-unit-5)"
-      }
-    },
-    {
-      "id": 209,
-      "name": "--glim-dimension-padding-1",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-0)",
-        "light": "var(--glim-dimension-dimensions-unit-0)",
-        "dark": "var(--glim-dimension-dimensions-unit-0)"
-      }
-    },
-    {
-      "id": 210,
-      "name": "--glim-dimension-padding-2",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-1)",
-        "light": "var(--glim-dimension-dimensions-unit-1)",
-        "dark": "var(--glim-dimension-dimensions-unit-1)"
-      }
-    },
-    {
-      "id": 211,
-      "name": "--glim-dimension-padding-3",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-2)",
-        "light": "var(--glim-dimension-dimensions-unit-2)",
-        "dark": "var(--glim-dimension-dimensions-unit-2)"
-      }
-    },
-    {
-      "id": 212,
-      "name": "--glim-dimension-padding-4",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-3)",
-        "light": "var(--glim-dimension-dimensions-unit-3)",
-        "dark": "var(--glim-dimension-dimensions-unit-3)"
-      }
-    },
-    {
-      "id": 213,
-      "name": "--glim-dimension-padding-5",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-4)",
-        "light": "var(--glim-dimension-dimensions-unit-4)",
-        "dark": "var(--glim-dimension-dimensions-unit-3)"
-      }
-    },
-    {
-      "id": 214,
-      "name": "--glim-dimension-margin-1",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-1)",
-        "light": "var(--glim-dimension-dimensions-unit-1)",
-        "dark": "var(--glim-dimension-dimensions-unit-1)"
-      }
-    },
-    {
-      "id": 215,
-      "name": "--glim-dimension-margin-2",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-2)",
-        "light": "var(--glim-dimension-dimensions-unit-2)",
-        "dark": "var(--glim-dimension-dimensions-unit-2)"
-      }
-    },
-    {
-      "id": 216,
-      "name": "--glim-dimension-margin-3",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-4)",
-        "light": "var(--glim-dimension-dimensions-unit-4)",
-        "dark": "var(--glim-dimension-dimensions-unit-4)"
-      }
-    },
-    {
-      "id": 217,
-      "name": "--glim-dimension-margin-4",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-6)",
-        "light": "var(--glim-dimension-dimensions-unit-6)",
-        "dark": "var(--glim-dimension-dimensions-unit-6)"
-      }
-    },
-    {
-      "id": 218,
-      "name": "--glim-dimension-gap-1",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-1)",
-        "light": "var(--glim-dimension-dimensions-unit-1)",
-        "dark": "var(--glim-dimension-dimensions-unit-1)"
-      }
-    },
-    {
-      "id": 219,
-      "name": "--glim-dimension-gap-2",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-2)",
-        "light": "var(--glim-dimension-dimensions-unit-2)",
-        "dark": "var(--glim-dimension-dimensions-unit-2)"
-      }
-    },
-    {
-      "id": 220,
-      "name": "--glim-dimension-gap-3",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-4)",
-        "light": "var(--glim-dimension-dimensions-unit-4)",
-        "dark": "var(--glim-dimension-dimensions-unit-4)"
-      }
-    },
-    {
-      "id": 221,
-      "name": "--glim-dimension-gap-4",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-6)",
-        "light": "var(--glim-dimension-dimensions-unit-6)",
-        "dark": "var(--glim-dimension-dimensions-unit-6)"
-      }
-    },
-    {
-      "id": 222,
-      "name": "--glim-dimension-gap-5",
-      "value": {
-        "base": "var(--glim-dimension-dimensions-unit-8)",
-        "light": "var(--glim-dimension-dimensions-unit-8)",
-        "dark": "var(--glim-dimension-dimensions-unit-8)"
-      }
-    },
-    {
-      "id": 223,
-      "name": "--glim-shadow-focus-shadow",
-      "value": {
-        "base": "inset 0px 0px 0px 3px var(--glim-color-elevation-layer-1)",
-        "light": "inset 0px 0px 0px 3px var(--glim-color-elevation-layer-1)",
-        "dark": "inset 0px 0px 0px 3px var(--glim-color-elevation-layer-1)"
-      }
-    },
-    {
-      "id": 224,
-      "name": "--glim-string-font-family-display",
-      "value": {
-        "base": "\"Eidra Sans\"",
-        "light": null,
-        "dark": null
-      }
-    },
-    {
-      "id": 225,
-      "name": "--glim-string-font-family-text",
-      "value": {
-        "base": "\"Eidra Sans\"",
-        "light": null,
-        "dark": null
-      }
-    },
-    {
-      "id": 226,
-      "name": "--glim-string-font-weight-loud",
-      "value": {
-        "base": "\"Bold\"",
-        "light": null,
-        "dark": null
-      }
-    },
-    {
-      "id": 227,
-      "name": "--glim-string-font-weight-composed",
-      "value": {
-        "base": "\"Regular\"",
-        "light": null,
-        "dark": null
-      }
-    },
-    {
-      "id": 228,
-      "name": "--glim-string-typography-string",
-      "value": {
-        "base": "\"Transportation Powerhouse\"",
-        "light": "\"Transportation Powerhouse\"",
-        "dark": "\"Transportation Powerhouse\""
-      }
-    },
-    {
-      "id": 229,
-      "name": "--glim-string-string-font-family-display",
-      "value": {
-        "base": null,
-        "light": "\"Eidra Sans\"",
-        "dark": "\"Eidra Sans\""
-      }
-    },
-    {
-      "id": 230,
-      "name": "--glim-string-string-font-family-text",
-      "value": {
-        "base": null,
-        "light": "\"Eidra Sans\"",
-        "dark": "\"Eidra Sans\""
-      }
-    },
-    {
-      "id": 231,
-      "name": "--glim-string-string-font-weight-loud",
-      "value": {
-        "base": null,
-        "light": "\"Bold\"",
-        "dark": "\"Bold\""
-      }
-    },
-    {
-      "id": 232,
-      "name": "--glim-string-string-font-weight-composed",
-      "value": {
-        "base": null,
-        "light": "\"Regular\"",
-        "dark": "\"Regular\""
-      }
-    },
-    {
-      "id": 233,
-      "name": "--glim-typography-display-xxl",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 216px/100% var(--glim-string-string-font-family-display)",
-        "light": "var(--glim-string-string-font-weight-loud) 216px/100% var(--glim-string-string-font-family-display)",
-        "dark": "var(--glim-string-string-font-weight-loud) 216px/100% var(--glim-string-string-font-family-display)"
-      }
-    },
-    {
-      "id": 234,
-      "name": "--glim-typography-display-xl",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 156px/100% var(--glim-string-string-font-family-display)",
-        "light": "var(--glim-string-string-font-weight-loud) 156px/100% var(--glim-string-string-font-family-display)",
-        "dark": "var(--glim-string-string-font-weight-loud) 156px/100% var(--glim-string-string-font-family-display)"
-      }
-    },
-    {
-      "id": 235,
-      "name": "--glim-typography-display-lg",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 112px/100% var(--glim-string-string-font-family-display)",
-        "light": "var(--glim-string-string-font-weight-loud) 112px/100% var(--glim-string-string-font-family-display)",
-        "dark": "var(--glim-string-string-font-weight-loud) 112px/100% var(--glim-string-string-font-family-display)"
-      }
-    },
-    {
-      "id": 236,
-      "name": "--glim-typography-headline-lg",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 80px/100% var(--glim-string-string-font-family-display)",
-        "light": "var(--glim-string-string-font-weight-loud) 80px/100% var(--glim-string-string-font-family-display)",
-        "dark": "var(--glim-string-string-font-weight-loud) 80px/100% var(--glim-string-string-font-family-display)"
-      }
-    },
-    {
-      "id": 237,
-      "name": "--glim-typography-headline-md",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 56px/100% var(--glim-string-string-font-family-display)",
-        "light": "var(--glim-string-string-font-weight-loud) 56px/100% var(--glim-string-string-font-family-display)",
-        "dark": "var(--glim-string-string-font-weight-loud) 56px/100% var(--glim-string-string-font-family-display)"
-      }
-    },
-    {
-      "id": 238,
-      "name": "--glim-typography-headline-sm",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 40px/100% var(--glim-string-string-font-family-display)",
-        "light": "var(--glim-string-string-font-weight-loud) 40px/100% var(--glim-string-string-font-family-display)",
-        "dark": "var(--glim-string-string-font-weight-loud) 40px/100% var(--glim-string-string-font-family-display)"
-      }
-    },
-    {
-      "id": 239,
-      "name": "--glim-typography-title-lg",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 24px/100% var(--glim-string-string-font-family-display)",
-        "light": "var(--glim-string-string-font-weight-loud) 24px/100% var(--glim-string-string-font-family-display)",
-        "dark": "var(--glim-string-string-font-weight-loud) 24px/100% var(--glim-string-string-font-family-display)"
-      }
-    },
-    {
-      "id": 240,
-      "name": "--glim-typography-title-md",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 20px/100% var(--glim-string-string-font-family-display)",
-        "light": "var(--glim-string-string-font-weight-loud) 20px/100% var(--glim-string-string-font-family-display)",
-        "dark": "var(--glim-string-string-font-weight-loud) 20px/100% var(--glim-string-string-font-family-display)"
-      }
-    },
-    {
-      "id": 241,
-      "name": "--glim-typography-title-sm",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 16px/100% var(--glim-string-string-font-family-display)",
-        "light": "var(--glim-string-string-font-weight-loud) 16px/100% var(--glim-string-string-font-family-display)",
-        "dark": "var(--glim-string-string-font-weight-loud) 16px/100% var(--glim-string-string-font-family-display)"
-      }
-    },
-    {
-      "id": 242,
-      "name": "--glim-typography-title-xs",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 14px/100% var(--glim-string-string-font-family-display)",
-        "light": "var(--glim-string-string-font-weight-loud) 14px/100% var(--glim-string-string-font-family-display)",
-        "dark": "var(--glim-string-string-font-weight-loud) 14px/100% var(--glim-string-string-font-family-display)"
-      }
-    },
-    {
-      "id": 243,
-      "name": "--glim-typography-body-loud-xl",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 24px/130% var(--glim-string-string-font-family-text)",
-        "light": "var(--glim-string-string-font-weight-loud) 24px/130% var(--glim-string-string-font-family-text)",
-        "dark": "var(--glim-string-string-font-weight-loud) 24px/130% var(--glim-string-string-font-family-text)"
-      }
-    },
-    {
-      "id": 244,
-      "name": "--glim-typography-body-loud-lg",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 20px/130% var(--glim-string-string-font-family-text)",
-        "light": "var(--glim-string-string-font-weight-loud) 20px/130% var(--glim-string-string-font-family-text)",
-        "dark": "var(--glim-string-string-font-weight-loud) 20px/130% var(--glim-string-string-font-family-text)"
-      }
-    },
-    {
-      "id": 245,
-      "name": "--glim-typography-body-loud-md",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 16px/130% var(--glim-string-string-font-family-text)",
-        "light": "var(--glim-string-string-font-weight-loud) 16px/130% var(--glim-string-string-font-family-text)",
-        "dark": "var(--glim-string-string-font-weight-loud) 16px/130% var(--glim-string-string-font-family-text)"
-      }
-    },
-    {
-      "id": 246,
-      "name": "--glim-typography-body-loud-sm",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 14px/130% var(--glim-string-string-font-family-text)",
-        "light": "var(--glim-string-string-font-weight-loud) 14px/130% var(--glim-string-string-font-family-text)",
-        "dark": "var(--glim-string-string-font-weight-loud) 14px/130% var(--glim-string-string-font-family-text)"
-      }
-    },
-    {
-      "id": 247,
-      "name": "--glim-typography-body-loud-xs",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-loud) 12px/130% var(--glim-string-string-font-family-text)",
-        "light": "var(--glim-string-string-font-weight-loud) 12px/130% var(--glim-string-string-font-family-text)",
-        "dark": "var(--glim-string-string-font-weight-loud) 12px/130% var(--glim-string-string-font-family-text)"
-      }
-    },
-    {
-      "id": 248,
-      "name": "--glim-typography-body-xl",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-composed) 24px/130% var(--glim-string-string-font-family-text)",
-        "light": "var(--glim-string-string-font-weight-composed) 24px/130% var(--glim-string-string-font-family-text)",
-        "dark": "var(--glim-string-string-font-weight-composed) 24px/130% var(--glim-string-string-font-family-text)"
-      }
-    },
-    {
-      "id": 249,
-      "name": "--glim-typography-body-lg",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-composed) 20px/130% var(--glim-string-string-font-family-text)",
-        "light": "var(--glim-string-string-font-weight-composed) 20px/130% var(--glim-string-string-font-family-text)",
-        "dark": "var(--glim-string-string-font-weight-composed) 20px/130% var(--glim-string-string-font-family-text)"
-      }
-    },
-    {
-      "id": 250,
-      "name": "--glim-typography-body-md",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-composed) 16px/130% var(--glim-string-string-font-family-text)",
-        "light": "var(--glim-string-string-font-weight-composed) 16px/130% var(--glim-string-string-font-family-text)",
-        "dark": "var(--glim-string-string-font-weight-composed) 16px/130% var(--glim-string-string-font-family-text)"
-      }
-    },
-    {
-      "id": 251,
-      "name": "--glim-typography-body-sm",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-composed) 14px/130% var(--glim-string-string-font-family-text)",
-        "light": "var(--glim-string-string-font-weight-composed) 14px/130% var(--glim-string-string-font-family-text)",
-        "dark": "var(--glim-string-string-font-weight-composed) 14px/130% var(--glim-string-string-font-family-text)"
-      }
-    },
-    {
-      "id": 252,
-      "name": "--glim-typography-body-xs",
-      "value": {
-        "base": "var(--glim-string-string-font-weight-composed) 12px/130% var(--glim-string-string-font-family-text)",
-        "light": "var(--glim-string-string-font-weight-composed) 12px/130% var(--glim-string-string-font-family-text)",
-        "dark": "var(--glim-string-string-font-weight-composed) 12px/130% var(--glim-string-string-font-family-text)"
-      }
-    }
-  ]
+  "variables": {
+    "colors": [
+      {
+        "id": 1,
+        "name": "--glim-color-neutral-solid-1000",
+        "value": {
+          "base": "rgba(16, 16, 16, 1)",
+          "light": "rgba(16, 16, 16, 1)",
+          "dark": "rgba(16, 16, 16, 1)"
+        }
+      },
+      {
+        "id": 2,
+        "name": "--glim-color-neutral-solid-950",
+        "value": {
+          "base": "rgba(26, 26, 26, 1)",
+          "light": "rgba(26, 26, 26, 1)",
+          "dark": "rgba(26, 26, 26, 1)"
+        }
+      },
+      {
+        "id": 3,
+        "name": "--glim-color-neutral-solid-900",
+        "value": {
+          "base": "rgba(36, 36, 36, 1)",
+          "light": "rgba(36, 36, 36, 1)",
+          "dark": "rgba(36, 36, 36, 1)"
+        }
+      },
+      {
+        "id": 4,
+        "name": "--glim-color-neutral-solid-850",
+        "value": {
+          "base": "rgba(50, 50, 50, 1)",
+          "light": "rgba(50, 50, 50, 1)",
+          "dark": "rgba(50, 50, 50, 1)"
+        }
+      },
+      {
+        "id": 5,
+        "name": "--glim-color-neutral-solid-800",
+        "value": {
+          "base": "rgba(67, 67, 67, 1)",
+          "light": "rgba(67, 67, 67, 1)",
+          "dark": "rgba(67, 67, 67, 1)"
+        }
+      },
+      {
+        "id": 6,
+        "name": "--glim-color-neutral-solid-700",
+        "value": {
+          "base": "rgba(87, 87, 87, 1)",
+          "light": "rgba(87, 87, 87, 1)",
+          "dark": "rgba(87, 87, 87, 1)"
+        }
+      },
+      {
+        "id": 7,
+        "name": "--glim-color-neutral-solid-600",
+        "value": {
+          "base": "rgba(112, 112, 112, 1)",
+          "light": "rgba(112, 112, 112, 1)",
+          "dark": "rgba(112, 112, 112, 1)"
+        }
+      },
+      {
+        "id": 8,
+        "name": "--glim-color-neutral-solid-500",
+        "value": {
+          "base": "rgba(136, 136, 136, 1)",
+          "light": "rgba(136, 136, 136, 1)",
+          "dark": "rgba(136, 136, 136, 1)"
+        }
+      },
+      {
+        "id": 9,
+        "name": "--glim-color-neutral-solid-400",
+        "value": {
+          "base": "rgba(161, 161, 161, 1)",
+          "light": "rgba(161, 161, 161, 1)",
+          "dark": "rgba(161, 161, 161, 1)"
+        }
+      },
+      {
+        "id": 10,
+        "name": "--glim-color-neutral-solid-300",
+        "value": {
+          "base": "rgba(188, 188, 188, 1)",
+          "light": "rgba(188, 188, 188, 1)",
+          "dark": "rgba(188, 188, 188, 1)"
+        }
+      },
+      {
+        "id": 11,
+        "name": "--glim-color-neutral-solid-200",
+        "value": {
+          "base": "rgba(207, 207, 207, 1)",
+          "light": "rgba(207, 207, 207, 1)",
+          "dark": "rgba(207, 207, 207, 1)"
+        }
+      },
+      {
+        "id": 12,
+        "name": "--glim-color-neutral-solid-150",
+        "value": {
+          "base": "rgba(228, 228, 228, 1)",
+          "light": "rgba(228, 228, 228, 1)",
+          "dark": "rgba(228, 228, 228, 1)"
+        }
+      },
+      {
+        "id": 13,
+        "name": "--glim-color-neutral-solid-100",
+        "value": {
+          "base": "rgba(239, 239, 239, 1)",
+          "light": "rgba(239, 239, 239, 1)",
+          "dark": "rgba(239, 239, 239, 1)"
+        }
+      },
+      {
+        "id": 14,
+        "name": "--glim-color-neutral-solid-50",
+        "value": {
+          "base": "rgba(249, 249, 249, 1)",
+          "light": "rgba(249, 249, 249, 1)",
+          "dark": "rgba(249, 249, 249, 1)"
+        }
+      },
+      {
+        "id": 15,
+        "name": "--glim-color-neutral-opacity-950",
+        "value": {
+          "base": "rgba(17, 17, 17, 1)",
+          "light": "rgba(17, 17, 17, 1)",
+          "dark": "rgba(17, 17, 17, 1)"
+        }
+      },
+      {
+        "id": 16,
+        "name": "--glim-color-neutral-opacity-700",
+        "value": {
+          "base": "rgba(26, 26, 26, 0.76)",
+          "light": "rgba(26, 26, 26, 0.76)",
+          "dark": "rgba(26, 26, 26, 0.76)"
+        }
+      },
+      {
+        "id": 17,
+        "name": "--glim-color-neutral-opacity-600",
+        "value": {
+          "base": "rgba(26, 26, 26, 0.62)",
+          "light": "rgba(26, 26, 26, 0.62)",
+          "dark": "rgba(26, 26, 26, 0.62)"
+        }
+      },
+      {
+        "id": 18,
+        "name": "--glim-color-neutral-opacity-500",
+        "value": {
+          "base": "rgba(26, 26, 26, 0.5)",
+          "light": "rgba(26, 26, 26, 0.5)",
+          "dark": "rgba(26, 26, 26, 0.5)"
+        }
+      },
+      {
+        "id": 19,
+        "name": "--glim-color-neutral-opacity-400",
+        "value": {
+          "base": "rgba(26, 26, 26, 0.36)",
+          "light": "rgba(26, 26, 26, 0.36)",
+          "dark": "rgba(26, 26, 26, 0.36)"
+        }
+      },
+      {
+        "id": 20,
+        "name": "--glim-color-neutral-opacity-200",
+        "value": {
+          "base": "rgba(26, 26, 26, 0.25)",
+          "light": "rgba(26, 26, 26, 0.25)",
+          "dark": "rgba(26, 26, 26, 0.25)"
+        }
+      },
+      {
+        "id": 21,
+        "name": "--glim-color-neutral-opacity-100",
+        "value": {
+          "base": "rgba(26, 26, 26, 0.14)",
+          "light": "rgba(26, 26, 26, 0.14)",
+          "dark": "rgba(26, 26, 26, 0.14)"
+        }
+      },
+      {
+        "id": 22,
+        "name": "--glim-color-neutral-opacity-inverse-950",
+        "value": {
+          "base": "rgba(255, 255, 255, 1)",
+          "light": "rgba(255, 255, 255, 1)",
+          "dark": "rgba(255, 255, 255, 1)"
+        }
+      },
+      {
+        "id": 23,
+        "name": "--glim-color-brand-primary-1000",
+        "value": {
+          "base": "rgba(48, 0, 78, 1)",
+          "light": "rgba(48, 0, 78, 1)",
+          "dark": "rgba(48, 0, 78, 1)"
+        }
+      },
+      {
+        "id": 24,
+        "name": "--glim-color-brand-secondary-1000",
+        "value": {
+          "base": "rgba(0, 2, 26, 1)",
+          "light": "rgba(0, 2, 26, 1)",
+          "dark": "rgba(0, 2, 26, 1)"
+        }
+      },
+      {
+        "id": 25,
+        "name": "--glim-color-brand-secondary-950",
+        "value": {
+          "base": "rgba(0, 2, 36, 1)",
+          "light": "rgba(0, 2, 36, 1)",
+          "dark": "rgba(0, 2, 36, 1)"
+        }
+      },
+      {
+        "id": 26,
+        "name": "--glim-color-brand-secondary-900",
+        "value": {
+          "base": "var(--glim-color-brand-secondary-900)",
+          "light": "var(--glim-color-brand-secondary-900)",
+          "dark": "var(--glim-color-brand-secondary-900)"
+        }
+      },
+      {
+        "id": 27,
+        "name": "--glim-color-brand-secondary-850",
+        "value": {
+          "base": "rgba(4, 8, 67, 1)",
+          "light": "rgba(4, 8, 67, 1)",
+          "dark": "rgba(4, 8, 67, 1)"
+        }
+      },
+      {
+        "id": 28,
+        "name": "--glim-color-brand-secondary-800",
+        "value": {
+          "base": "var(--glim-color-brand-secondary-800)",
+          "light": "var(--glim-color-brand-secondary-800)",
+          "dark": "var(--glim-color-brand-secondary-800)"
+        }
+      },
+      {
+        "id": 29,
+        "name": "--glim-color-brand-secondary-700",
+        "value": {
+          "base": "var(--glim-color-brand-secondary-700)",
+          "light": "var(--glim-color-brand-secondary-700)",
+          "dark": "var(--glim-color-brand-secondary-700)"
+        }
+      },
+      {
+        "id": 30,
+        "name": "--glim-color-brand-secondary-600",
+        "value": {
+          "base": "var(--glim-color-brand-secondary-600)",
+          "light": "var(--glim-color-brand-secondary-600)",
+          "dark": "var(--glim-color-brand-secondary-600)"
+        }
+      },
+      {
+        "id": 31,
+        "name": "--glim-color-brand-secondary-500",
+        "value": {
+          "base": "var(--glim-color-brand-secondary-500)",
+          "light": "var(--glim-color-brand-secondary-500)",
+          "dark": "var(--glim-color-brand-secondary-500)"
+        }
+      },
+      {
+        "id": 32,
+        "name": "--glim-color-brand-secondary-400",
+        "value": {
+          "base": "var(--glim-color-brand-secondary-400)",
+          "light": "var(--glim-color-brand-secondary-400)",
+          "dark": "var(--glim-color-brand-secondary-400)"
+        }
+      },
+      {
+        "id": 33,
+        "name": "--glim-color-brand-secondary-300",
+        "value": {
+          "base": "var(--glim-color-brand-secondary-300)",
+          "light": "var(--glim-color-brand-secondary-300)",
+          "dark": "var(--glim-color-brand-secondary-300)"
+        }
+      },
+      {
+        "id": 34,
+        "name": "--glim-color-brand-secondary-200",
+        "value": {
+          "base": "var(--glim-color-brand-secondary-200)",
+          "light": "var(--glim-color-brand-secondary-200)",
+          "dark": "var(--glim-color-brand-secondary-200)"
+        }
+      },
+      {
+        "id": 35,
+        "name": "--glim-color-brand-secondary-150",
+        "value": {
+          "base": "rgba(122, 131, 255, 1)",
+          "light": "rgba(122, 131, 255, 1)",
+          "dark": "rgba(122, 131, 255, 1)"
+        }
+      },
+      {
+        "id": 36,
+        "name": "--glim-color-brand-secondary-100",
+        "value": {
+          "base": "var(--glim-color-brand-secondary-100)",
+          "light": "var(--glim-color-brand-secondary-100)",
+          "dark": "var(--glim-color-brand-secondary-100)"
+        }
+      },
+      {
+        "id": 37,
+        "name": "--glim-color-brand-secondary-50",
+        "value": {
+          "base": "var(--glim-color-brand-secondary-50)",
+          "light": "var(--glim-color-brand-secondary-50)",
+          "dark": "var(--glim-color-brand-secondary-50)"
+        }
+      },
+      {
+        "id": 38,
+        "name": "--glim-color-brand-primary-950",
+        "value": {
+          "base": "rgba(62, 0, 100, 1)",
+          "light": "rgba(62, 0, 100, 1)",
+          "dark": "rgba(62, 0, 100, 1)"
+        }
+      },
+      {
+        "id": 39,
+        "name": "--glim-color-brand-primary-900",
+        "value": {
+          "base": "var(--glim-color-brand-primary-900)",
+          "light": "var(--glim-color-brand-primary-900)",
+          "dark": "var(--glim-color-brand-primary-900)"
+        }
+      },
+      {
+        "id": 40,
+        "name": "--glim-color-brand-primary-850",
+        "value": {
+          "base": "rgba(90, 0, 146, 1)",
+          "light": "rgba(90, 0, 146, 1)",
+          "dark": "rgba(90, 0, 146, 1)"
+        }
+      },
+      {
+        "id": 41,
+        "name": "--glim-color-brand-primary-800",
+        "value": {
+          "base": "var(--glim-color-brand-primary-800)",
+          "light": "var(--glim-color-brand-primary-800)",
+          "dark": "var(--glim-color-brand-primary-800)"
+        }
+      },
+      {
+        "id": 42,
+        "name": "--glim-color-brand-primary-700",
+        "value": {
+          "base": "var(--glim-color-brand-primary-700)",
+          "light": "var(--glim-color-brand-primary-700)",
+          "dark": "var(--glim-color-brand-primary-700)"
+        }
+      },
+      {
+        "id": 43,
+        "name": "--glim-color-brand-primary-600",
+        "value": {
+          "base": "var(--glim-color-brand-primary-600)",
+          "light": "var(--glim-color-brand-primary-600)",
+          "dark": "var(--glim-color-brand-primary-600)"
+        }
+      },
+      {
+        "id": 44,
+        "name": "--glim-color-brand-primary-500",
+        "value": {
+          "base": "var(--glim-color-brand-primary-500)",
+          "light": "var(--glim-color-brand-primary-500)",
+          "dark": "var(--glim-color-brand-primary-500)"
+        }
+      },
+      {
+        "id": 45,
+        "name": "--glim-color-brand-primary-400",
+        "value": {
+          "base": "var(--glim-color-brand-primary-400)",
+          "light": "var(--glim-color-brand-primary-400)",
+          "dark": "var(--glim-color-brand-primary-400)"
+        }
+      },
+      {
+        "id": 46,
+        "name": "--glim-color-brand-primary-300",
+        "value": {
+          "base": "var(--glim-color-brand-primary-300)",
+          "light": "var(--glim-color-brand-primary-300)",
+          "dark": "var(--glim-color-brand-primary-300)"
+        }
+      },
+      {
+        "id": 47,
+        "name": "--glim-color-brand-primary-200",
+        "value": {
+          "base": "var(--glim-color-brand-primary-200)",
+          "light": "var(--glim-color-brand-primary-200)",
+          "dark": "var(--glim-color-brand-primary-200)"
+        }
+      },
+      {
+        "id": 48,
+        "name": "--glim-color-brand-primary-150",
+        "value": {
+          "base": "rgba(225, 181, 252, 1)",
+          "light": "rgba(225, 181, 252, 1)",
+          "dark": "rgba(225, 181, 252, 1)"
+        }
+      },
+      {
+        "id": 49,
+        "name": "--glim-color-brand-primary-100",
+        "value": {
+          "base": "var(--glim-color-brand-primary-100)",
+          "light": "var(--glim-color-brand-primary-100)",
+          "dark": "var(--glim-color-brand-primary-100)"
+        }
+      },
+      {
+        "id": 50,
+        "name": "--glim-color-brand-primary-50",
+        "value": {
+          "base": "var(--glim-color-brand-primary-50)",
+          "light": "var(--glim-color-brand-primary-50)",
+          "dark": "var(--glim-color-brand-primary-50)"
+        }
+      },
+      {
+        "id": 51,
+        "name": "--glim-color-neutral-opacity-inverse-700",
+        "value": {
+          "base": "rgba(229, 229, 229, 0.87)",
+          "light": "rgba(229, 229, 229, 0.87)",
+          "dark": "rgba(229, 229, 229, 0.87)"
+        }
+      },
+      {
+        "id": 52,
+        "name": "--glim-color-neutral-opacity-inverse-600",
+        "value": {
+          "base": "rgba(229, 229, 229, 0.75)",
+          "light": "rgba(229, 229, 229, 0.75)",
+          "dark": "rgba(229, 229, 229, 0.75)"
+        }
+      },
+      {
+        "id": 53,
+        "name": "--glim-color-neutral-opacity-inverse-500",
+        "value": {
+          "base": "rgba(229, 229, 229, 0.63)",
+          "light": "rgba(229, 229, 229, 0.63)",
+          "dark": "rgba(229, 229, 229, 0.63)"
+        }
+      },
+      {
+        "id": 54,
+        "name": "--glim-color-neutral-opacity-inverse-400",
+        "value": {
+          "base": "rgba(229, 229, 229, 0.49)",
+          "light": "rgba(229, 229, 229, 0.49)",
+          "dark": "rgba(229, 229, 229, 0.49)"
+        }
+      },
+      {
+        "id": 55,
+        "name": "--glim-color-neutral-opacity-inverse-200",
+        "value": {
+          "base": "rgba(229, 229, 229, 0.33)",
+          "light": "rgba(229, 229, 229, 0.33)",
+          "dark": "rgba(229, 229, 229, 0.33)"
+        }
+      },
+      {
+        "id": 56,
+        "name": "--glim-color-neutral-opacity-inverse-100",
+        "value": {
+          "base": "rgba(229, 229, 229, 0.12)",
+          "light": "rgba(229, 229, 229, 0.12)",
+          "dark": "rgba(229, 229, 229, 0.12)"
+        }
+      },
+      {
+        "id": 57,
+        "name": "--glim-color-elevation-scrim",
+        "value": {
+          "base": "rgba(0, 0, 0, 0.38)",
+          "light": "rgba(0, 0, 0, 0.38)",
+          "dark": "rgba(0, 0, 0, 0.5)"
+        }
+      },
+      {
+        "id": 58,
+        "name": "--glim-color-interaction-danger-default",
+        "value": {
+          "base": "rgba(216, 59, 58, 1)",
+          "light": "rgba(216, 59, 58, 1)",
+          "dark": "rgba(216, 59, 58, 1)"
+        }
+      },
+      {
+        "id": 59,
+        "name": "--glim-color-interaction-danger-danger-hover",
+        "value": {
+          "base": "rgba(188, 48, 47, 1)",
+          "light": "rgba(188, 48, 47, 1)",
+          "dark": "rgba(188, 48, 47, 1)"
+        }
+      },
+      {
+        "id": 60,
+        "name": "--glim-color-interaction-danger-pressed",
+        "value": {
+          "base": "rgba(133, 41, 41, 1)",
+          "light": "rgba(133, 41, 41, 1)",
+          "dark": "rgba(133, 41, 41, 1)"
+        }
+      },
+      {
+        "id": 61,
+        "name": "--glim-color-interaction-danger-focus",
+        "value": {
+          "base": "rgba(188, 48, 47, 1)",
+          "light": "rgba(188, 48, 47, 1)",
+          "dark": "rgba(188, 48, 47, 1)"
+        }
+      },
+      {
+        "id": 62,
+        "name": "--glim-color-interaction-danger-disabled",
+        "value": {
+          "base": "rgba(255, 224, 224, 1)",
+          "light": "rgba(255, 224, 224, 1)",
+          "dark": "rgba(49, 17, 17, 1)"
+        }
+      },
+      {
+        "id": 63,
+        "name": "--glim-color-interaction-danger-resting",
+        "value": {
+          "base": "rgba(247, 186, 186, 1)",
+          "light": "rgba(247, 186, 186, 1)",
+          "dark": "rgba(49, 17, 17, 1)"
+        }
+      },
+      {
+        "id": 64,
+        "name": "--glim-color-system-success-strong",
+        "value": {
+          "base": "rgba(21, 50, 23, 1)",
+          "light": "rgba(21, 50, 23, 1)",
+          "dark": "rgba(209, 250, 209, 1)"
+        }
+      },
+      {
+        "id": 65,
+        "name": "--glim-color-system-success-default",
+        "value": {
+          "base": "rgba(59, 166, 63, 1)",
+          "light": "rgba(59, 166, 63, 1)",
+          "dark": "rgba(59, 166, 63, 1)"
+        }
+      },
+      {
+        "id": 66,
+        "name": "--glim-color-system-success-subtle",
+        "value": {
+          "base": "rgba(209, 250, 209, 1)",
+          "light": "rgba(209, 250, 209, 1)",
+          "dark": "rgba(21, 50, 23, 1)"
+        }
+      },
+      {
+        "id": 67,
+        "name": "--glim-color-system-warning-strong",
+        "value": {
+          "base": "rgba(89, 51, 5, 1)",
+          "light": "rgba(89, 51, 5, 1)",
+          "dark": "rgba(255, 217, 170, 1)"
+        }
+      },
+      {
+        "id": 68,
+        "name": "--glim-color-system-warning-default",
+        "value": {
+          "base": "rgba(255, 146, 13, 1)",
+          "light": "rgba(255, 146, 13, 1)",
+          "dark": "rgba(255, 146, 13, 1)"
+        }
+      },
+      {
+        "id": 69,
+        "name": "--glim-color-system-warning-subtle",
+        "value": {
+          "base": "rgba(255, 217, 170, 1)",
+          "light": "rgba(255, 217, 170, 1)",
+          "dark": "rgba(89, 51, 5, 1)"
+        }
+      },
+      {
+        "id": 70,
+        "name": "--glim-color-system-error-strong",
+        "value": {
+          "base": "rgba(65, 22, 22, 1)",
+          "light": "rgba(65, 22, 22, 1)",
+          "dark": "rgba(255, 224, 224, 1)"
+        }
+      },
+      {
+        "id": 71,
+        "name": "--glim-color-system-error-default",
+        "value": {
+          "base": "rgba(216, 59, 58, 1)",
+          "light": "rgba(216, 59, 58, 1)",
+          "dark": "rgba(216, 59, 58, 1)"
+        }
+      },
+      {
+        "id": 72,
+        "name": "--glim-color-system-error-subtle",
+        "value": {
+          "base": "rgba(255, 224, 224, 1)",
+          "light": "rgba(255, 224, 224, 1)",
+          "dark": "rgba(65, 22, 22, 1)"
+        }
+      },
+      {
+        "id": 73,
+        "name": "--glim-color-permanent-white",
+        "value": {
+          "base": "rgba(255, 255, 255, 1)",
+          "light": "rgba(255, 255, 255, 1)",
+          "dark": "rgba(255, 255, 255, 1)"
+        }
+      },
+      {
+        "id": 74,
+        "name": "--glim-color-permanent-black",
+        "value": {
+          "base": "rgba(0, 0, 0, 1)",
+          "light": "rgba(0, 0, 0, 1)",
+          "dark": "rgba(0, 0, 0, 1)"
+        }
+      },
+      {
+        "id": 75,
+        "name": "--glim-color-brand-primary-background-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          }
+        }
+      },
+      {
+        "id": 76,
+        "name": "--glim-color-text-strong",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-950)",
+            "resolved": "rgba(17, 17, 17, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-950)",
+            "resolved": "rgba(17, 17, 17, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-950)",
+            "resolved": "rgba(255, 255, 255, 1)"
+          }
+        }
+      },
+      {
+        "id": 77,
+        "name": "--glim-color-text-defined",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-700)",
+            "resolved": "rgba(26, 26, 26, 0.76)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-700)",
+            "resolved": "rgba(26, 26, 26, 0.76)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-700)",
+            "resolved": "rgba(229, 229, 229, 0.87)"
+          }
+        }
+      },
+      {
+        "id": 78,
+        "name": "--glim-color-text-soft",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-600)",
+            "resolved": "rgba(26, 26, 26, 0.62)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-600)",
+            "resolved": "rgba(26, 26, 26, 0.62)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-600)",
+            "resolved": "rgba(229, 229, 229, 0.75)"
+          }
+        }
+      },
+      {
+        "id": 79,
+        "name": "--glim-color-text-subtle",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-500)",
+            "resolved": "rgba(26, 26, 26, 0.5)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-500)",
+            "resolved": "rgba(26, 26, 26, 0.5)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-500)",
+            "resolved": "rgba(229, 229, 229, 0.63)"
+          }
+        }
+      },
+      {
+        "id": 80,
+        "name": "--glim-color-text-disabled",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          }
+        }
+      },
+      {
+        "id": 81,
+        "name": "--glim-color-text-supertype",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          }
+        }
+      },
+      {
+        "id": 82,
+        "name": "--glim-color-text-defined-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-700)",
+            "resolved": "rgba(229, 229, 229, 0.87)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-700)",
+            "resolved": "rgba(229, 229, 229, 0.87)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-700)",
+            "resolved": "rgba(26, 26, 26, 0.76)"
+          }
+        }
+      },
+      {
+        "id": 83,
+        "name": "--glim-color-text-soft-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-600)",
+            "resolved": "rgba(229, 229, 229, 0.75)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-600)",
+            "resolved": "rgba(229, 229, 229, 0.75)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-600)",
+            "resolved": "rgba(26, 26, 26, 0.62)"
+          }
+        }
+      },
+      {
+        "id": 84,
+        "name": "--glim-color-text-subtle-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-500)",
+            "resolved": "rgba(229, 229, 229, 0.63)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-500)",
+            "resolved": "rgba(229, 229, 229, 0.63)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-500)",
+            "resolved": "rgba(26, 26, 26, 0.5)"
+          }
+        }
+      },
+      {
+        "id": 85,
+        "name": "--glim-color-text-disabled-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          }
+        }
+      },
+      {
+        "id": 86,
+        "name": "--glim-color-text-supertype-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-950)",
+            "resolved": "rgba(17, 17, 17, 1)"
+          }
+        }
+      },
+      {
+        "id": 87,
+        "name": "--glim-color-text-strong-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-950)",
+            "resolved": "rgba(255, 255, 255, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-950)",
+            "resolved": "rgba(255, 255, 255, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-950)",
+            "resolved": "rgba(17, 17, 17, 1)"
+          }
+        }
+      },
+      {
+        "id": 88,
+        "name": "--glim-color-interaction-link",
+        "value": {
+          "base": "var(--glim-color-brand-primary-600)",
+          "light": "var(--glim-color-brand-primary-600)",
+          "dark": "var(--glim-color-brand-primary-600)"
+        }
+      },
+      {
+        "id": 89,
+        "name": "--glim-color-elevation-base",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          }
+        }
+      },
+      {
+        "id": 90,
+        "name": "--glim-color-interaction-link-visited",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-brand-primary-950)",
+            "resolved": "rgba(62, 0, 100, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-brand-primary-950)",
+            "resolved": "rgba(62, 0, 100, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-brand-primary-150)",
+            "resolved": "rgba(225, 181, 252, 1)"
+          }
+        }
+      },
+      {
+        "id": 91,
+        "name": "--glim-color-elevation-layer-1",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-100)",
+            "resolved": "rgba(239, 239, 239, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-100)",
+            "resolved": "rgba(239, 239, 239, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          }
+        }
+      },
+      {
+        "id": 92,
+        "name": "--glim-color-elevation-layer-2",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          }
+        }
+      },
+      {
+        "id": 93,
+        "name": "--glim-color-elevation-layer-3",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-100)",
+            "resolved": "rgba(239, 239, 239, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-100)",
+            "resolved": "rgba(239, 239, 239, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-850)",
+            "resolved": "rgba(50, 50, 50, 1)"
+          }
+        }
+      },
+      {
+        "id": 94,
+        "name": "--glim-color-elevation-top",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          }
+        }
+      },
+      {
+        "id": 95,
+        "name": "--glim-color-elevation-background-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          }
+        }
+      },
+      {
+        "id": 96,
+        "name": "--glim-color-elevation-layer-1-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-100)",
+            "resolved": "rgba(239, 239, 239, 1)"
+          }
+        }
+      },
+      {
+        "id": 97,
+        "name": "--glim-color-bg-elements-1000",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          }
+        }
+      },
+      {
+        "id": 98,
+        "name": "--glim-color-bg-elements-900",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-200)",
+            "resolved": "rgba(207, 207, 207, 1)"
+          }
+        }
+      },
+      {
+        "id": 99,
+        "name": "--glim-color-bg-elements-800",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-800)",
+            "resolved": "rgba(67, 67, 67, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-800)",
+            "resolved": "rgba(67, 67, 67, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-300)",
+            "resolved": "rgba(188, 188, 188, 1)"
+          }
+        }
+      },
+      {
+        "id": 100,
+        "name": "--glim-color-bg-elements-700",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-700)",
+            "resolved": "rgba(87, 87, 87, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-700)",
+            "resolved": "rgba(87, 87, 87, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-400)",
+            "resolved": "rgba(161, 161, 161, 1)"
+          }
+        }
+      },
+      {
+        "id": 101,
+        "name": "--glim-color-bg-elements-600",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-600)",
+            "resolved": "rgba(112, 112, 112, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-600)",
+            "resolved": "rgba(112, 112, 112, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-500)",
+            "resolved": "rgba(136, 136, 136, 1)"
+          }
+        }
+      },
+      {
+        "id": 102,
+        "name": "--glim-color-bg-elements-500",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-500)",
+            "resolved": "rgba(136, 136, 136, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-500)",
+            "resolved": "rgba(136, 136, 136, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-600)",
+            "resolved": "rgba(112, 112, 112, 1)"
+          }
+        }
+      },
+      {
+        "id": 103,
+        "name": "--glim-color-bg-elements-400",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-400)",
+            "resolved": "rgba(161, 161, 161, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-400)",
+            "resolved": "rgba(161, 161, 161, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-700)",
+            "resolved": "rgba(87, 87, 87, 1)"
+          }
+        }
+      },
+      {
+        "id": 104,
+        "name": "--glim-color-bg-elements-300",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-300)",
+            "resolved": "rgba(188, 188, 188, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-300)",
+            "resolved": "rgba(188, 188, 188, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-800)",
+            "resolved": "rgba(67, 67, 67, 1)"
+          }
+        }
+      },
+      {
+        "id": 105,
+        "name": "--glim-color-bg-elements-200",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-200)",
+            "resolved": "rgba(207, 207, 207, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-200)",
+            "resolved": "rgba(207, 207, 207, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-850)",
+            "resolved": "rgba(50, 50, 50, 1)"
+          }
+        }
+      },
+      {
+        "id": 106,
+        "name": "--glim-color-bg-elements-100",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          }
+        }
+      },
+      {
+        "id": 107,
+        "name": "--glim-color-interaction-hover",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-100)",
+            "resolved": "rgba(229, 229, 229, 0.12)"
+          }
+        }
+      },
+      {
+        "id": 108,
+        "name": "--glim-color-interaction-pressed",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          }
+        }
+      },
+      {
+        "id": 109,
+        "name": "--glim-color-interaction-expanded",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-100)",
+            "resolved": "rgba(229, 229, 229, 0.12)"
+          }
+        }
+      },
+      {
+        "id": 110,
+        "name": "--glim-color-interaction-hover-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-100)",
+            "resolved": "rgba(229, 229, 229, 0.12)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-100)",
+            "resolved": "rgba(229, 229, 229, 0.12)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          }
+        }
+      },
+      {
+        "id": 111,
+        "name": "--glim-color-interaction-pressed-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          }
+        }
+      },
+      {
+        "id": 112,
+        "name": "--glim-color-interaction-expanded-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-100)",
+            "resolved": "rgba(229, 229, 229, 0.12)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-100)",
+            "resolved": "rgba(229, 229, 229, 0.12)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          }
+        }
+      },
+      {
+        "id": 113,
+        "name": "--glim-color-elements-default",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          }
+        }
+      },
+      {
+        "id": 114,
+        "name": "--glim-color-elements-hover",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-200)",
+            "resolved": "rgba(207, 207, 207, 1)"
+          }
+        }
+      },
+      {
+        "id": 115,
+        "name": "--glim-color-elements-pressed",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-400)",
+            "resolved": "rgba(161, 161, 161, 1)"
+          }
+        }
+      },
+      {
+        "id": 116,
+        "name": "--glim-color-elements-focus",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-100)",
+            "resolved": "rgba(239, 239, 239, 1)"
+          }
+        }
+      },
+      {
+        "id": 117,
+        "name": "--glim-color-elements-disabled",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-300)",
+            "resolved": "rgba(188, 188, 188, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-300)",
+            "resolved": "rgba(188, 188, 188, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          }
+        }
+      },
+      {
+        "id": 118,
+        "name": "--glim-color-elements-resting",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          }
+        }
+      },
+      {
+        "id": 119,
+        "name": "--glim-color-elements-default-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          }
+        }
+      },
+      {
+        "id": 120,
+        "name": "--glim-color-elements-hover-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-200)",
+            "resolved": "rgba(207, 207, 207, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-200)",
+            "resolved": "rgba(207, 207, 207, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          }
+        }
+      },
+      {
+        "id": 121,
+        "name": "--glim-color-elements-pressed-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-400)",
+            "resolved": "rgba(161, 161, 161, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-400)",
+            "resolved": "rgba(161, 161, 161, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          }
+        }
+      },
+      {
+        "id": 122,
+        "name": "--glim-color-elements-focus-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-100)",
+            "resolved": "rgba(239, 239, 239, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-100)",
+            "resolved": "rgba(239, 239, 239, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-1000)",
+            "resolved": "rgba(16, 16, 16, 1)"
+          }
+        }
+      },
+      {
+        "id": 123,
+        "name": "--glim-color-elements-disabled-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-300)",
+            "resolved": "rgba(188, 188, 188, 1)"
+          }
+        }
+      },
+      {
+        "id": 124,
+        "name": "--glim-color-elements-resting-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          }
+        }
+      },
+      {
+        "id": 125,
+        "name": "--glim-color-border-strong",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-950)",
+            "resolved": "rgba(17, 17, 17, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-950)",
+            "resolved": "rgba(17, 17, 17, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-950)",
+            "resolved": "rgba(255, 255, 255, 1)"
+          }
+        }
+      },
+      {
+        "id": 126,
+        "name": "--glim-color-border-defined",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-700)",
+            "resolved": "rgba(26, 26, 26, 0.76)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-700)",
+            "resolved": "rgba(26, 26, 26, 0.76)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-700)",
+            "resolved": "rgba(229, 229, 229, 0.87)"
+          }
+        }
+      },
+      {
+        "id": 127,
+        "name": "--glim-color-border-soft",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-600)",
+            "resolved": "rgba(26, 26, 26, 0.62)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-600)",
+            "resolved": "rgba(26, 26, 26, 0.62)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-600)",
+            "resolved": "rgba(229, 229, 229, 0.75)"
+          }
+        }
+      },
+      {
+        "id": 128,
+        "name": "--glim-color-border-subtle",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-500)",
+            "resolved": "rgba(26, 26, 26, 0.5)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-500)",
+            "resolved": "rgba(26, 26, 26, 0.5)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-500)",
+            "resolved": "rgba(229, 229, 229, 0.63)"
+          }
+        }
+      },
+      {
+        "id": 129,
+        "name": "--glim-color-border-disabled",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          }
+        }
+      },
+      {
+        "id": 130,
+        "name": "--glim-color-border-discrete",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-200)",
+            "resolved": "rgba(229, 229, 229, 0.33)"
+          }
+        }
+      },
+      {
+        "id": 131,
+        "name": "--glim-color-interaction-focus",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          }
+        }
+      },
+      {
+        "id": 132,
+        "name": "--glim-color-border-strong-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-950)",
+            "resolved": "rgba(255, 255, 255, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-950)",
+            "resolved": "rgba(255, 255, 255, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-950)",
+            "resolved": "rgba(17, 17, 17, 1)"
+          }
+        }
+      },
+      {
+        "id": 133,
+        "name": "--glim-color-border-defined-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-700)",
+            "resolved": "rgba(229, 229, 229, 0.87)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-700)",
+            "resolved": "rgba(229, 229, 229, 0.87)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-700)",
+            "resolved": "rgba(26, 26, 26, 0.76)"
+          }
+        }
+      },
+      {
+        "id": 134,
+        "name": "--glim-color-border-soft-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-600)",
+            "resolved": "rgba(229, 229, 229, 0.75)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-600)",
+            "resolved": "rgba(229, 229, 229, 0.75)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-600)",
+            "resolved": "rgba(26, 26, 26, 0.62)"
+          }
+        }
+      },
+      {
+        "id": 135,
+        "name": "--glim-color-border-subtle-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-500)",
+            "resolved": "rgba(229, 229, 229, 0.63)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-500)",
+            "resolved": "rgba(229, 229, 229, 0.63)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-500)",
+            "resolved": "rgba(26, 26, 26, 0.5)"
+          }
+        }
+      },
+      {
+        "id": 136,
+        "name": "--glim-color-border-disabled-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          }
+        }
+      },
+      {
+        "id": 137,
+        "name": "--glim-color-elevation-layer-2-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          }
+        }
+      },
+      {
+        "id": 138,
+        "name": "--glim-color-border-discrete-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-200)",
+            "resolved": "rgba(229, 229, 229, 0.33)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-200)",
+            "resolved": "rgba(229, 229, 229, 0.33)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          }
+        }
+      },
+      {
+        "id": 139,
+        "name": "--glim-color-elevation-layer-3-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-850)",
+            "resolved": "rgba(50, 50, 50, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-850)",
+            "resolved": "rgba(50, 50, 50, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-100)",
+            "resolved": "rgba(239, 239, 239, 1)"
+          }
+        }
+      },
+      {
+        "id": 140,
+        "name": "--glim-color-elevation-top-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-50)",
+            "resolved": "rgba(249, 249, 249, 1)"
+          }
+        }
+      },
+      {
+        "id": 141,
+        "name": "--glim-color-interaction-link-brand",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-brand-primary-950)",
+            "resolved": "rgba(62, 0, 100, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-brand-primary-950)",
+            "resolved": "rgba(62, 0, 100, 1)"
+          },
+          "dark": "var(--glim-color-brand-primary-50)"
+        }
+      },
+      {
+        "id": 142,
+        "name": "--glim-color-transparent-strong",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-950)",
+            "resolved": "rgba(17, 17, 17, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-950)",
+            "resolved": "rgba(17, 17, 17, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-950)",
+            "resolved": "rgba(255, 255, 255, 1)"
+          }
+        }
+      },
+      {
+        "id": 143,
+        "name": "--glim-color-transparent-defined",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-700)",
+            "resolved": "rgba(26, 26, 26, 0.76)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-700)",
+            "resolved": "rgba(26, 26, 26, 0.76)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-700)",
+            "resolved": "rgba(229, 229, 229, 0.87)"
+          }
+        }
+      },
+      {
+        "id": 144,
+        "name": "--glim-color-transparent-soft",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-600)",
+            "resolved": "rgba(26, 26, 26, 0.62)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-600)",
+            "resolved": "rgba(26, 26, 26, 0.62)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-600)",
+            "resolved": "rgba(229, 229, 229, 0.75)"
+          }
+        }
+      },
+      {
+        "id": 145,
+        "name": "--glim-color-transparent-subtle",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-500)",
+            "resolved": "rgba(26, 26, 26, 0.5)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-500)",
+            "resolved": "rgba(26, 26, 26, 0.5)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-500)",
+            "resolved": "rgba(229, 229, 229, 0.63)"
+          }
+        }
+      },
+      {
+        "id": 146,
+        "name": "--glim-color-transparent-disabled",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          }
+        }
+      },
+      {
+        "id": 147,
+        "name": "--glim-color-transparent-discrete",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-100)",
+            "resolved": "rgba(229, 229, 229, 0.12)"
+          }
+        }
+      },
+      {
+        "id": 148,
+        "name": "--glim-color-transparent-strong-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-950)",
+            "resolved": "rgba(255, 255, 255, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-950)",
+            "resolved": "rgba(255, 255, 255, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-950)",
+            "resolved": "rgba(17, 17, 17, 1)"
+          }
+        }
+      },
+      {
+        "id": 149,
+        "name": "--glim-color-transparent-defined-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-700)",
+            "resolved": "rgba(229, 229, 229, 0.87)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-700)",
+            "resolved": "rgba(229, 229, 229, 0.87)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-700)",
+            "resolved": "rgba(26, 26, 26, 0.76)"
+          }
+        }
+      },
+      {
+        "id": 150,
+        "name": "--glim-color-transparent-soft-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-600)",
+            "resolved": "rgba(229, 229, 229, 0.75)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-600)",
+            "resolved": "rgba(229, 229, 229, 0.75)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-600)",
+            "resolved": "rgba(26, 26, 26, 0.62)"
+          }
+        }
+      },
+      {
+        "id": 151,
+        "name": "--glim-color-transparent-subtle-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-500)",
+            "resolved": "rgba(229, 229, 229, 0.63)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-500)",
+            "resolved": "rgba(229, 229, 229, 0.63)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-500)",
+            "resolved": "rgba(26, 26, 26, 0.5)"
+          }
+        }
+      },
+      {
+        "id": 152,
+        "name": "--glim-color-transparent-disabled-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-400)",
+            "resolved": "rgba(229, 229, 229, 0.49)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-400)",
+            "resolved": "rgba(26, 26, 26, 0.36)"
+          }
+        }
+      },
+      {
+        "id": 153,
+        "name": "--glim-color-transparent-discrete-inverse",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-100)",
+            "resolved": "rgba(229, 229, 229, 0.12)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-opacity-inverse-100)",
+            "resolved": "rgba(229, 229, 229, 0.12)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-opacity-100)",
+            "resolved": "rgba(26, 26, 26, 0.14)"
+          }
+        }
+      },
+      {
+        "id": 154,
+        "name": "--glim-color-interaction-link-inverse",
+        "value": {
+          "base": "var(--glim-color-brand-primary-700)",
+          "light": "var(--glim-color-brand-primary-700)",
+          "dark": "var(--glim-color-brand-primary-500)"
+        }
+      },
+      {
+        "id": 155,
+        "name": "--glim-color-solid-1000",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-950)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          }
+        }
+      },
+      {
+        "id": 156,
+        "name": "--glim-color-system-info-strong",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-solid-1000)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-solid-1000)",
+            "resolved": "rgba(26, 26, 26, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-solid-1000)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          }
+        }
+      },
+      {
+        "id": 157,
+        "name": "--glim-color-solid-600",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-600)",
+            "resolved": "rgba(112, 112, 112, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-600)",
+            "resolved": "rgba(112, 112, 112, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-500)",
+            "resolved": "rgba(136, 136, 136, 1)"
+          }
+        }
+      },
+      {
+        "id": 158,
+        "name": "--glim-color-system-info-default",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-solid-600)",
+            "resolved": "rgba(112, 112, 112, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-solid-600)",
+            "resolved": "rgba(112, 112, 112, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-solid-600)",
+            "resolved": "rgba(136, 136, 136, 1)"
+          }
+        }
+      },
+      {
+        "id": 159,
+        "name": "--glim-color-solid-100",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-150)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          }
+        }
+      },
+      {
+        "id": 160,
+        "name": "--glim-color-system-info-subtle",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-solid-100)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-solid-100)",
+            "resolved": "rgba(228, 228, 228, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-solid-100)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          }
+        }
+      },
+      {
+        "id": 161,
+        "name": "--glim-color-solid-900",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-900)",
+            "resolved": "rgba(36, 36, 36, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-200)",
+            "resolved": "rgba(207, 207, 207, 1)"
+          }
+        }
+      },
+      {
+        "id": 162,
+        "name": "--glim-color-solid-800",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-800)",
+            "resolved": "rgba(67, 67, 67, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-800)",
+            "resolved": "rgba(67, 67, 67, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-300)",
+            "resolved": "rgba(188, 188, 188, 1)"
+          }
+        }
+      },
+      {
+        "id": 163,
+        "name": "--glim-color-solid-700",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-700)",
+            "resolved": "rgba(87, 87, 87, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-700)",
+            "resolved": "rgba(87, 87, 87, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-400)",
+            "resolved": "rgba(161, 161, 161, 1)"
+          }
+        }
+      },
+      {
+        "id": 164,
+        "name": "--glim-color-solid-500",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-500)",
+            "resolved": "rgba(136, 136, 136, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-500)",
+            "resolved": "rgba(136, 136, 136, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-600)",
+            "resolved": "rgba(112, 112, 112, 1)"
+          }
+        }
+      },
+      {
+        "id": 165,
+        "name": "--glim-color-solid-400",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-400)",
+            "resolved": "rgba(161, 161, 161, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-400)",
+            "resolved": "rgba(161, 161, 161, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-700)",
+            "resolved": "rgba(87, 87, 87, 1)"
+          }
+        }
+      },
+      {
+        "id": 166,
+        "name": "--glim-color-solid-300",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-300)",
+            "resolved": "rgba(188, 188, 188, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-300)",
+            "resolved": "rgba(188, 188, 188, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-800)",
+            "resolved": "rgba(67, 67, 67, 1)"
+          }
+        }
+      },
+      {
+        "id": 167,
+        "name": "--glim-color-solid-200",
+        "value": {
+          "base": {
+            "raw": "var(--glim-color-neutral-solid-200)",
+            "resolved": "rgba(207, 207, 207, 1)"
+          },
+          "light": {
+            "raw": "var(--glim-color-neutral-solid-200)",
+            "resolved": "rgba(207, 207, 207, 1)"
+          },
+          "dark": {
+            "raw": "var(--glim-color-neutral-solid-850)",
+            "resolved": "rgba(50, 50, 50, 1)"
+          }
+        }
+      }
+    ],
+    "dimensions": [
+      {
+        "id": 168,
+        "name": "--glim-dimension-dimensions-unit-0",
+        "value": {
+          "base": "2px",
+          "light": "2px",
+          "dark": "2px"
+        }
+      },
+      {
+        "id": 169,
+        "name": "--glim-dimension-dimensions-unit-1",
+        "value": {
+          "base": "4px",
+          "light": "4px",
+          "dark": "4px"
+        }
+      },
+      {
+        "id": 170,
+        "name": "--glim-dimension-dimensions-unit-2",
+        "value": {
+          "base": "8px",
+          "light": "8px",
+          "dark": "8px"
+        }
+      },
+      {
+        "id": 171,
+        "name": "--glim-dimension-dimensions-unit-3",
+        "value": {
+          "base": "12px",
+          "light": "12px",
+          "dark": "12px"
+        }
+      },
+      {
+        "id": 172,
+        "name": "--glim-dimension-dimensions-unit-4",
+        "value": {
+          "base": "16px",
+          "light": "16px",
+          "dark": "16px"
+        }
+      },
+      {
+        "id": 173,
+        "name": "--glim-dimension-dimensions-unit-5",
+        "value": {
+          "base": "20px",
+          "light": "20px",
+          "dark": "20px"
+        }
+      },
+      {
+        "id": 174,
+        "name": "--glim-dimension-dimensions-unit-6",
+        "value": {
+          "base": "24px",
+          "light": "24px",
+          "dark": "24px"
+        }
+      },
+      {
+        "id": 175,
+        "name": "--glim-dimension-dimensions-unit-7",
+        "value": {
+          "base": "32px",
+          "light": "32px",
+          "dark": "32px"
+        }
+      },
+      {
+        "id": 176,
+        "name": "--glim-dimension-dimensions-unit-8",
+        "value": {
+          "base": "40px",
+          "light": "40px",
+          "dark": "40px"
+        }
+      },
+      {
+        "id": 177,
+        "name": "--glim-dimension-dimensions-unit-9",
+        "value": {
+          "base": "48px",
+          "light": "48px",
+          "dark": "48px"
+        }
+      },
+      {
+        "id": 178,
+        "name": "--glim-dimension-dimensions-unit-10",
+        "value": {
+          "base": "56px",
+          "light": "56px",
+          "dark": "56px"
+        }
+      },
+      {
+        "id": 179,
+        "name": "--glim-dimension-dimensions-unit-11",
+        "value": {
+          "base": "64px",
+          "light": "64px",
+          "dark": "64px"
+        }
+      },
+      {
+        "id": 180,
+        "name": "--glim-dimension-dimensions-unit-12",
+        "value": {
+          "base": "80px",
+          "light": "80px",
+          "dark": "80px"
+        }
+      },
+      {
+        "id": 181,
+        "name": "--glim-dimension-dimensions-unit-13",
+        "value": {
+          "base": "96px",
+          "light": "96px",
+          "dark": "96px"
+        }
+      },
+      {
+        "id": 182,
+        "name": "--glim-dimension-dimensions-unit-14",
+        "value": {
+          "base": "120px",
+          "light": "120px",
+          "dark": "120px"
+        }
+      },
+      {
+        "id": 183,
+        "name": "--glim-dimension-border-focus",
+        "value": {
+          "base": "2px",
+          "light": "2px",
+          "dark": "2px"
+        }
+      },
+      {
+        "id": 184,
+        "name": "--glim-dimension-font-size-12",
+        "value": {
+          "base": "12px",
+          "light": "12px",
+          "dark": "12px"
+        }
+      },
+      {
+        "id": 185,
+        "name": "--glim-dimension-font-size-14",
+        "value": {
+          "base": "14px",
+          "light": "14px",
+          "dark": "14px"
+        }
+      },
+      {
+        "id": 186,
+        "name": "--glim-dimension-font-size-16",
+        "value": {
+          "base": "16px",
+          "light": "16px",
+          "dark": "16px"
+        }
+      },
+      {
+        "id": 187,
+        "name": "--glim-dimension-font-size-20",
+        "value": {
+          "base": "20px",
+          "light": "20px",
+          "dark": "20px"
+        }
+      },
+      {
+        "id": 188,
+        "name": "--glim-dimension-font-size-24",
+        "value": {
+          "base": "24px",
+          "light": "24px",
+          "dark": "24px"
+        }
+      },
+      {
+        "id": 189,
+        "name": "--glim-dimension-font-size-32",
+        "value": {
+          "base": "32px",
+          "light": "32px",
+          "dark": "32px"
+        }
+      },
+      {
+        "id": 190,
+        "name": "--glim-dimension-font-size-40",
+        "value": {
+          "base": "40px",
+          "light": "40px",
+          "dark": "40px"
+        }
+      },
+      {
+        "id": 191,
+        "name": "--glim-dimension-font-size-48",
+        "value": {
+          "base": "48px",
+          "light": "48px",
+          "dark": "48px"
+        }
+      },
+      {
+        "id": 192,
+        "name": "--glim-dimension-font-size-56",
+        "value": {
+          "base": "56px",
+          "light": "56px",
+          "dark": "56px"
+        }
+      },
+      {
+        "id": 193,
+        "name": "--glim-dimension-font-size-64",
+        "value": {
+          "base": "64px",
+          "light": "64px",
+          "dark": "64px"
+        }
+      },
+      {
+        "id": 194,
+        "name": "--glim-dimension-font-size-96",
+        "value": {
+          "base": "96px",
+          "light": "96px",
+          "dark": "96px"
+        }
+      },
+      {
+        "id": 195,
+        "name": "--glim-dimension-font-size-112",
+        "value": {
+          "base": "112px",
+          "light": "112px",
+          "dark": "112px"
+        }
+      },
+      {
+        "id": 196,
+        "name": "--glim-dimension-font-size-156",
+        "value": {
+          "base": "156px",
+          "light": "156px",
+          "dark": "156px"
+        }
+      },
+      {
+        "id": 197,
+        "name": "--glim-dimension-font-size-216",
+        "value": {
+          "base": "216px",
+          "light": "216px",
+          "dark": "216px"
+        }
+      },
+      {
+        "id": 198,
+        "name": "--glim-dimension-size-1",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          }
+        }
+      },
+      {
+        "id": 199,
+        "name": "--glim-dimension-radius-1",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-0)",
+            "resolved": "2px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-0)",
+            "resolved": "2px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-0)",
+            "resolved": "2px"
+          }
+        }
+      },
+      {
+        "id": 200,
+        "name": "--glim-dimension-radius-2",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          }
+        }
+      },
+      {
+        "id": 201,
+        "name": "--glim-dimension-radius-3",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          }
+        }
+      },
+      {
+        "id": 202,
+        "name": "--glim-dimension-radius-4",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-3)",
+            "resolved": "12px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-3)",
+            "resolved": "12px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-3)",
+            "resolved": "12px"
+          }
+        }
+      },
+      {
+        "id": 203,
+        "name": "--glim-dimension-size-2",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-4)",
+            "resolved": "16px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-4)",
+            "resolved": "16px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-4)",
+            "resolved": "16px"
+          }
+        }
+      },
+      {
+        "id": 204,
+        "name": "--glim-dimension-size-3",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-6)",
+            "resolved": "24px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-6)",
+            "resolved": "24px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-6)",
+            "resolved": "24px"
+          }
+        }
+      },
+      {
+        "id": 205,
+        "name": "--glim-dimension-size-4",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-8)",
+            "resolved": "40px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-8)",
+            "resolved": "40px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-8)",
+            "resolved": "40px"
+          }
+        }
+      },
+      {
+        "id": 206,
+        "name": "--glim-dimension-size-5",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-10)",
+            "resolved": "56px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-10)",
+            "resolved": "56px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-10)",
+            "resolved": "56px"
+          }
+        }
+      },
+      {
+        "id": 207,
+        "name": "--glim-dimension-size-0-5",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          }
+        }
+      },
+      {
+        "id": 208,
+        "name": "--glim-dimension-radius-5",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-5)",
+            "resolved": "20px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-5)",
+            "resolved": "20px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-5)",
+            "resolved": "20px"
+          }
+        }
+      },
+      {
+        "id": 209,
+        "name": "--glim-dimension-padding-1",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-0)",
+            "resolved": "2px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-0)",
+            "resolved": "2px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-0)",
+            "resolved": "2px"
+          }
+        }
+      },
+      {
+        "id": 210,
+        "name": "--glim-dimension-padding-2",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          }
+        }
+      },
+      {
+        "id": 211,
+        "name": "--glim-dimension-padding-3",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          }
+        }
+      },
+      {
+        "id": 212,
+        "name": "--glim-dimension-padding-4",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-3)",
+            "resolved": "12px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-3)",
+            "resolved": "12px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-3)",
+            "resolved": "12px"
+          }
+        }
+      },
+      {
+        "id": 213,
+        "name": "--glim-dimension-padding-5",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-4)",
+            "resolved": "16px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-4)",
+            "resolved": "16px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-3)",
+            "resolved": "12px"
+          }
+        }
+      },
+      {
+        "id": 214,
+        "name": "--glim-dimension-margin-1",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          }
+        }
+      },
+      {
+        "id": 215,
+        "name": "--glim-dimension-margin-2",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          }
+        }
+      },
+      {
+        "id": 216,
+        "name": "--glim-dimension-margin-3",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-4)",
+            "resolved": "16px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-4)",
+            "resolved": "16px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-4)",
+            "resolved": "16px"
+          }
+        }
+      },
+      {
+        "id": 217,
+        "name": "--glim-dimension-margin-4",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-6)",
+            "resolved": "24px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-6)",
+            "resolved": "24px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-6)",
+            "resolved": "24px"
+          }
+        }
+      },
+      {
+        "id": 218,
+        "name": "--glim-dimension-gap-1",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-1)",
+            "resolved": "4px"
+          }
+        }
+      },
+      {
+        "id": 219,
+        "name": "--glim-dimension-gap-2",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-2)",
+            "resolved": "8px"
+          }
+        }
+      },
+      {
+        "id": 220,
+        "name": "--glim-dimension-gap-3",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-4)",
+            "resolved": "16px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-4)",
+            "resolved": "16px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-4)",
+            "resolved": "16px"
+          }
+        }
+      },
+      {
+        "id": 221,
+        "name": "--glim-dimension-gap-4",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-6)",
+            "resolved": "24px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-6)",
+            "resolved": "24px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-6)",
+            "resolved": "24px"
+          }
+        }
+      },
+      {
+        "id": 222,
+        "name": "--glim-dimension-gap-5",
+        "value": {
+          "base": {
+            "raw": "var(--glim-dimension-dimensions-unit-8)",
+            "resolved": "40px"
+          },
+          "light": {
+            "raw": "var(--glim-dimension-dimensions-unit-8)",
+            "resolved": "40px"
+          },
+          "dark": {
+            "raw": "var(--glim-dimension-dimensions-unit-8)",
+            "resolved": "40px"
+          }
+        }
+      }
+    ],
+    "shadows": [
+      {
+        "id": 223,
+        "name": "--glim-shadow-focus-shadow",
+        "value": {
+          "base": "inset 0px 0px 0px 3px var(--glim-color-elevation-layer-1)",
+          "light": "inset 0px 0px 0px 3px var(--glim-color-elevation-layer-1)",
+          "dark": "inset 0px 0px 0px 3px var(--glim-color-elevation-layer-1)"
+        }
+      }
+    ],
+    "strings": [
+      {
+        "id": 224,
+        "name": "--glim-string-font-family-display",
+        "value": {
+          "base": "\"Eidra Sans\"",
+          "light": null,
+          "dark": null
+        }
+      },
+      {
+        "id": 225,
+        "name": "--glim-string-font-family-text",
+        "value": {
+          "base": "\"Eidra Sans\"",
+          "light": null,
+          "dark": null
+        }
+      },
+      {
+        "id": 226,
+        "name": "--glim-string-font-weight-loud",
+        "value": {
+          "base": "\"Bold\"",
+          "light": null,
+          "dark": null
+        }
+      },
+      {
+        "id": 227,
+        "name": "--glim-string-font-weight-composed",
+        "value": {
+          "base": "\"Regular\"",
+          "light": null,
+          "dark": null
+        }
+      },
+      {
+        "id": 228,
+        "name": "--glim-string-typography-string",
+        "value": {
+          "base": "\"Transportation Powerhouse\"",
+          "light": "\"Transportation Powerhouse\"",
+          "dark": "\"Transportation Powerhouse\""
+        }
+      },
+      {
+        "id": 229,
+        "name": "--glim-string-string-font-family-display",
+        "value": {
+          "base": null,
+          "light": "\"Eidra Sans\"",
+          "dark": "\"Eidra Sans\""
+        }
+      },
+      {
+        "id": 230,
+        "name": "--glim-string-string-font-family-text",
+        "value": {
+          "base": null,
+          "light": "\"Eidra Sans\"",
+          "dark": "\"Eidra Sans\""
+        }
+      },
+      {
+        "id": 231,
+        "name": "--glim-string-string-font-weight-loud",
+        "value": {
+          "base": null,
+          "light": "\"Bold\"",
+          "dark": "\"Bold\""
+        }
+      },
+      {
+        "id": 232,
+        "name": "--glim-string-string-font-weight-composed",
+        "value": {
+          "base": null,
+          "light": "\"Regular\"",
+          "dark": "\"Regular\""
+        }
+      }
+    ],
+    "typography": [
+      {
+        "id": 233,
+        "name": "--glim-typography-display-xxl",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 216px/100% var(--glim-string-string-font-family-display)",
+          "light": "var(--glim-string-string-font-weight-loud) 216px/100% var(--glim-string-string-font-family-display)",
+          "dark": "var(--glim-string-string-font-weight-loud) 216px/100% var(--glim-string-string-font-family-display)"
+        }
+      },
+      {
+        "id": 234,
+        "name": "--glim-typography-display-xl",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 156px/100% var(--glim-string-string-font-family-display)",
+          "light": "var(--glim-string-string-font-weight-loud) 156px/100% var(--glim-string-string-font-family-display)",
+          "dark": "var(--glim-string-string-font-weight-loud) 156px/100% var(--glim-string-string-font-family-display)"
+        }
+      },
+      {
+        "id": 235,
+        "name": "--glim-typography-display-lg",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 112px/100% var(--glim-string-string-font-family-display)",
+          "light": "var(--glim-string-string-font-weight-loud) 112px/100% var(--glim-string-string-font-family-display)",
+          "dark": "var(--glim-string-string-font-weight-loud) 112px/100% var(--glim-string-string-font-family-display)"
+        }
+      },
+      {
+        "id": 236,
+        "name": "--glim-typography-headline-lg",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 80px/100% var(--glim-string-string-font-family-display)",
+          "light": "var(--glim-string-string-font-weight-loud) 80px/100% var(--glim-string-string-font-family-display)",
+          "dark": "var(--glim-string-string-font-weight-loud) 80px/100% var(--glim-string-string-font-family-display)"
+        }
+      },
+      {
+        "id": 237,
+        "name": "--glim-typography-headline-md",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 56px/100% var(--glim-string-string-font-family-display)",
+          "light": "var(--glim-string-string-font-weight-loud) 56px/100% var(--glim-string-string-font-family-display)",
+          "dark": "var(--glim-string-string-font-weight-loud) 56px/100% var(--glim-string-string-font-family-display)"
+        }
+      },
+      {
+        "id": 238,
+        "name": "--glim-typography-headline-sm",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 40px/100% var(--glim-string-string-font-family-display)",
+          "light": "var(--glim-string-string-font-weight-loud) 40px/100% var(--glim-string-string-font-family-display)",
+          "dark": "var(--glim-string-string-font-weight-loud) 40px/100% var(--glim-string-string-font-family-display)"
+        }
+      },
+      {
+        "id": 239,
+        "name": "--glim-typography-title-lg",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 24px/100% var(--glim-string-string-font-family-display)",
+          "light": "var(--glim-string-string-font-weight-loud) 24px/100% var(--glim-string-string-font-family-display)",
+          "dark": "var(--glim-string-string-font-weight-loud) 24px/100% var(--glim-string-string-font-family-display)"
+        }
+      },
+      {
+        "id": 240,
+        "name": "--glim-typography-title-md",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 20px/100% var(--glim-string-string-font-family-display)",
+          "light": "var(--glim-string-string-font-weight-loud) 20px/100% var(--glim-string-string-font-family-display)",
+          "dark": "var(--glim-string-string-font-weight-loud) 20px/100% var(--glim-string-string-font-family-display)"
+        }
+      },
+      {
+        "id": 241,
+        "name": "--glim-typography-title-sm",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 16px/100% var(--glim-string-string-font-family-display)",
+          "light": "var(--glim-string-string-font-weight-loud) 16px/100% var(--glim-string-string-font-family-display)",
+          "dark": "var(--glim-string-string-font-weight-loud) 16px/100% var(--glim-string-string-font-family-display)"
+        }
+      },
+      {
+        "id": 242,
+        "name": "--glim-typography-title-xs",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 14px/100% var(--glim-string-string-font-family-display)",
+          "light": "var(--glim-string-string-font-weight-loud) 14px/100% var(--glim-string-string-font-family-display)",
+          "dark": "var(--glim-string-string-font-weight-loud) 14px/100% var(--glim-string-string-font-family-display)"
+        }
+      },
+      {
+        "id": 243,
+        "name": "--glim-typography-body-loud-xl",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 24px/130% var(--glim-string-string-font-family-text)",
+          "light": "var(--glim-string-string-font-weight-loud) 24px/130% var(--glim-string-string-font-family-text)",
+          "dark": "var(--glim-string-string-font-weight-loud) 24px/130% var(--glim-string-string-font-family-text)"
+        }
+      },
+      {
+        "id": 244,
+        "name": "--glim-typography-body-loud-lg",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 20px/130% var(--glim-string-string-font-family-text)",
+          "light": "var(--glim-string-string-font-weight-loud) 20px/130% var(--glim-string-string-font-family-text)",
+          "dark": "var(--glim-string-string-font-weight-loud) 20px/130% var(--glim-string-string-font-family-text)"
+        }
+      },
+      {
+        "id": 245,
+        "name": "--glim-typography-body-loud-md",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 16px/130% var(--glim-string-string-font-family-text)",
+          "light": "var(--glim-string-string-font-weight-loud) 16px/130% var(--glim-string-string-font-family-text)",
+          "dark": "var(--glim-string-string-font-weight-loud) 16px/130% var(--glim-string-string-font-family-text)"
+        }
+      },
+      {
+        "id": 246,
+        "name": "--glim-typography-body-loud-sm",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 14px/130% var(--glim-string-string-font-family-text)",
+          "light": "var(--glim-string-string-font-weight-loud) 14px/130% var(--glim-string-string-font-family-text)",
+          "dark": "var(--glim-string-string-font-weight-loud) 14px/130% var(--glim-string-string-font-family-text)"
+        }
+      },
+      {
+        "id": 247,
+        "name": "--glim-typography-body-loud-xs",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-loud) 12px/130% var(--glim-string-string-font-family-text)",
+          "light": "var(--glim-string-string-font-weight-loud) 12px/130% var(--glim-string-string-font-family-text)",
+          "dark": "var(--glim-string-string-font-weight-loud) 12px/130% var(--glim-string-string-font-family-text)"
+        }
+      },
+      {
+        "id": 248,
+        "name": "--glim-typography-body-xl",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-composed) 24px/130% var(--glim-string-string-font-family-text)",
+          "light": "var(--glim-string-string-font-weight-composed) 24px/130% var(--glim-string-string-font-family-text)",
+          "dark": "var(--glim-string-string-font-weight-composed) 24px/130% var(--glim-string-string-font-family-text)"
+        }
+      },
+      {
+        "id": 249,
+        "name": "--glim-typography-body-lg",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-composed) 20px/130% var(--glim-string-string-font-family-text)",
+          "light": "var(--glim-string-string-font-weight-composed) 20px/130% var(--glim-string-string-font-family-text)",
+          "dark": "var(--glim-string-string-font-weight-composed) 20px/130% var(--glim-string-string-font-family-text)"
+        }
+      },
+      {
+        "id": 250,
+        "name": "--glim-typography-body-md",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-composed) 16px/130% var(--glim-string-string-font-family-text)",
+          "light": "var(--glim-string-string-font-weight-composed) 16px/130% var(--glim-string-string-font-family-text)",
+          "dark": "var(--glim-string-string-font-weight-composed) 16px/130% var(--glim-string-string-font-family-text)"
+        }
+      },
+      {
+        "id": 251,
+        "name": "--glim-typography-body-sm",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-composed) 14px/130% var(--glim-string-string-font-family-text)",
+          "light": "var(--glim-string-string-font-weight-composed) 14px/130% var(--glim-string-string-font-family-text)",
+          "dark": "var(--glim-string-string-font-weight-composed) 14px/130% var(--glim-string-string-font-family-text)"
+        }
+      },
+      {
+        "id": 252,
+        "name": "--glim-typography-body-xs",
+        "value": {
+          "base": "var(--glim-string-string-font-weight-composed) 12px/130% var(--glim-string-string-font-family-text)",
+          "light": "var(--glim-string-string-font-weight-composed) 12px/130% var(--glim-string-string-font-family-text)",
+          "dark": "var(--glim-string-string-font-weight-composed) 12px/130% var(--glim-string-string-font-family-text)"
+        }
+      }
+    ]
+  }
 }

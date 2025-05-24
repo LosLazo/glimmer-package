@@ -70,6 +70,7 @@ export interface ComponentTokens {
 // Main Component API interface
 export interface ComponentAPI {
   name: string;
+  prefixedName: string;
   description: string;
   props: Record<string, ComponentProp>;
   events: Record<string, ComponentEvent>;
@@ -102,8 +103,13 @@ export function isComponentTokens(value: any): value is ComponentTokens {
 
 // Helper function to create a new component API
 export function createComponentAPI(name: string, description: string): ComponentAPI {
+  // Remove 'Glim' prefix if it exists to get the base name
+  const baseName = name.startsWith('Glim') ? name.substring(4) : name;
+  const prefixedName = baseName.startsWith('Glim') ? baseName : `Glim${baseName}`;
+  
   return {
-    name,
+    name: baseName,
+    prefixedName,
     description,
     props: {},
     events: {},

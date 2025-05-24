@@ -1,6 +1,7 @@
 [
   {
-    "name": "GlimAccordion",
+    "name": "Accordion",
+    "prefixedName": "GlimAccordion",
     "description": "Accordion An expandable/collapsible accordion component that displays items with titles and expandable content. Features smooth animations and customizable max-width settings.",
     "props": {},
     "events": {},
@@ -166,7 +167,8 @@
     }
   },
   {
-    "name": "GlimAvatar",
+    "name": "Avatar",
+    "prefixedName": "GlimAvatar",
     "description": "GlimAvatar A versatile avatar component for displaying user images with fallback icon support. Supports different shapes (circle or squircle) and customizable sizing.",
     "props": {
       "image": {
@@ -320,7 +322,8 @@
     }
   },
   {
-    "name": "GlimBadge",
+    "name": "Badge",
+    "prefixedName": "GlimBadge",
     "description": "GlimBadge Displays a small numerical value or indicator that can be used for notifications, counts, or status indicators. The badge can be displayed as a number with optional maximum value or as a simple dot.",
     "props": {
       "value": {
@@ -397,7 +400,8 @@
     }
   },
   {
-    "name": "GlimBanner",
+    "name": "Banner",
+    "prefixedName": "GlimBanner",
     "description": "GlimBanner A banner component that displays information or notifications with different variants. Can be dismissible and supports both a title and description.",
     "props": {
       "description": {
@@ -582,7 +586,8 @@
     }
   },
   {
-    "name": "GlimButton",
+    "name": "Button",
+    "prefixedName": "GlimButton",
     "description": "A versatile button component with multiple variants, sizes, and states. Supports icons, loading states, and inverse color schemes. Use for user interactions and form submissions.",
     "props": {
       "disabled": {
@@ -1405,7 +1410,8 @@
     }
   },
   {
-    "name": "GlimCard",
+    "name": "Card",
+    "prefixedName": "GlimCard",
     "description": "A versatile card component for displaying content with optional image and action slots. Cards can be used for various purposes such as product cards, article previews, or feature highlights.",
     "props": {},
     "events": {},
@@ -1677,7 +1683,8 @@
     }
   },
   {
-    "name": "GlimCheckbox",
+    "name": "Checkbox",
+    "prefixedName": "GlimCheckbox",
     "description": "GlimCheckbox A checkbox component for boolean inputs with customizable label and sizing. Follows accessibility best practices and provides visual feedback for different states.",
     "props": {},
     "events": {},
@@ -2018,7 +2025,8 @@
     }
   },
   {
-    "name": "GlimDivider",
+    "name": "Divider",
+    "prefixedName": "GlimDivider",
     "description": "A versatile divider component for visual separation of content. Supports both horizontal and vertical orientations with various color strengths.",
     "props": {
       "orientation": {
@@ -2196,7 +2204,8 @@
     }
   },
   {
-    "name": "GlimDropdown",
+    "name": "Dropdown",
+    "prefixedName": "GlimDropdown",
     "description": "",
     "props": {},
     "events": {},
@@ -2390,7 +2399,8 @@
     }
   },
   {
-    "name": "GlimIcon",
+    "name": "Icon",
+    "prefixedName": "GlimIcon",
     "description": "GlimIcon Renders SVG icons from the Feather icon library with customizable size and color. This component provides a simple way to include consistent icons throughout the application.",
     "props": {},
     "events": {},
@@ -2636,7 +2646,8 @@
     }
   },
   {
-    "name": "GlimImage",
+    "name": "Image",
+    "prefixedName": "GlimImage",
     "description": "GlimImage A responsive image component that maintains aspect ratio and supports various image formats. Handles different aspect ratios and orientations, and provides a placeholder when no image is available.",
     "props": {},
     "events": {},
@@ -2852,7 +2863,8 @@
     }
   },
   {
-    "name": "GlimInput",
+    "name": "Input",
+    "prefixedName": "GlimInput",
     "description": "A form input component with support for various states, icons, and validation. Provides a consistent interface for text input with built-in error handling and visual feedback.",
     "props": {},
     "events": {
@@ -3290,7 +3302,8 @@
     }
   },
   {
-    "name": "GlimMenu",
+    "name": "Menu",
+    "prefixedName": "GlimMenu",
     "description": "GlimMenu A menu component that displays a list of selectable items. Used for dropdown menus, context menus, and other selection interfaces.",
     "props": {
       "items": {
@@ -3408,7 +3421,8 @@
     }
   },
   {
-    "name": "GlimMessage",
+    "name": "Message",
+    "prefixedName": "GlimMessage",
     "description": "",
     "props": {},
     "events": {},
@@ -3574,7 +3588,8 @@
     }
   },
   {
-    "name": "GlimProgressBar",
+    "name": "ProgressBar",
+    "prefixedName": "GlimProgressBar",
     "description": "GlimProgressBar A progress bar component that can show determinate progress or an indeterminate loading state / import { computed } from 'vue'; const props = defineProps({ /** Current progress value (0-100) / value: { type: Number, required: true, default: 0, validator: (value: number) => value >= 0 && value <= 100 }, /** Whether to show the progress value as a percentage / showValue: { type: Boolean, default: false }, /** Size variant of the progress bar / size: { type: String as () => 'small' | 'medium' | 'large', default: 'medium', validator: (value: string) => ['small', 'medium', 'large'].includes(value) }, /** Whether the progress bar is indeterminate / indeterminate: { type: Boolean, default: false }, /** Custom height for the progress bar",
     "props": {
       "value": {
@@ -3715,7 +3730,8 @@
     }
   },
   {
-    "name": "GlimSegmentedControls",
+    "name": "SegmentedControls",
+    "prefixedName": "GlimSegmentedControls",
     "description": "A component that provides a set of mutually exclusive options, similar to radio buttons but with a cohesive, button-like appearance. Commonly used for switching between views or toggling related options.",
     "props": {
       "modelValue": {
@@ -3956,7 +3972,8 @@
     }
   },
   {
-    "name": "GlimSlider",
+    "name": "Slider",
+    "prefixedName": "GlimSlider",
     "description": "GlimSlider An interactive slider component for selecting a value within a range. Features a draggable thumb, visual track/rail, and tooltip showing the current value.",
     "props": {},
     "events": {
@@ -4188,7 +4205,8 @@
     }
   },
   {
-    "name": "GlimSpinner",
+    "name": "Spinner",
+    "prefixedName": "GlimSpinner",
     "description": "GlimSpinner A loading spinner component that provides visual feedback during asynchronous operations. The spinner can be customized with different sizes and colors.",
     "props": {
       "size": {
@@ -4258,7 +4276,8 @@
     }
   },
   {
-    "name": "GlimTabs",
+    "name": "Tabs",
+    "prefixedName": "GlimTabs",
     "description": "A tabbed interface component that allows switching between different content sections. Features an animated indicator that follows the selected tab.",
     "props": {
       "modelValue": {
@@ -4464,7 +4483,8 @@
     }
   },
   {
-    "name": "GlimToggle",
+    "name": "Toggle",
+    "prefixedName": "GlimToggle",
     "description": "GlimToggle A toggle switch component for boolean inputs, similar to a checkbox but with a sliding visual design. Used for enabling/disabling settings or features.",
     "props": {},
     "events": {},
@@ -4636,7 +4656,8 @@
     }
   },
   {
-    "name": "GlimTooltip",
+    "name": "Tooltip",
+    "prefixedName": "GlimTooltip",
     "description": "GlimTooltip A tooltip component that displays additional information when hovering over or focusing on an element. Tooltips can be positioned in different directions and can contain text or custom content.",
     "props": {},
     "events": {},
@@ -4823,6 +4844,7 @@
   },
   {
     "name": "ExampleComponent",
+    "prefixedName": "GlimExampleComponent",
     "description": "ExampleComponent A demonstration component showing how to properly document Vue components. This component serves as a reference for the documentation format.",
     "props": {
       "title": {
